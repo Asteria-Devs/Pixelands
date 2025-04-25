@@ -1,1 +1,1 @@
-# PixelandsGame
+# Pixelands
