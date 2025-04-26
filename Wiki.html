@@ -149,7 +149,7 @@ function renderItems() {
     }
 
     if (
-      item.name.toLowerCase().includes(searchTerm) &&
+      (item.name.toLowerCase().includes(searchTerm) || searchTerm === '') && // Show if search term matches or is empty
       (selectedCategories.length === 0 || selectedCategories.includes(category))
     ) {
       const itemDiv = document.createElement('div');
@@ -173,7 +173,7 @@ function renderItems() {
   // Event listeners to open/close dropdowns
   document.querySelectorAll('.item').forEach(itemDiv => {
     itemDiv.addEventListener('click', function() {
-      // Close all other dropdowns before opening the current open one
+      // Close all other dropdowns before opening the clicked one
       document.querySelectorAll('.item').forEach(i => {
         if (i !== this) {
           i.classList.remove('active');
