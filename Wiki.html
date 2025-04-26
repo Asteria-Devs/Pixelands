@@ -111,21 +111,22 @@
 <a href="index.html">← Back to Home</a>
 
 <script>
+// Sample item data with description and obtained info
 const maxItems = 1500; // Increased to 1500 slots
 const items = [
   { name: 'Dirt Block', description: 'A basic dirt block. Used as a common building material.', obtained: 'Found naturally underground or crafted.' },
   { name: 'Grass Block', description: 'Grass-covered dirt block, perfect for nature builds.', obtained: 'Spread from grass to adjacent dirt blocks.' },
   { name: 'Sign', description: 'Placeable item to write text on.', obtained: 'Crafted using wood.' },
   { name: 'Cave Background', description: 'Background texture for underground areas.', obtained: 'Found in underground caves.' },
-  { name: 'Golden Heart Block', description: '', obtained: '' },
-  { name: 'Four Leaf Clover', description: '', obtained: '' },
+  { name: 'Golden Heart Block', description: 'Used for rare crafting.', obtained: 'Rare drop from Golden Hearts.' },
+  { name: 'Four Leaf Clover', description: 'Lucky item that grants good fortune.', obtained: 'Can be found in certain biomes.' },
 ];
 
 const emptySlots = Array(maxItems - items.length).fill({ name: '', description: '', obtained: '' });
 
 const container = document.getElementById('itemsContainer');
 
-// Auto-generate list
+// Function to render the items
 function renderItems() {
   container.innerHTML = '';
   const searchTerm = document.getElementById('search').value.toLowerCase();
@@ -148,6 +149,7 @@ function renderItems() {
       category = 'Block';
     }
 
+    // Filter logic
     if (
       (item.name.toLowerCase().includes(searchTerm) || searchTerm === '') && // Show if search term matches or is empty
       (selectedCategories.length === 0 || selectedCategories.includes(category))
