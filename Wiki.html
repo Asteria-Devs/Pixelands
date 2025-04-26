@@ -96,8 +96,10 @@
 <h1>Welcome to the Wiki!</h1>
 <h2>This is a place to find all of Pixelands items!</h2>
 
+<!-- Search bar -->
 <input type="text" id="search" placeholder="Search items...">
 
+<!-- Filter categories -->
 <div class="filter-section">
   <label><input type="checkbox" class="filter" value="Block"> Block</label>
   <label><input type="checkbox" class="filter" value="Item"> Item</label>
@@ -123,11 +125,13 @@ const emptySlots = Array(maxItems - items.length).fill({ name: '', description: 
 
 const container = document.getElementById('itemsContainer');
 
+// Auto-generate list
 function renderItems() {
   container.innerHTML = '';
   const searchTerm = document.getElementById('search').value.toLowerCase();
   const selectedCategories = Array.from(document.querySelectorAll('.filter:checked')).map(cb => cb.value);
 
+  // Merge items with empty slots
   const allItems = [...items, ...emptySlots];
 
   allItems.forEach(item => {
@@ -166,8 +170,10 @@ function renderItems() {
     }
   });
 
+  // Event listeners to open/close dropdowns
   document.querySelectorAll('.item').forEach(itemDiv => {
     itemDiv.addEventListener('click', function() {
+      // Close all other dropdowns before opening the current open one
       document.querySelectorAll('.item').forEach(i => {
         if (i !== this) {
           i.classList.remove('active');
@@ -181,10 +187,13 @@ function renderItems() {
   });
 }
 
+// Initial render of items
 renderItems();
 
+// Search function
 document.getElementById('search').addEventListener('input', renderItems);
 
+// Filter function
 document.querySelectorAll('.filter').forEach(filter => {
   filter.addEventListener('change', renderItems);
 });
