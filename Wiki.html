@@ -114,12 +114,12 @@
 // Sample item data with description and obtained info
 const maxItems = 1500; // Increased to 1500 slots
 const items = [
-  { name: 'Dirt Block', description: 'A basic dirt block. Used as a common building material.', obtained: 'Found naturally underground or crafted.' },
-  { name: 'Grass Block', description: 'Grass-covered dirt block, perfect for nature builds.', obtained: 'Spread from grass to adjacent dirt blocks.' },
-  { name: 'Sign', description: 'Placeable item to write text on.', obtained: 'Crafted using wood.' },
-  { name: 'Cave Background', description: 'Background texture for underground areas.', obtained: 'Found in underground caves.' },
-  { name: 'Golden Heart Block', description: 'Used for rare crafting.', obtained: 'Rare drop from Golden Hearts.' },
-  { name: 'Four Leaf Clover', description: 'Lucky item that grants good fortune.', obtained: 'Can be found in certain biomes.' },
+  { name: 'Dirt Block', description: 'A basic dirt block. Used as a common building material.', obtained: 'Found naturally underground.' },
+  { name: 'Grass Block', description: 'Grass-covered dirt block, perfect for nature builds.', obtained: 'Found on the surface of worlds..' },
+  { name: 'Sign', description: 'Placeable item to write text on.', obtained: 'Bought from the shop.' },
+  { name: 'Cave Background', description: 'Background texture for underground areas.', obtained: 'Found behind dirt.' },
+  { name: 'Golden Heart Block', description: 'Used for rare crafting.', obtained: 'Drop from valentines gacha.' },
+  { name: 'Four Leaf Clover', description: 'Lucky item that grants good fortune.', obtained: 'Chance of obtaining from breaking dirt.' },
 ];
 
 const emptySlots = Array(maxItems - items.length).fill({ name: '', description: '', obtained: '' });
