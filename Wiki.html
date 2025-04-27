@@ -110,13 +110,26 @@
 <script>
 const maxItems = 1500; 
 const items = [
-  { name: 'Dirt Block', description: 'A basic dirt block.', obtained: 'Found underground.' },
-  { name: 'Grass Block', description: 'Covered with grass.', obtained: 'Found ontop of worlds..' },
-  { name: 'Sign', description: 'Place to write things for all too see.', obtained: 'Bought from the shop.' },
-  { name: 'Cave Background', description: 'Decorative background.', obtained: 'Found behind dirt.' },
-  { name: 'Door', description: 'Wrench to open or close.', obtained: 'Bought from the shop.' },
-  { name: 'Four Leaf Clover', description: 'Lucky charm used for crafting.', obtained: 'Obtained by breaking blocks.' },
-  { name: 'Golden Chest', description: 'Gives 5000 gems on use.', obtained: 'Obtained by purchasing in the shop for 5000 gems.' },
+  { name: 'Dirt Block', description: 'A basic dirt block', obtained: 'Found underground' },
+  { name: 'Grass Block', description: 'Covered with grass', obtained: 'Found ontop of worlds' },
+  { name: 'Sign', description: 'Place to write things for all too see', obtained: 'Bought from the shop for 75 gems in the signs and doors pack' },
+  { name: 'Cave Background', description: 'Decorative background', obtained: 'Found behind dirt' },
+  { name: 'Door', description: 'Wrench to open or close', obtained: 'Bought from the shop for 75 gems in the signs and doors pack' },
+  { name: 'Four Leaf Clover', description: 'Lucky charm used for crafting', obtained: 'By breaking dirt blocks' },
+  { name: 'Golden Chest', description: 'Gives 5000 gems on use', obtained: 'Obtained by purchasing in the shop for 5000 gems' },
+  { name: 'Green Block', description: 'Nice', obtained: 'Found in Block Crates' },
+  { name: 'Black Block', description: 'Nice', obtained: 'Found in Block Crates' },
+  { name: 'Blue Block', description: 'Nice', obtained: 'Found in Block Crates' },
+  { name: 'Orange Block', description: 'Nice', obtained: 'Found in Block Crates' },
+  { name: 'Red Block', description: 'Nice', obtained: 'Found in Block Crates' },
+  { name: 'Purple Block', description: 'Nice', obtained: 'Found in Block Crates' },
+  { name: 'Yellow Block', description: 'Nice', obtained: 'Found in Block Crates' },
+  { name: 'Block Crate', description: 'Gives 1 random coloured block', obtained: 'Bought in the shop for 50 gems' },
+  { name: 'Diamond Ore', description: 'Uncommon used to craft', obtained: 'Found when fishing' },
+  { name: 'Ruby Ore', description: 'Uncommon used to craft', obtained: 'Breaking stone blocks' },
+  { name: 'Stone Block', description: 'Crafting item', obtained: 'Found in worlds' },
+  { name: 'Sand block', description: 'Crafting item', obtained: 'By crafting 10 stone together in a crafting table' },
+  { name: 'Crafting table block', description: 'With this table you can craft items', obtained: 'Bought for 50 gems in the shop' },
 ];
 
 const emptySlots = Array(maxItems - items.length).fill({ name: '', description: '', obtained: '' });
