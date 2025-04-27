@@ -42,7 +42,6 @@
     .item {
       font-size: 20px;
       margin: 10px 0;
-      cursor: pointer;
       position: relative;
     }
 
@@ -56,6 +55,8 @@
     .arrow {
       margin-left: 10px;
       cursor: pointer;
+      font-size: 24px;
+      vertical-align: middle;
     }
 
     .dropdown-content {
@@ -69,10 +70,6 @@
 
     .item.active .dropdown-content {
       display: block;
-    }
-
-    .item.active .arrow {
-      transform: rotate(180deg);
     }
 
     hr {
@@ -111,91 +108,85 @@
 <a href="index.html">← Back to Home</a>
 
 <script>
-// Sample item data with description and obtained info
-const maxItems = 1500; // Increased to 1500 slots
+const maxItems = 1500; 
 const items = [
-  { name: 'Dirt Block', description: 'A basic dirt block. Used as a common building material.', obtained: 'Found naturally underground.' },
-  { name: 'Grass Block', description: 'Grass-covered dirt block, perfect for nature builds.', obtained: 'Found on the surface of worlds..' },
-  { name: 'Sign', description: 'Placeable item to write text on.', obtained: 'Bought from the shop.' },
-  { name: 'Cave Background', description: 'Background texture for underground areas.', obtained: 'Found behind dirt.' },
-  { name: 'Golden Heart Block', description: 'Used for rare crafting.', obtained: 'Drop from valentines gacha.' },
-  { name: 'Four Leaf Clover', description: 'Lucky item that grants good fortune.', obtained: 'Chance of obtaining from breaking dirt.' },
+  { name: 'Dirt Block', description: 'A basic dirt block.', obtained: 'Found underground.' },
+  { name: 'Grass Block', description: 'Covered with grass.', obtained: 'Spreads naturally.' },
+  { name: 'Sign', description: 'Place to write.', obtained: 'Crafted from wood.' },
+  { name: 'Cave Background', description: 'Decorative background.', obtained: 'Found in caves.' },
+  { name: 'Golden Heart Block', description: 'Rare crafting material.', obtained: 'Dropped from Golden Hearts.' },
+  { name: 'Four Leaf Clover', description: 'Lucky charm.', obtained: 'Found in special biomes.' },
 ];
 
 const emptySlots = Array(maxItems - items.length).fill({ name: '', description: '', obtained: '' });
 
 const container = document.getElementById('itemsContainer');
 
-// Function to render the items
 function renderItems() {
   container.innerHTML = '';
   const searchTerm = document.getElementById('search').value.toLowerCase();
   const selectedCategories = Array.from(document.querySelectorAll('.filter:checked')).map(cb => cb.value);
 
-  // Merge items with empty slots
   const allItems = [...items, ...emptySlots];
 
-  allItems.forEach(item => {
-    // Don't show empty slots in the search
+  allItems.forEach((item, index) => {
     if (item.name === '' && item.description === '' && item.obtained === '') {
       return;
     }
 
-    let category = 'Item'; // Default category
-
+    let category = 'Item';
     if (item.name.toLowerCase().includes('background')) {
       category = 'Background';
     } else if (item.name.toLowerCase().includes('block')) {
       category = 'Block';
     }
 
-    // Filter logic
     if (
-      (item.name.toLowerCase().includes(searchTerm) || searchTerm === '') && // Show if search term matches or is empty
+      (item.name.toLowerCase().includes(searchTerm) || searchTerm === '') &&
       (selectedCategories.length === 0 || selectedCategories.includes(category))
     ) {
       const itemDiv = document.createElement('div');
       itemDiv.className = 'item';
       itemDiv.innerHTML = `
         ${item.name}
-        <span class="category-tag ${category.toLowerCase()}">${category}</span>
-        <span class="arrow">+</span>
+        <span class="category-tag">${category}</span>
+        <span class="arrow" data-index="${index}">+</span>
         <div class="dropdown-content">
           <strong>Description:</strong><br> ${item.description || '(Not yet filled)'}<br><br>
           <strong>How it's obtained:</strong><br> ${item.obtained || '(Not yet filled)'}
         </div>
       `;
       container.appendChild(itemDiv);
-
-      const hr = document.createElement('hr');
-      container.appendChild(hr);
+      container.appendChild(document.createElement('hr'));
     }
   });
 
-  // Event listeners to open/close dropdowns
-  document.querySelectorAll('.item').forEach(itemDiv => {
-    itemDiv.addEventListener('click', function() {
-      // Close all other dropdowns before opening the clicked one
+  // Setup dropdown toggles only on arrow clicks
+  document.querySelectorAll('.arrow').forEach(arrow => {
+    arrow.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent clicking the whole div
+      const itemDiv = this.parentElement;
+      const currentlyActive = itemDiv.classList.contains('active');
+
       document.querySelectorAll('.item').forEach(i => {
-        if (i !== this) {
-          i.classList.remove('active');
-          i.querySelector('.arrow').innerText = '+';
-        }
+        i.classList.remove('active');
+        i.querySelector('.arrow').innerText = '+';
       });
-      this.classList.toggle('active');
-      const arrow = this.querySelector('.arrow');
-      arrow.innerText = this.classList.contains('active') ? '-' : '+';
+
+      if (!currentlyActive) {
+        itemDiv.classList.add('active');
+        this.innerText = '-';
+      }
     });
   });
 }
 
-// Initial render of items
 renderItems();
 
-// Search function
+// Search
 document.getElementById('search').addEventListener('input', renderItems);
 
-// Filter function
+// Filter
 document.querySelectorAll('.filter').forEach(filter => {
   filter.addEventListener('change', renderItems);
 });
