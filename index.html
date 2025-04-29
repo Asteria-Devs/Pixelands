@@ -141,18 +141,31 @@
     margin-top: 40px;
   }
 
-  .download-box {
-    padding: 12px 20px;
-    font-size: 18px;
-    font-family: monospace;
-    color: #000;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    width: fit-content;
+  <style>
+  .download-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    margin-top: 40px;
   }
+
+  .download-box {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-family: 'Delius', cursive;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .download-box:hover {
+    background-color: #555;
+  }
+</style>
+
 
   .download-box:hover {
     background-color: #f0f0f0;
