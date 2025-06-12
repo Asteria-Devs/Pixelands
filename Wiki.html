@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pixelands Wiki</title>
-<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8"> 
+<title>Pixelands Wiki</title>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet"
   <style>
     body {
       background-color: #000;
@@ -14,7 +13,6 @@
       margin: 0;
       padding: 40px;
     }
-
     a {
       color: #fff;
       background-color: #333;
@@ -26,11 +24,9 @@
       margin-top: 30px;
       transition: background-color 0.3s ease;
     }
-
     a:hover {
       background-color: #555;
     }
-
     #search {
       padding: 10px;
       font-size: 16px;
@@ -39,27 +35,23 @@
       border-radius: 5px;
       border: none;
     }
-
     .item {
       font-size: 20px;
       margin: 10px 0;
       position: relative;
     }
-
     .category-tag {
       padding: 3px 10px;
       background-color: #444;
       border-radius: 5px;
       margin-left: 10px;
     }
-
     .arrow {
       margin-left: 10px;
       cursor: pointer;
       font-size: 24px;
       vertical-align: middle;
     }
-
     .dropdown-content {
       display: none;
       background-color: #333;
@@ -68,21 +60,17 @@
       margin-top: 5px;
       text-align: left;
     }
-
     .item.active .dropdown-content {
       display: block;
     }
-
     hr {
       border: 1px solid #555;
       width: 80%;
       margin: 20px auto;
     }
-
     .filter-section {
       margin-bottom: 20px;
     }
-
     .filter {
       margin-right: 10px;
       cursor: pointer;
@@ -90,24 +78,17 @@
   </style>
 </head>
 <body>
-
 <h1>Welcome to the Wiki!</h1>
 <h2>This is a place to find all of Pixelands items!</h2>
-
-<!-- Search bar -->
 <input type="text" id="search" placeholder="Search items...">
-
 <!-- Filter categories -->
 <div class="filter-section">
   <label><input type="checkbox" class="filter" value="Block"> Block</label>
   <label><input type="checkbox" class="filter" value="Item"> Item</label>
   <label><input type="checkbox" class="filter" value="Background"> Background</label>
 </div>
-
 <div id="itemsContainer"></div>
-
 <a href="index.html">← Back to Home</a>
-
 <script>
 const maxItems = 1500; 
 const items = [
@@ -155,30 +136,23 @@ const items = [
   { name: 'Golden Shoes', description: 'No need for any other shoe.....', obtained: 'Bought in the shop for gems' },
   { name: 'Bone Fragment', description: 'Used to craft limited items', obtained: '?' },
 ];
-
 const emptySlots = Array(maxItems - items.length).fill({ name: '', description: '', obtained: '' });
-
 const container = document.getElementById('itemsContainer');
-
 function renderItems() {
   container.innerHTML = '';
   const searchTerm = document.getElementById('search').value.toLowerCase();
   const selectedCategories = Array.from(document.querySelectorAll('.filter:checked')).map(cb => cb.value);
-
   const allItems = [...items, ...emptySlots];
-
   allItems.forEach((item, index) => {
     if (item.name === '' && item.description === '' && item.obtained === '') {
       return;
     }
-
     let category = 'Item';
     if (item.name.toLowerCase().includes('background')) {
       category = 'Background';
     } else if (item.name.toLowerCase().includes('block')) {
       category = 'Block';
     }
-
     if (
       (item.name.toLowerCase().includes(searchTerm) || searchTerm === '') &&
       (selectedCategories.length === 0 || selectedCategories.includes(category))
@@ -198,19 +172,15 @@ function renderItems() {
       container.appendChild(document.createElement('hr'));
     }
   });
-
-  // Setup dropdown toggles only on arrow clicks
   document.querySelectorAll('.arrow').forEach(arrow => {
     arrow.addEventListener('click', function(e) {
       e.stopPropagation(); // Prevent clicking the whole div
       const itemDiv = this.parentElement;
       const currentlyActive = itemDiv.classList.contains('active');
-
       document.querySelectorAll('.item').forEach(i => {
         i.classList.remove('active');
         i.querySelector('.arrow').innerText = '+';
       });
-
       if (!currentlyActive) {
         itemDiv.classList.add('active');
         this.innerText = '-';
@@ -218,17 +188,11 @@ function renderItems() {
     });
   });
 }
-
 renderItems();
-
-// Search
 document.getElementById('search').addEventListener('input', renderItems);
-
-// Filter
 document.querySelectorAll('.filter').forEach(filter => {
   filter.addEventListener('change', renderItems);
 });
 </script>
-
 </body>
 </html>
