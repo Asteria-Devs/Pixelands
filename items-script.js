@@ -4,7 +4,7 @@ const items = [
   { name: 'Golden Chest', description: 'Gives 5000 gems on use', obtained: 'Obtained by purchasing in the shop for 5000 gems', type: 'Material' },
   { name: 'Diamond Ore', description: 'Uncommon. used to craft Diamond Blocks', obtained: 'Found when fishing', type: 'Material' },
   { name: 'Ruby Ore', description: 'Uncommon. used to craft Ruby Blocks', obtained: 'Breaking stone blocks', type: 'Material' },
-  { name: 'Devil Wings', description: 'Ultra Rare. Part Of the Devil Set', obtained: 'Could be bought for ', type: 'Wings' },
+  { name: 'Night Owl Wings', description: 'Legendary. Special owl wings, owned by the very best!', obtained: 'Unobtainable. IAP Bundle May 2025 for 10$. ', type: 'Wings' },
   { name: 'White Lenses', description: 'Rare. Lenses that makes your eyes white.', obtained: 'Unobtainable. Was once purchaseable in the shop for 7,500 gems', type: 'Accessory' },
   { name: 'Rich Boy Glasses', description: 'Ultra Rare. Glasses which only rich people dare to wear!', obtained: 'Unobtainable. Was once purchaseable in the shop for 15,500 gems', type: 'Accessory' },
   { name: 'Devil Wings', description: 'Ultra Rare. Wings of the devil.', obtained: 'Unobtainable. Was once purchaseable in the shop for 25,500 gems.', type: 'Wings' },
