@@ -47,7 +47,7 @@ function createBlockElement(block, index) {
     </div>
     <div class="dropdown-content">
       <div class="item-image-container">
-        <img src="images/${block.name.toLowerCase().replace(/\s+/g, '_')}.png" alt="${block.name}" onerror="this.style.display='none'">
+        <img src="images/${block.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')}.png" alt="${block.name}" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot;>No Image Available</div>'">
       </div>
       <p><strong>Description:</strong><br>${block.description || '(Not yet filled)'}</p>
       <p><strong>How it's obtained:</strong><br>${block.obtained || '(Not yet filled)'}</p>
