@@ -59,6 +59,7 @@ const searchInput = document.getElementById('search');
 const filterCheckboxes = document.querySelectorAll('.filter');
 const itemCountSpan = document.getElementById('itemCount');
 const lastUpdatedSpan = document.getElementById('lastUpdated');
+const maxItems = 20;
 
 // Utility functions
 function updateStats() {
