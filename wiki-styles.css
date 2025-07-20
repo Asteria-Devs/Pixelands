@@ -369,7 +369,8 @@ body {
 .item[data-category="Natural"] .item-image-container img,
 .item[data-category="Crafted"] .item-image-container img,
 .item[data-category="Decorative"] .item-image-container img,
-.item[data-category="Functional"] .item-image-container img {
+.item[data-category="Functional"] .item-image-container img,
+.item[data-category="Wings"] .item-image-container img {
   width: 95px;
   height: 95px;
 }
