@@ -28,7 +28,7 @@ const items = [
   { name: 'Sea hair', description: 'Ultra Rare.', obtained: 'Obtained from the summer treasure chests.', category: 'Accessory' },
   { name: 'Jade Dragon', description: 'Legendary. The legendary Jade Dragon.', obtained: 'Could be bought for 75,000 gems in the shop. Now is obtainable from the VIP Wheel.', category: 'Wings' },
   { name: 'Golden Jade Dragon', description: 'Legendary. Golden variation of the legendary Jade Dragon.', obtained: 'Unobtainable. Once could be bought for 125,000 gems in the shop. Unobtainable now.', category: 'Wings' },
-
+  { name: 'Night Owl Wings', description: 'Legenadry'
   // Blocks
   { name: 'Dirt Block', description: 'A basic dirt block', obtained: 'Basic Block found in worlds.', category: 'Block' },
   { name: 'Grass Block', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', category: 'Block' },
@@ -92,7 +92,7 @@ function createItemElement(item, index) {
     </div>
     <div class="dropdown-content">
       <div class="item-image-container">
-        <img src="images/${item.name.toLowerCase().replace(/\s+/g, '_')}.png" alt="${item.name}" onerror="this.style.display='none'">
+        <img src="images/${item.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')}.png" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot;>No Image Available</div>'">
       </div>
       <p><strong>Description:</strong><br>${item.description || '(Not yet filled)'}</p>
       <p><strong>How it's obtained:</strong><br>${item.obtained || '(Not yet filled)'}</p>
