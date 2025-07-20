@@ -31,6 +31,7 @@ const items = [
   { name: 'Night Owl Wings', description: 'Legenadry. Special owl wings, owned by the very best!', obtained: 'Unobtainable. Was a part of the IAP bundle 2025 May.', category: 'Wings' },
   { name: 'Pixie Wings', description: 'Rare. Wings taken from a Pixie.', obtained: 'Unobtainable. Could be bought for 12,500 gems', type: 'Wings'},
   { name: 'Fairy Wings', description: 'Rare. Wings taken from a Fairy.', obtained: 'Unobtainable. Could be bought for 12,500 gems', type: 'Wings'},
+  { name: 'Rabbit Jetpack', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtauned: 'Unobtainable. Easter item.', type: 'Wings'},
 
 
 
