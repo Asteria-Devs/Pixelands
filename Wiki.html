@@ -1,201 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"> 
-<title>Pixelands Wiki</title>
-<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Jersey 10', sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 40px;
-    }
-    a {
-      color: #fff;
-      background-color: #333;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 20px;
-      display: inline-block;
-      margin-top: 30px;
-      transition: background-color 0.3s ease;
-    }
-    a:hover {
-      background-color: #555;
-    }
-    #search {
-      padding: 10px;
-      font-size: 16px;
-      width: 250px;
-      margin: 20px 0;
-      border-radius: 5px;
-      border: none;
-    }
-    .item {
-      font-size: 20px;
-      margin: 10px 0;
-      position: relative;
-    }
-    .category-tag {
-      padding: 3px 10px;
-      background-color: #444;
-      border-radius: 5px;
-      margin-left: 10px;
-    }
-    .arrow {
-      margin-left: 10px;
-      cursor: pointer;
-      font-size: 24px;
-      vertical-align: middle;
-    }
-    .dropdown-content {
-      display: none;
-      background-color: #333;
-      padding: 10px;
-      border-radius: 8px;
-      margin-top: 5px;
-      text-align: left;
-    }
-    .item.active .dropdown-content {
-      display: block;
-    }
-    hr {
-      border: 1px solid #555;
-      width: 80%;
-      margin: 20px auto;
-    }
-    .filter-section {
-      margin-bottom: 20px;
-    }
-    .filter {
-      margin-right: 10px;
-      cursor: pointer;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixelands Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wiki-styles.css">
 </head>
 <body>
-<h1>Welcome to the Wiki!</h1>
-<h2>This is a place to find all of Pixelands items!</h2>
-<input type="text" id="search" placeholder="Search items...">
-<!-- Filter categories -->
-<div class="filter-section">
-  <label><input type="checkbox" class="filter" value="Block"> Block</label>
-  <label><input type="checkbox" class="filter" value="Item"> Item</label>
-  <label><input type="checkbox" class="filter" value="Background"> Background</label>
-</div>
-<div id="itemsContainer"></div>
-<a href="index.html">← Back to Home</a>
-<script>
-const maxItems = 1500; 
-const items = [
-  { name: 'Dirt Block', description: 'A basic dirt block', obtained: 'Found underground' },
-  { name: 'Grass Block', description: 'Covered with grass', obtained: 'Found ontop of worlds' },
-  { name: 'Sign', description: 'Place to write things for all too see', obtained: 'Bought from the shop for 75 gems in the signs and doors pack' },
-  { name: 'Cave Background', description: 'Decorative background', obtained: 'Found behind dirt' },
-  { name: 'Door', description: 'Wrench to open or close', obtained: 'Bought from the shop for 75 gems in the signs and doors pack' },
-  { name: 'Four Leaf Clover', description: 'Lucky charm used for crafting', obtained: 'By breaking dirt blocks' },
-  { name: 'Golden Chest', description: 'Gives 5000 gems on use', obtained: 'Obtained by purchasing in the shop for 5000 gems' },
-  { name: 'Green Block', description: 'Nice', obtained: 'Found in Block Crates' },
-  { name: 'Black Block', description: 'Nice', obtained: 'Found in Block Crates' },
-  { name: 'Blue Block', description: 'Nice', obtained: 'Found in Block Crates' },
-  { name: 'Orange Block', description: 'Nice', obtained: 'Found in Block Crates' },
-  { name: 'Red Block', description: 'Nice', obtained: 'Found in Block Crates' },
-  { name: 'Purple Block', description: 'Nice', obtained: 'Found in Block Crates' },
-  { name: 'Yellow Block', description: 'Nice', obtained: 'Found in Block Crates' },
-  { name: 'Block Crate', description: 'Gives 1 random coloured block', obtained: 'Bought in the shop for 50 gems' },
-  { name: 'Diamond Ore', description: 'Uncommon used to craft', obtained: 'Found when fishing' },
-  { name: 'Ruby Ore', description: 'Uncommon used to craft', obtained: 'Breaking stone blocks' },
-  { name: 'Stone Block', description: 'Crafting item', obtained: 'Found in worlds' },
-  { name: 'Sand block', description: 'Crafting item', obtained: 'By crafting 10 stone together in a crafting table' },
-  { name: 'Crafting table block', description: 'With this table you can craft items', obtained: 'Bought for 50 gems in the shop' },
-  { name: 'Golden Angel Wings', description: 'Part of the Golden Set', obtained: 'Found in Golden Valentines Gacha' },
-  { name: 'Cthulu Wings', description: 'Came from the deep....', obtained: '?' },
-  { name: 'Dark Cthulu Wings', description: 'Legendary Dark Item', obtained: '?' },
-  { name: 'Devil Wings', description: 'Ultra Rare', obtained: '?' },
-  { name: 'Vampire Wings', description: 'Legendary Vampire Wings', obtained: '?' },
-  { name: 'Nightmare Vampire Wings', description: 'Legenday Vampire Wings', obtained: '?' },
-  { name: 'Gold Cape', description: 'Ultra Rare', obtained: '?' },
-  { name: 'Skeleton Wings', description: 'Legendary Bone Item', obtained: '?' },
-  { name: 'Dracula Cape', description: 'Legendary Item', obtained: '?' },
-  { name: 'Demon Blade', description: 'Rare', obtained: '?' },
-  { name: 'Cursed Katana', description: 'So sharp it takes souls with one swipe', obtained: '?' },
-  { name: 'Wooden Sword', description: 'Rare', obtained: 'Bought in the shop for gems' },
-  { name: 'Demon Scythe', description: 'Demon Item', obtained: '?' },  { name: 'Dark Cthulu Wings', description: 'Legendary Dark Item', obtained: '?' },
-  { name: 'Bone ', description: 'Halloween item', obtained: '?' },
-  { name: 'Ruby Pickaxe', description: 'Halloween item', obtained: '?' },
-  { name: 'Demon horns', description: 'Demon item', obtained: '?' },
-  { name: 'Skele mask', description: 'Halloween item', obtained: '?' },
-  { name: 'Shadow Mask', description: 'Halloween Item', obtained: '?' },
-  { name: 'Ninja Mask', description: 'Halloween Item', obtained: '?' },
-  { name: 'Vampire Lenses', description: 'Used to craft limited items', obtained: '?' },
-  { name: 'Cursed Katana', description: 'So sharp it takes souls with one swipe', obtained: '?' },
-  { name: 'Golden Shoes', description: 'No need for any other shoe.....', obtained: 'Bought in the shop for gems' },
-  { name: 'Bone Fragment', description: 'Used to craft limited items', obtained: '?' },
-  { name: 'Golden Pickaxe', description: '', obtained: 'Unobtainable' },
-  { name: 'Wings of Diviniation - Asteria', description: '', obtained: 'Unconfirmed as of now. Submited by Asteria to item design. Will be given away personally by Asteria if added.' },
-  { name: 'Crown of the Cosmos - Asteria', description: 'Legends say that the crown contains the cosmos. When broken space and time itself rips apart. With great power comes great responsibility ', obtained: 'Unconfirmed as of now. Submited by Asteria to item design. Will be given away personally by Asteria if added.' },
-]
-const emptySlots = Array(maxItems - items.length).fill({ name: '', description: '', obtained: '' });
-const container = document.getElementById('itemsContainer');
-function renderItems() {
-  container.innerHTML = '';
-  const searchTerm = document.getElementById('search').value.toLowerCase();
-  const selectedCategories = Array.from(document.querySelectorAll('.filter:checked')).map(cb => cb.value);
-  const allItems = [...items, ...emptySlots];
-  allItems.forEach((item, index) => {
-    if (item.name === '' && item.description === '' && item.obtained === '') {
-      return;
-    }
-    let category = 'Item';
-    if (item.name.toLowerCase().includes('background')) {
-      category = 'Background';
-    } else if (item.name.toLowerCase().includes('block')) {
-      category = 'Block';
-    }
-    if (
-      (item.name.toLowerCase().includes(searchTerm) || searchTerm === '') &&
-      (selectedCategories.length === 0 || selectedCategories.includes(category))
-    ) {
-      const itemDiv = document.createElement('div');
-      itemDiv.className = 'item';
-      itemDiv.innerHTML = `
-        ${item.name}
-        <span class="category-tag">${category}</span>
-        <span class="arrow" data-index="${index}">+</span>
-        <div class="dropdown-content">
-          <strong>Description:</strong><br> ${item.description || '(Not yet filled)'}<br><br>
-          <strong>How it's obtained:</strong><br> ${item.obtained || '(Not yet filled)'}
+  <header class="wiki-header">
+    <div class="wiki-nav">
+      <div class="wiki-logo">
+        <h1>Pixelands Wiki</h1>
+      </div>
+      <nav class="wiki-navigation">
+        <a href="index.html">Main Page</a>
+        <a href="items.html">Items</a>
+        <a href="blocks.html">Blocks</a>
+        <a href="guides.html">Guides</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wiki-container">
+    <aside class="wiki-sidebar">
+      <div class="search-section">
+        <h3>Search</h3>
+        <input type="text" id="search" placeholder="Search items...">
+      </div>
+
+      <div class="filter-section">
+        <h3>Categories</h3>
+        <div class="category-filters">
+          <label><input type="checkbox" class="filter" value="Block"> Blocks</label>
+          <label><input type="checkbox" class="filter" value="Item"> Items</label>
+          <label><input type="checkbox" class="filter" value="Background"> Backgrounds</label>
         </div>
-      `;
-      container.appendChild(itemDiv);
-      container.appendChild(document.createElement('hr'));
-    }
-  });
-  document.querySelectorAll('.arrow').forEach(arrow => {
-    arrow.addEventListener('click', function(e) {
-      e.stopPropagation(); // Prevent clicking the whole div
-      const itemDiv = this.parentElement;
-      const currentlyActive = itemDiv.classList.contains('active');
-      document.querySelectorAll('.item').forEach(i => {
-        i.classList.remove('active');
-        i.querySelector('.arrow').innerText = '+';
-      });
-      if (!currentlyActive) {
-        itemDiv.classList.add('active');
-        this.innerText = '-';
-      }
-    });
-  });
-}
-renderItems();
-document.getElementById('search').addEventListener('input', renderItems);
-document.querySelectorAll('.filter').forEach(filter => {
-  filter.addEventListener('change', renderItems);
-});
-</script>
+      </div>
+
+      <div class="wiki-stats">
+        <h3>Wiki Statistics</h3>
+        <p>Items documented: <span id="itemCount">0</span></p>
+        <p>Last updated: <span id="lastUpdated">Today</span></p>
+      </div>
+    </aside>
+
+    <main class="wiki-content">
+      <div class="wiki-article">
+        <header class="article-header">
+          <h1>Item Database</h1>
+          <p class="article-subtitle">Complete catalog of all items, blocks, and equipment in Pixelands</p>
+        </header>
+
+        <div class="content-body">
+          <p>Welcome to the comprehensive Pixelands item database. Here you can find detailed information about every item, block, and piece of equipment available in the game.</p>
+
+          <div class="table-of-contents">
+            <h2>Contents</h2>
+            <ul>
+              <li><a href="#item-list">1. Item List</a></li>
+              <li><a href="#categories">2. Categories</a></li>
+              <li><a href="#obtaining">3. How to Obtain Items</a></li>
+            </ul>
+          </div>
+
+          <section id="item-list">
+            <h2>Item List</h2>
+            <div id="itemsContainer"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="wiki-footer">
+    <p>© 2024 Pixelands Wiki - Community driven documentation</p>
+    <p><a href="index.html">← Back to Home</a></p>
+  </footer>
+
+  <script src="wiki-script.js"></script>
 </body>
 </html>
