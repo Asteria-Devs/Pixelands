@@ -63,7 +63,7 @@ function createGuideElement(guide, index) {
   const guideDiv = document.createElement('div');
   guideDiv.className = 'item';
   guideDiv.setAttribute('data-category', guide.category);
-  
+
   guideDiv.innerHTML = `
     <div class="item-header" data-index="${index}">
       <span class="item-title">${guide.title}</span>
@@ -77,39 +77,39 @@ function createGuideElement(guide, index) {
       <p><strong>Guide Content:</strong><br>${guide.content}</p>
     </div>
   `;
-  
+
   return guideDiv;
 }
 
 function renderGuides() {
   container.innerHTML = '';
-  
+
   const searchTerm = searchInput.value.toLowerCase();
   const selectedCategories = Array.from(filterCheckboxes)
     .filter(cb => cb.checked)
     .map(cb => cb.value);
-  
+
   const filteredGuides = guides.filter(guide => {
     if (!guide.title) return false;
-    
+
     const matchesSearch = guide.title.toLowerCase().includes(searchTerm) || 
                          guide.description.toLowerCase().includes(searchTerm) || 
                          searchTerm === '';
     const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(guide.category);
-    
+
     return matchesSearch && matchesCategory;
   });
-  
+
   if (filteredGuides.length === 0) {
     container.innerHTML = '<p style="text-align: center; color: #7f8c8d; padding: 2rem;">No guides found matching your search.</p>';
     return;
   }
-  
+
   filteredGuides.forEach((guide, index) => {
     const guideElement = createGuideElement(guide, index);
     container.appendChild(guideElement);
   });
-  
+
   // Add click event listeners for dropdowns
   document.querySelectorAll('.item-header').forEach(header => {
     header.addEventListener('click', toggleDropdown);
@@ -120,13 +120,13 @@ function toggleDropdown(event) {
   const itemDiv = event.currentTarget.closest('.item');
   const arrow = itemDiv.querySelector('.arrow');
   const isActive = itemDiv.classList.contains('active');
-  
+
   // Close all other dropdowns
   document.querySelectorAll('.item').forEach(item => {
     item.classList.remove('active');
     item.querySelector('.arrow').textContent = '+';
   });
-  
+
   // Toggle current dropdown
   if (!isActive) {
     itemDiv.classList.add('active');
