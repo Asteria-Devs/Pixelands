@@ -36,16 +36,6 @@ const items = [
   { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the Legendary Quest "Seraphim Wings".', type 'Quest'},
 
 
-
-
-];
-
-
-
-
-
-
-  
   // Blocks
   { name: 'Dirt Block', description: 'A basic dirt block', obtained: 'Basic Block found in worlds.', category: 'Block' },
   { name: 'Grass Block', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', category: 'Block' },
