@@ -1,0 +1,317 @@
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  font-family: 'Jersey 10', monospace, sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Game Header */
+.game-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 0;
+  border-bottom: 3px solid #34495e;
+}
+
+.game-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.game-logo h1 {
+  font-size: 2.2rem;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  letter-spacing: 1px;
+}
+
+.game-navigation {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.game-navigation a {
+  color: #ecf0f1;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.game-navigation a:hover {
+  background-color: #34495e;
+}
+
+/* Main Container */
+.game-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.game-content {
+  background-color: #2d2d2d;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  padding: 2rem;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+  color: #e0e0e0;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  letter-spacing: 1px;
+}
+
+.banner-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.banner-images img {
+  width: 48%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #404040;
+}
+
+.wiki-link-section {
+  margin: 2rem 0;
+}
+
+.wiki-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.wiki-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Download Section */
+.download-section {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.download-section h2 {
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.download-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #27ae60;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.download-button:hover {
+  background-color: #229954;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Video Section */
+.video-section {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.video-section h2 {
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+}
+
+.video-container iframe {
+  width: 560px;
+  height: 315px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Community Section */
+.community-section {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.community-section h2 {
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.community-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #7f8c8d;
+}
+
+.discord-link {
+  margin: 2rem 0;
+}
+
+.discord-link img {
+  width: 50%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.discord-link img:hover {
+  transform: scale(1.05);
+}
+
+.game-features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.game-features img {
+  width: 30%;
+  min-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #404040;
+}
+
+.game-features img {
+  width: 45%;
+  min-width: 320px;
+}
+
+/* Footer */
+.game-footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .game-nav {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .game-navigation {
+    justify-content: center;
+  }
+  
+  .banner-images {
+    flex-direction: column;
+  }
+  
+  .banner-images img {
+    width: 100%;
+  }
+  
+  .download-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .video-container iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+  }
+  
+  .game-features {
+    flex-direction: column;
+  }
+  
+  .game-features img {
+    width: 80%;
+  }
+  
+  .discord-link img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+  
+  .download-section h2,
+  .video-section h2,
+  .community-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .game-container {
+    padding: 1rem;
+  }
+  
+  .game-content {
+    padding: 1rem;
+  }
+}
