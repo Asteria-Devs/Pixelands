@@ -50,7 +50,7 @@ body {
 .game-navigation a {
   color: #ecf0f1;
   text-decoration: none;
-  padding: 0.5rem 0.8rem;
+  padding: 0.5rem 1.0rem;
   border-radius: 4px;
   transition: background-color 0.3s ease;
   white-space: nowrap;
