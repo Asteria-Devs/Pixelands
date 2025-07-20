@@ -31,6 +31,8 @@ const items = [
   { name: 'Golden Jade Dragon', description: 'Legendary. Golden variation of the legendary Jade Dragon.', obtained: 'Unobtainable. Once could be bought for 125,000 gems in the shop.', type: 'Wings' },
   { name: 'Fairy Wings', description: 'Rare. Wings taken from a Fairy.', obtained: 'Unobtainable. Could be bought for 12,500 gems', type: 'Wings'},
   { name: 'Rabbit Jetpack', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtauned: 'Unobtainable. Easter item.', type: 'Wings'},
+  { name: 'DaVinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the legendary quest.', type: 'Quest'},
+  { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the legendary quest "Seraphim Wings".', type 'Quest'},
 ];
 
 // DOM elements
