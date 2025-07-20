@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guides - Pixelands Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wiki-styles.css">
+</head>
+<body>
+  <header class="wiki-header">
+    <div class="wiki-nav">
+      <div class="wiki-logo">
+        <h1>Pixelands Wiki</h1>
+      </div>
+      <nav class="wiki-navigation">
+        <a href="index.html">Main Page</a>
+        <a href="items.html">Items</a>
+        <a href="blocks.html">Blocks</a>
+        <a href="guides.html">Guides</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wiki-container">
+    <aside class="wiki-sidebar">
+      <div class="search-section">
+        <h3>Search Guides</h3>
+        <input type="text" id="search" placeholder="Search guides...">
+      </div>
+
+      <div class="filter-section">
+        <h3>Guide Categories</h3>
+        <div class="category-filters">
+          <label><input type="checkbox" class="filter" value="Beginner"> Beginner</label>
+          <label><input type="checkbox" class="filter" value="Building"> Building</label>
+          <label><input type="checkbox" class="filter" value="Crafting"> Crafting</label>
+          <label><input type="checkbox" class="filter" value="Economy"> Economy</label>
+          <label><input type="checkbox" class="filter" value="Advanced"> Advanced</label>
+        </div>
+      </div>
+
+      <div class="wiki-stats">
+        <h3>Guide Statistics</h3>
+        <p>Guides available: <span id="guideCount">0</span></p>
+        <p>Last updated: <span id="lastUpdated">Today</span></p>
+      </div>
+    </aside>
+
+    <main class="wiki-content">
+      <div class="wiki-article">
+        <header class="article-header">
+          <h1>Player Guides</h1>
+          <p class="article-subtitle">Comprehensive guides to help you master Pixelands</p>
+        </header>
+
+        <div class="content-body">
+          <p>Welcome to the Pixelands guides section! Here you'll find tutorials, tips, and strategies to help you become a better player.</p>
+
+          <section id="guide-list">
+            <h2>Available Guides</h2>
+            <div id="guidesContainer"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="wiki-footer">
+    <p>© 2024 Pixelands Wiki - Community driven documentation</p>
+    <p><a href="index.html">← Back to Home</a></p>
+  </footer>
+
+  <script src="guides-script.js"></script>
+</body>
+</html>
