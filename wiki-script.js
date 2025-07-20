@@ -44,7 +44,8 @@ const items = [
   { name: 'Pink Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Red Blocks + 50 White Blocks', category: 'Block' },
   { name: 'Cyan Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Blue Blocks + 50 White Blocks', category: 'Block' },
   { name: 'Grey Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Black Blocks + 50 White Blocks', category: 'Block' },
-  { name: 'Cave Background', description: 'Decorative background', obtained: 'Found behind dirt', category: 'Background' },
+  { name: 'Cave Background', description: 'A basic cave background', obtained: 'Found behind dirt', category: 'Background' },
+  { name: 'Wood Background', description: 'Craftting Item', obtained: 'Can be crafted using the crafting tabble. 3 Grass + 5 Cave Backgrounds', type: 'Background'},
 
   // Additional items
   { name: 'Sign', description: 'Place to write things for all too see', obtained: 'Bought from the shop for 75 gems in the signs and doors pack', category: 'Item' },
