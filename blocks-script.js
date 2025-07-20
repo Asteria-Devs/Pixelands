@@ -1,7 +1,7 @@
 // Blocks page functionality
 const blocks = [
   { name: 'Dirt Block', description: 'A basic dirt block', obtained: 'Basic Block found in worlds.', type: 'Natural' },
-  { name: 'Grass Block', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', type: 'Natural' },
+  { name: 'Grass', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', type: 'Natural' },
   { name: 'Stone Block', description: 'Crafting item', obtained: 'Basic Block found in worlds', type: 'Natural' },
   { name: 'Sand Block', description: 'Summer Block', obtained: 'Found in Summer Worlds', type: 'Natural' },
   { name: 'Green Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Yellow Blocks + 50 Blue Blocks.', type: 'Crafted' },
@@ -14,7 +14,8 @@ const blocks = [
   { name: 'Pink Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Red Blocks + 50 White Blocks', type: 'Crafted' },
   { name: 'Cyan Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Blue Blocks + 50 White Blocks', type: 'Crafted' },
   { name: 'Grey Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Black Blocks + 50 White Blocks', type: 'Crafted' },
-  { name: 'Cave Background', description: 'Decorative background', obtained: 'Found behind dirt', type: 'Decorative' }
+  { name: 'Wood Background', description: 'Craftting Item', obtained: 'Can be crafted using the crafting tabble. 3 Grass + 5 Cave Backgrounds', type: 'Crafted'},
+  { name: 'Cave Background', description: 'A basic cave background', obtained: 'Found behind dirt', type: 'Natural' }
 ];
 
 // DOM elements
