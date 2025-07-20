@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Items - Pixelands Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wiki-styles.css">
+</head>
+<body>
+  <header class="wiki-header">
+    <div class="wiki-nav">
+      <div class="wiki-logo">
+        <h1>Pixelands Wiki</h1>
+      </div>
+      <nav class="wiki-navigation">
+        <a href="index.html">Main Page</a>
+        <a href="items.html">Items</a>
+        <a href="blocks.html">Blocks</a>
+        <a href="guides.html">Guides</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wiki-container">
+    <aside class="wiki-sidebar">
+      <div class="search-section">
+        <h3>Search Items</h3>
+        <input type="text" id="search" placeholder="Search items...">
+      </div>
+
+      <div class="filter-section">
+        <h3>Item Types</h3>
+        <div class="category-filters">
+          <label><input type="checkbox" class="filter" value="Weapon"> Weapons</label>
+          <label><input type="checkbox" class="filter" value="Wings"> Wings</label>
+          <label><input type="checkbox" class="filter" value="Quest"> Quest</label>
+          <label><input type="checkbox" class="filter" value="Accessory"> Accessories</label>
+          <label><input type="checkbox" class="filter" value="Material"> Materials</label>
+        </div>
+      </div>
+
+      <div class="wiki-stats">
+        <h3>Item Statistics</h3>
+        <p>Items documented: <span id="itemCount">0</span></p>
+        <p>Last updated: <span id="lastUpdated">Today</span></p>
+      </div>
+    </aside>
+
+    <main class="wiki-content">
+      <div class="wiki-article">
+        <header class="article-header">
+          <h1>Items Database</h1>
+          <p class="article-subtitle">Complete catalog of all items, tools, weapons, and equipment in Pixelands</p>
+        </header>
+
+        <div class="content-body">
+          <p>Items are collectible objects that players can obtain, craft, or purchase. They include weapons, tools, accessories, wings, and crafting materials.</p>
+
+          <section id="item-list">
+            <h2>All Items</h2>
+            <div id="itemsContainer"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="wiki-footer">
+    <p>© 2024 Pixelands Wiki - Community driven documentation</p>
+    <p><a href="index.html">← Back to Home</a></p>
+  </footer>
+
+  <script src="items-script.js"></script>
+</body>
+</html>
