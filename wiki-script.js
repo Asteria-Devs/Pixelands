@@ -29,6 +29,21 @@ const items = [
   { name: 'Jade Dragon', description: 'Legendary. The legendary Jade Dragon.', obtained: 'Could be bought for 75,000 gems in the shop. Now is obtainable from the VIP Wheel.', category: 'Wings' },
   { name: 'Golden Jade Dragon', description: 'Legendary. Golden variation of the legendary Jade Dragon.', obtained: 'Unobtainable. Once could be bought for 125,000 gems in the shop. Unobtainable now.', category: 'Wings' },
   { name: 'Night Owl Wings', description: 'Legenadry. Special owl wings, owned by the very best!', obtained: 'Unobtainable. Was a part of the IAP bundle 2025 May.', category: 'Wings' },
+  { name: 'Pixie Wings', description: 'Rare. Wings taken from a Pixie.', obtained: 'Unobtainable. Could be bought for 12,500 gems', type: 'Wings'},
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   // Blocks
   { name: 'Dirt Block', description: 'A basic dirt block', obtained: 'Basic Block found in worlds.', category: 'Block' },
   { name: 'Grass Block', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', category: 'Block' },
