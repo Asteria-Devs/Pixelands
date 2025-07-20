@@ -1,211 +1,76 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixelands Game</title>
-<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Jersey 10', sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 40px;
-    }
-
-    a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 20px;
-      background-color: #333;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-    }
-
-    a:hover {
-      background-color: #555;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    .download-links {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'Pacifico', cursive;
-      font-size: 20px;
-      margin-top: 40px;
-    }
-
-    .images {
-      display: flex;
-      justify-content: space-between;
-      gap: 0px; 
-      margin-top: 20px;
-    }
-
-    .images img {
-      width: 50%;
-      height: auto;
-      display: block;
-    }
-
-    iframe {
-      width: 560px;
-      height: 315px;
-      border: none;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index-styles.css">
 </head>
 <body>
-  <h1>Welcome to Pixelands Game</h1>
-<div class="images">
-  <img class="left-img" src="https://raw.githubusercontent.com/Asteria-Devs/Pixelands/main/images/PixelandsBanner.png" alt="Pixelands Banner" />
-  <img class="right-img" src="https://raw.githubusercontent.com/Asteria-Devs/Pixelands/main/images/PixelandsBanner.png" alt="Pixelands Banner" />
-</div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
- <a href="Wiki.html" style="padding: 12px 25px; background-color: #333; color: #fff; border-radius: 10px; text-decoration: none; font-family: 'Bubblegum Sans', cursive; font-size: 20px;">
-    Go to the Wiki
-  </a>
-</div>
-<style>
-  .images {
-    display: flex;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
+  <header class="game-header">
+    <div class="game-nav">
+      <div class="game-logo">
+        <h1>Pixelands Game</h1>
+      </div>
+      <nav class="game-navigation">
+        <a href="index.html">Home</a>
+        <a href="Wiki.html">Wiki</a>
+        <a href="#download">Download</a>
+      </nav>
+    </div>
+  </header>
 
-  .images img {
-    flex: 1;
-    height: auto;
-    display: block;
-  }
-</style>
+  <div class="game-container">
+    <main class="game-content">
+      <section class="hero-section">
+        <h1>Welcome to Pixelands Game</h1>
+        <div class="banner-images">
+          <img src="https://raw.githubusercontent.com/Asteria-Devs/Pixelands/main/images/PixelandsBanner.png" alt="Pixelands Banner" />
+          <img src="https://raw.githubusercontent.com/Asteria-Devs/Pixelands/main/images/PixelandsBanner.png" alt="Pixelands Banner" />
+        </div>
 
-<style>
-  .images {
-    display: flex;
-    width: 100%;
-    margin: 0;
-  }
+        <div class="wiki-link-section">
+          <a href="Wiki.html" class="wiki-button">Go to the Wiki</a>
+        </div>
+      </section>
 
-  .images img {
-    width: 50%;
-    height: auto;
-    display: block;
-  }
-</style>
+      <section id="download" class="download-section">
+        <h2>Download Game</h2>
+        <div class="download-links">
+          <a href="https://drive.google.com/uc?export=download&id=1Nd8xcGRWKDLEMFSRsmoVg-mDxgQZAnz2" download class="download-button">Windows Download</a>
+          <a href="https://drive.google.com/file/d/1QE8K_NSoC6GPqTeYwwk2qJkCeTbzqJEI/view?usp=sharing" class="download-button">Android Download</a>
+        </div>
+      </section>
 
+      <section class="video-section">
+        <h2>Video of the Week</h2>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/k_VeKIv-dh4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
 
-<style>
-  .images {
-    display: flex;               
-    justify-content: space-between; 
-    width: 100%;                  
-  }
+      <section id="community" class="community-section">
+        <h2>Join Our Community</h2>
+        <p>Join our Discord to ask for help, or just chat!</p>
+        <p><strong>Join over 2000 players!</strong></p>
 
-  .images img {
-    width: 48%;
-    height: auto;
-    display: block;            
-  }
+        <div class="discord-link">
+          <a href="https://discord.gg/9PsNEt9Q">
+            <img src="https://raw.githubusercontent.com/Asteria-Devs/Pixelands/main/images/DC%20homepage.png" alt="Discord" />
+          </a>
+        </div>
 
-  
-  .left-img {
-    
-  }
-
-  .right-img {
- 
-  }
-</style>
-
-
-
-
-<div class="download-links">
-  <a href="https://drive.google.com/uc?export=download&id=1Nd8xcGRWKDLEMFSRsmoVg-mDxgQZAnz2" download class="download-box left">Windows Download</a>
-  <a href="https://drive.google.com/file/d/1QE8K_NSoC6GPqTeYwwk2qJkCeTbzqJEI/view?usp=sharing" class="download-box right">Android Download</a>
-</div>
-
-<style>
-  .download-links {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10%;
-    margin-top: 40px;
-  }
-
-  <style>
-  .download-links {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10%;
-    margin-top: 40px;
-  }
-
-  .download-box {
-    padding: 12px 24px;
-    font-size: 18px;
-    font-family: 'Delius', cursive;
-    color: #fff;
-    background-color: #333;
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-
-  .download-box:hover {
-    background-color: #555;
-  }
-</style>
-
+        <div class="game-features">
+          <img src="https://raw.githubusercontent.com/Asteria-Devs/Pixelands/main/images/Build%20worlds%20fc.PNG" alt="Build Worlds" />
+          <img src="https://raw.githubusercontent.com/Asteria-Devs/Pixelands/main/images/become%20the%20richest.PNG" alt="Become the Richest" />
+        </div>
+      </section>
+    </main>
   </div>
 
-  <div style="text-align: center; margin-top: 20px;">
-    <h2>Here is the Video of the Week</h2>
-    <iframe src="https://www.youtube.com/embed/k_VeKIv-dh4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-
-  <br><br>
-
-  <div style="text-align: center; margin-top: 20px;">
-    <a href="https://discord.gg/9PsNEt9Q">
-    <div style="width: 100%; text-align: center;">
-  <img src="https://raw.githubusercontent.com/Asteria-Devs/Pixelands/main/images/DC%20homepage.png" style="width: 50%; height: auto;">
-</div>
-
-
-
-    </a>
-  </div>
-
-  <h1 style="text-align: center;">You can join our discord to ask for help, or just chat!</h1>
-<h2 style="text-align: center;">Join over 2000 players!</h2>
-<h4></h4>  
-  <div style="text-align: center;">
-  <img src="https://raw.githubusercontent.com/Asteria-Devs/Pixelands/main/images/Build%20worlds%20fc.PNG" style="width: 50%; height: auto;">
-    <img src="https://raw.githubusercontent.com/Asteria-Devs/Pixelands/main/images/become%20the%20richest.PNG" style="width: 60%; height: auto;">
-    <div style="text-align: center;">
-  <img src="https://raw.githubusercontent.com/Asteria-Devs/Pixelands/main/images/PIXELANDS.png" style="width: 50%; height: auto;">
-</div>
-<div style="text-align: center; margin-top: 30px;">
-  
-</div>
-
-
-
-</div>
-
-<p style="text-align: left; margin-top: 20px;">Made by Asteria</p>
+  <footer class="game-footer">
+    <p>© 2024 Pixelands Game - Made by Asteria</p>
+  </footer>
 </body>
 </html>
