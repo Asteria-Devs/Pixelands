@@ -89,13 +89,6 @@ const staff = [
   },
   // Artists
   { 
-    name: 'KAMI', 
-    role: 'Artist', 
-    description: 'Game artist creating visual content',
-    responsibilities: 'Art creation, visual design, game assets',
-    joinDate: '2025'
-  },
-  { 
     name: 'Awto', 
     role: 'Artist', 
     description: 'Game artist creating visual content',
