@@ -30,9 +30,9 @@ const items = [
   { name: 'Pixie Wings', description: 'Rare. Wings taken from a Pixie.', obtained: 'Unobtainable. Could be bought for 12,500 gems', type: 'Wings'},
   { name: 'Golden Jade Dragon', description: 'Legendary. Golden variation of the legendary Jade Dragon.', obtained: 'Unobtainable. Once could be bought for 125,000 gems in the shop.', type: 'Wings' },
   { name: 'Fairy Wings', description: 'Rare. Wings taken from a Fairy.', obtained: 'Unobtainable. Could be bought for 12,500 gems', type: 'Wings'},
-  { name: 'Rabbit Rocket', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtauned: 'Unobtainable. Easter item.', type: 'Wings'},
-  { name: 'DaVinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the LEGENDARY QUEST.', type: 'Quest'},
-  { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', type: 'Quest'},
+  { name: 'Rabbit Rocket', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtained: 'Unobtainable. Easter item.', type: 'Wings'},
+  { name: 'DaVinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the LEGENDARY QUEST.', type: ['Quest', 'Wings']},
+  { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', type: ['Quest', 'Wings']}
 ];
 
 // DOM elements
@@ -52,13 +52,19 @@ function updateStats() {
 function createItemElement(item, index) {
   const itemDiv = document.createElement('div');
   itemDiv.className = 'item';
-  itemDiv.setAttribute('data-category', item.type);
+
+  // Support multiple tags
+  const tags = Array.isArray(item.type) ? item.type : [item.type];
+  itemDiv.setAttribute('data-category', tags.join(' '));
+
+  // Generate tag HTML
+  const tagHTML = tags.map(tag => `<span class="category-tag ${tag}">${tag}</span>`).join('');
 
   itemDiv.innerHTML = `
     <div class="item-header" data-index="${index}">
       <span class="item-title">${item.name}</span>
-      <div>
-        <span class="category-tag ${item.type}">${item.type}</span>
+      <div class="item-tags">
+        ${tagHTML}
         <span class="arrow">+</span>
       </div>
     </div>
@@ -82,17 +88,26 @@ function renderItems() {
     .filter(cb => cb.checked)
     .map(cb => cb.value);
 
+  // Define wearable categories
+  const wearableCategories = ['Weapon', 'Wings', 'Shirts', 'Pants', 'Shoes', 'Headgear', 'Back Gear', 'Quest'];
+
   const filteredItems = items.filter(item => {
     if (!item.name) return false;
 
+    const itemTypes = Array.isArray(item.type) ? item.type : [item.type];
+
+    // Only show wearables and quest items
+    const isWearable = itemTypes.some(type => wearableCategories.includes(type));
+    if (!isWearable) return false;
+
     const matchesSearch = item.name.toLowerCase().includes(searchTerm) || searchTerm === '';
-    const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(item.type);
+    const matchesCategory = selectedCategories.length === 0 || selectedCategories.some(cat => itemTypes.includes(cat));
 
     return matchesSearch && matchesCategory;
   });
 
   if (filteredItems.length === 0) {
-    container.innerHTML = '<p style="text-align: center; color: #7f8c8d; padding: 2rem;">No items found matching your criteria.</p>';
+    container.innerHTML = '<p style="text-align: center; color: #7f8c8d; padding: 2rem;">No wearables found matching your criteria.</p>';
     return;
   }
 
