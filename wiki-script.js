@@ -32,8 +32,8 @@ const items = [
   { name: 'Pixie Wings', description: 'Rare. Wings taken from a Pixie.', obtained: 'Unobtainable. Could be bought for 12,500 gems', category: 'Wings'},
   { name: 'Fairy Wings', description: 'Rare. Wings taken from a Fairy.', obtained: 'Unobtainable. Could be bought for 12,500 gems', category: 'Wings'},
   { name: 'Rabbit Rocket', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtained: 'Unobtainable. Easter item.', category: 'Wings'},
-  { name: 'DaVinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the LEGENDARY QUEST.', category: 'Quest'},
-  { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', category: 'Quest'},
+  { name: 'DaVinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the LEGENDARY QUEST.', category: ['Quest', 'Wings']},
+  { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', category: ['Quest', 'Wings']},
 
 
   // Blocks
@@ -86,14 +86,17 @@ function determineCategory(itemName) {
 function createItemElement(item, index) {
   const itemDiv = document.createElement('div');
   itemDiv.className = 'item';
-  const category = item.category || determineCategory(item.name);
-  itemDiv.setAttribute('data-category', category);
+  const categories = Array.isArray(item.category) ? item.category : [item.category || determineCategory(item.name)];
+  itemDiv.setAttribute('data-category', categories.join(' '));
+
+  // Generate tag HTML
+  const tagHTML = categories.map(cat => `<span class="category-tag ${cat}">${cat}</span>`).join('');
 
   itemDiv.innerHTML = `
     <div class="item-header" data-index="${index}">
       <span class="item-title">${item.name}</span>
-      <div>
-        <span class="category-tag ${category}">${category}</span>
+      <div class="item-tags">
+        ${tagHTML}
         <span class="arrow">+</span>
       </div>
     </div>
@@ -121,8 +124,8 @@ function renderItems() {
     if (!item.name) return false;
 
     const matchesSearch = item.name.toLowerCase().includes(searchTerm) || searchTerm === '';
-    const category = item.category || determineCategory(item.name);
-    const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(category);
+    const itemCategories = Array.isArray(item.category) ? item.category : [item.category || determineCategory(item.name)];
+    const matchesCategory = selectedCategories.length === 0 || selectedCategories.some(cat => itemCategories.includes(cat));
 
     return matchesSearch && matchesCategory;
   });
