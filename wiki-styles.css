@@ -184,6 +184,79 @@ body {
   text-decoration: underline;
 }
 
+/* Database Container Scrollbars */
+#itemsContainer,
+#blocksContainer,
+#guidesContainer {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Custom scrollbar styling */
+#itemsContainer::-webkit-scrollbar,
+#blocksContainer::-webkit-scrollbar,
+#guidesContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+#itemsContainer::-webkit-scrollbar-track,
+#blocksContainer::-webkit-scrollbar-track,
+#guidesContainer::-webkit-scrollbar-track {
+  background: #2d2d2d;
+  border-radius: 4px;
+}
+
+#itemsContainer::-webkit-scrollbar-thumb,
+#blocksContainer::-webkit-scrollbar-thumb,
+#guidesContainer::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+#itemsContainer::-webkit-scrollbar-thumb:hover,
+#blocksContainer::-webkit-scrollbar-thumb:hover,
+#guidesContainer::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Support Us Button */
+.support-us-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+}
+
+.support-us-button:hover {
+  background: linear-gradient(45deg, #c0392b, #a93226);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+/* Multi-tag support */
+.item-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.category-tag {
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
 /* Item Display */
 .item {
   background-color: #404040;
@@ -204,20 +277,35 @@ body {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  padding: 1rem;
+  background-color: #404040;
+  border-radius: 8px 8px 0 0;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.item-header:hover {
+  background-color: #4a4a4a;
 }
 
 .item-title {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #e0e0e0;
 }
 
-.category-tag {
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: normal;
+.item-tags {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: #3498db;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+  margin-left: 0.5rem;
 }
 
 /* Item Categories */
@@ -240,6 +328,26 @@ body {
 
 .category-tag.Material {
   background-color: #27ae60;
+}
+
+.category-tag.Shirts {
+  background-color: #16a085;
+}
+
+.category-tag.Pants {
+  background-color: #2980b9;
+}
+
+.category-tag.Shoes {
+  background-color: #8e44ad;
+}
+
+.category-tag.Headgear {
+  background-color: #d35400;
+}
+
+.category-tag.Back.Gear {
+  background-color: #7f8c8d;
 }
 
 /* Block Categories */
@@ -307,17 +415,6 @@ body {
 
 .category-tag.Background {
   background-color: #9b59b6;
-}
-
-.arrow {
-  color: #3498db;
-  font-size: 1.5rem;
-  font-weight: bold;
-  transition: transform 0.3s ease;
-}
-
-.item.active .arrow {
-  transform: rotate(45deg);
 }
 
 .dropdown-content {
