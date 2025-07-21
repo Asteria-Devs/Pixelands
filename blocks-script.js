@@ -35,13 +35,19 @@ function updateStats() {
 function createBlockElement(block, index) {
   const blockDiv = document.createElement('div');
   blockDiv.className = 'item';
-  blockDiv.setAttribute('data-category', block.type);
+  
+  // Support multiple tags
+  const tags = Array.isArray(block.type) ? block.type : [block.type];
+  blockDiv.setAttribute('data-category', tags.join(' '));
+
+  // Generate tag HTML
+  const tagHTML = tags.map(tag => `<span class="category-tag ${tag}">${tag}</span>`).join('');
 
   blockDiv.innerHTML = `
     <div class="item-header" data-index="${index}">
       <span class="item-title">${block.name}</span>
-      <div>
-        <span class="category-tag ${block.type}">${block.type}</span>
+      <div class="item-tags">
+        ${tagHTML}
         <span class="arrow">+</span>
       </div>
     </div>
@@ -69,7 +75,8 @@ function renderBlocks() {
     if (!block.name) return false;
 
     const matchesSearch = block.name.toLowerCase().includes(searchTerm) || searchTerm === '';
-    const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(block.type);
+    const blockTypes = Array.isArray(block.type) ? block.type : [block.type];
+    const matchesCategory = selectedCategories.length === 0 || selectedCategories.some(cat => blockTypes.includes(cat));
 
     return matchesSearch && matchesCategory;
   });
