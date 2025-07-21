@@ -28,7 +28,7 @@ const guides = [
   { 
     title: 'How to earn your first Gold Lock:', 
     description: 'Earn your first Gold Lock/100 World Locks using this Guide!',
-    content: 'Stone Blocks are one the most important and demanded blocks in the whole game. You can easily find those in every world. People tend to buy Stone Blocks for a fair price (e.g. 25-40 Stone Blocks/1 World Lock) and you can earn many World Locks by selling Stone Blocks.',
+    content: '• Stone Blocks are one the most important and demanded blocks in the whole game. You can easily find those in every world. People tend to buy Stone Blocks for a fair price (e.g. 25-40 Stone Blocks/1 World Lock) and you can earn many World Locks by selling Stone Blocks.<br><br>• Earn 5,000 Gems and purchase Golden Chest from the game shop and sell it to players 3 World Locks each! On Events they rises up to 5 World Locks per Chest! That\'s a big difference between spending 5,000 Gems to earn 3 World Locks instead of spending 9,000 Gems to Purchase 3 World Locks.',
     category: 'Economy'
   },
   { 
@@ -62,13 +62,19 @@ function updateStats() {
 function createGuideElement(guide, index) {
   const guideDiv = document.createElement('div');
   guideDiv.className = 'item';
-  guideDiv.setAttribute('data-category', guide.category);
+  
+  // Support multiple tags
+  const tags = Array.isArray(guide.category) ? guide.category : [guide.category];
+  guideDiv.setAttribute('data-category', tags.join(' '));
+
+  // Generate tag HTML
+  const tagHTML = tags.map(tag => `<span class="category-tag ${tag}">${tag}</span>`).join('');
 
   guideDiv.innerHTML = `
     <div class="item-header" data-index="${index}">
       <span class="item-title">${guide.title}</span>
-      <div>
-        <span class="category-tag ${guide.category}">${guide.category}</span>
+      <div class="item-tags">
+        ${tagHTML}
         <span class="arrow">+</span>
       </div>
     </div>
@@ -95,7 +101,8 @@ function renderGuides() {
     const matchesSearch = guide.title.toLowerCase().includes(searchTerm) || 
                          guide.description.toLowerCase().includes(searchTerm) || 
                          searchTerm === '';
-    const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(guide.category);
+    const guideCategories = Array.isArray(guide.category) ? guide.category : [guide.category];
+    const matchesCategory = selectedCategories.length === 0 || selectedCategories.some(cat => guideCategories.includes(cat));
 
     return matchesSearch && matchesCategory;
   });
