@@ -20,15 +20,15 @@ const guides = [
     category: 'Crafting'
   },
   { 
-    title: 'Making Gems and Getting Rich', 
-    description: 'Strategies for earning gems and building wealth in Pixelands.',
-    content: 'Gems are the main currency in Pixelands. Learn the best methods to earn gems through trading, fishing, breaking blocks, renting and discord giveaways.',
+    title: 'How to earn your first World Lock:', 
+    description: 'Earn your first World Lock using this Guide!',
+    content: 'Once you have created your first world, dig down till you find magma blocks. Magma blocks are a great farmable they also give a lot gems! Farm them till you have 3,000 gems and after that open Shop and buy your first World Lock!',
     category: 'Economy'
   },
   { 
-    title: 'Trading and Market Strategies', 
-    description: 'Learn how to trade effectively and understand market dynamics.',
-    content: 'Master the art of trading with other players, understand item values by checking vending shops or asking older players, and learn when to buy and sell for maximum profit.',
+    title: 'How to earn your first Gold Lock:', 
+    description: 'Earn your first Gold Lock/100 World Locks using this Guide!',
+    content: 'Stone Blocks are one the most important and demanded blocks in the whole game. You can easily find those in every world. People tend to buy Stone Blocks for a fair price (e.g. 25-40 Stone Blocks/1 World Lock) and you can earn many World Locks by selling Stone Blocks.',
     category: 'Economy'
   },
   { 
