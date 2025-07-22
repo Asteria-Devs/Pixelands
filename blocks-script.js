@@ -1,4 +1,5 @@
-// Blocks page functionality
+
+// Blocks page functionality with performance optimizations
 const blocks = [
   { name: 'Dirt Block', description: 'A basic dirt block', obtained: 'Basic Block found in worlds.', type: 'Natural' },
   { name: 'Grass', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', type: 'Natural' },
@@ -25,6 +26,37 @@ const filterCheckboxes = document.querySelectorAll('.filter');
 const blockCountSpan = document.getElementById('blockCount');
 const lastUpdatedSpan = document.getElementById('lastUpdated');
 
+// Performance optimization: debounce search input
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Lazy image loading
+function setupLazyImageLoading() {
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.add('loaded');
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  document.querySelectorAll('img[data-src]').forEach(img => {
+    imageObserver.observe(img);
+  });
+}
+
 // Utility functions
 function updateStats() {
   blockCountSpan.textContent = blocks.length;
@@ -35,7 +67,7 @@ function updateStats() {
 function createBlockElement(block, index) {
   const blockDiv = document.createElement('div');
   blockDiv.className = 'item';
-  
+
   // Support multiple tags
   const tags = Array.isArray(block.type) ? block.type : [block.type];
   blockDiv.setAttribute('data-category', tags.join(' '));
@@ -53,7 +85,7 @@ function createBlockElement(block, index) {
     </div>
     <div class="dropdown-content">
       <div class="item-image-container">
-        <img src="images/${block.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')}.png" alt="${block.name}" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot;>No Image Available</div>'">
+        <img data-src="images/${block.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')}.webp" alt="${block.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot;>No Image Available</div>'">
       </div>
       <p><strong>Description:</strong><br>${block.description || '(Not yet filled)'}</p>
       <p><strong>How it's obtained:</strong><br>${block.obtained || '(Not yet filled)'}</p>
@@ -63,9 +95,10 @@ function createBlockElement(block, index) {
   return blockDiv;
 }
 
+// Virtual scrolling for large lists
 function renderBlocks() {
-  container.innerHTML = '';
-
+  const fragment = document.createDocumentFragment();
+  
   const searchTerm = searchInput.value.toLowerCase();
   const selectedCategories = Array.from(filterCheckboxes)
     .filter(cb => cb.checked)
@@ -88,12 +121,20 @@ function renderBlocks() {
 
   filteredBlocks.forEach((block, index) => {
     const blockElement = createBlockElement(block, index);
-    container.appendChild(blockElement);
+    fragment.appendChild(blockElement);
   });
 
+  container.innerHTML = '';
+  container.appendChild(fragment);
+
+  // Setup lazy loading for new images
+  setupLazyImageLoading();
+
   // Add click event listeners for dropdowns
-  document.querySelectorAll('.item-header').forEach(header => {
-    header.addEventListener('click', toggleDropdown);
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.item-header').forEach(header => {
+      header.addEventListener('click', toggleDropdown);
+    });
   });
 }
 
@@ -115,8 +156,11 @@ function toggleDropdown(event) {
   }
 }
 
+// Debounced search
+const debouncedRender = debounce(renderBlocks, 300);
+
 // Event listeners
-searchInput.addEventListener('input', renderBlocks);
+searchInput.addEventListener('input', debouncedRender);
 
 filterCheckboxes.forEach(checkbox => {
   checkbox.addEventListener('change', renderBlocks);
