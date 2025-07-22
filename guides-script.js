@@ -1,5 +1,5 @@
 
-// Guides page functionality with performance optimizations
+// Guides page functionality
 const guides = [
   { 
     title: 'Getting Started in Pixelands', 
@@ -52,19 +52,6 @@ const filterCheckboxes = document.querySelectorAll('.filter');
 const guideCountSpan = document.getElementById('guideCount');
 const lastUpdatedSpan = document.getElementById('lastUpdated');
 
-// Performance optimization: debounce search input
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
 // Utility functions
 function updateStats() {
   guideCountSpan.textContent = guides.length;
@@ -75,7 +62,7 @@ function updateStats() {
 function createGuideElement(guide, index) {
   const guideDiv = document.createElement('div');
   guideDiv.className = 'item';
-
+  
   // Support multiple tags
   const tags = Array.isArray(guide.category) ? guide.category : [guide.category];
   guideDiv.setAttribute('data-category', tags.join(' '));
@@ -101,8 +88,8 @@ function createGuideElement(guide, index) {
 }
 
 function renderGuides() {
-  const fragment = document.createDocumentFragment();
-  
+  container.innerHTML = '';
+
   const searchTerm = searchInput.value.toLowerCase();
   const selectedCategories = Array.from(filterCheckboxes)
     .filter(cb => cb.checked)
@@ -127,17 +114,12 @@ function renderGuides() {
 
   filteredGuides.forEach((guide, index) => {
     const guideElement = createGuideElement(guide, index);
-    fragment.appendChild(guideElement);
+    container.appendChild(guideElement);
   });
 
-  container.innerHTML = '';
-  container.appendChild(fragment);
-
   // Add click event listeners for dropdowns
-  requestAnimationFrame(() => {
-    document.querySelectorAll('.item-header').forEach(header => {
-      header.addEventListener('click', toggleDropdown);
-    });
+  document.querySelectorAll('.item-header').forEach(header => {
+    header.addEventListener('click', toggleDropdown);
   });
 }
 
@@ -152,18 +134,15 @@ function toggleDropdown(event) {
     item.querySelector('.arrow').textContent = '+';
   });
 
-  // Toggle current dropdown
+  // Toggle current dropdow
   if (!isActive) {
     itemDiv.classList.add('active');
     arrow.textContent = '−';
   }
 }
 
-// Debounced search
-const debouncedRender = debounce(renderGuides, 300);
-
 // Event listener/s
-searchInput.addEventListener('input', debouncedRender);
+searchInput.addEventListener('input', renderGuides);
 
 filterCheckboxes.forEach(checkbox => {
   checkbox.addEventListener('change', renderGuides);
