@@ -97,8 +97,8 @@ function createItemElement(item, index) {
       <span class="item-title">${item.name}</span>
       <div class="item-tags">
         ${tagHTML}
-        <span class="arrow">+</span>
       </div>
+      <span class="arrow">+</span>
     </div>
     <div class="dropdown-content">
       <div class="item-image-container">
