@@ -102,7 +102,7 @@ function createItemElement(item, index) {
     </div>
     <div class="dropdown-content">
       <div class="item-image-container">
-        <img src="images/${item.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')}.png" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot;>No Image Available</div>'">
+        <img src="images/${item.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')}.webp" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot;>No Image Available</div>'">
       </div>
       <p><strong>Description:</strong><br>${item.description || '(Not yet filled)'}</p>
       <p><strong>How it's obtained:</strong><br>${item.obtained || '(Not yet filled)'}</p>
