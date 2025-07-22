@@ -35,7 +35,7 @@ function updateStats() {
 function createBlockElement(block, index) {
   const blockDiv = document.createElement('div');
   blockDiv.className = 'item';
-  
+
   // Support multiple tags
   const tags = Array.isArray(block.type) ? block.type : [block.type];
   blockDiv.setAttribute('data-category', tags.join(' '));
@@ -48,12 +48,12 @@ function createBlockElement(block, index) {
       <span class="item-title">${block.name}</span>
       <div class="item-tags">
         ${tagHTML}
-        <span class="arrow">+</span>
       </div>
+      <span class="arrow">+</span>
     </div>
     <div class="dropdown-content">
       <div class="item-image-container">
-        <img src="images/${block.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')}.png" alt="${block.name}" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot;>No Image Available</div>'">
+        <img src="images/${block.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')}.webp" alt="${block.name}" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot;>No Image Available</div>'">
       </div>
       <p><strong>Description:</strong><br>${block.description || '(Not yet filled)'}</p>
       <p><strong>How it's obtained:</strong><br>${block.obtained || '(Not yet filled)'}</p>
