@@ -126,10 +126,10 @@ function createStaffElement(member, index) {
   staffDiv.innerHTML = `
     <div class="item-header" data-index="${index}">
       <span class="item-title">${member.name}</span>
-      <div>
+      <div class="item-tags">
         <span class="category-tag ${member.role}">${member.role}</span>
-        <span class="arrow">+</span>
       </div>
+      <span class="arrow">+</span>
     </div>
     <div class="dropdown-content">
       <p><strong>Role:</strong><br>${member.role}</p>
