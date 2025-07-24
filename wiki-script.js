@@ -2,6 +2,9 @@
 const items = [
   // Items from items-script.js (newer, more complete data)
   { name: 'Four Leaf Clover', description: 'Misc Item', obtained: 'Unobtainable', category: 'Misc' },
+  { name: 'Blue Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', category: 'Misc'},
+  { name: 'Green Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', category: 'Misc'},
+  { name: 'Basic Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', category: 'Misc'},
   { name: 'Golden Chest', description: 'Gives 5000 gems on use', obtained: 'Obtained by purchasing in the shop for 5000 gems', category: 'Misc' },
   { name: 'Diamond Ore', description: 'Uncommon. used to craft Diamond Fragments', obtained: 'Found when fishing', category: 'Misc' },
   { name: 'Ruby Ore', description: 'Uncommon. used to craft Ruby Fragments', obtained: 'Breaking stone blocks', category: 'Misc' },
