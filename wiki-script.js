@@ -16,7 +16,7 @@ const items = [
   { name: 'Devil Wings', description: 'Ultra Rare. Wings of the devil.', obtained: 'Unobtainable. Was once purchaseable in the shop for 25,500 gems.', category: 'Wings' },
   { name: 'Cat Hat', description: 'Rare. A sleepy cat sleeps on your head', obtained: 'Unobtainable. Was once purchaseable in the shop for 2,500 gems.', category: 'Accessory' },
   { name: 'Invisible Skin', description: 'Legendary. Makes you disappear? ', obtained: 'Obtained from doing the LEGENDARY QUEST.', category: 'Quest' },
-  { name: 'Eye Of Rah', description: 'Legendary. Floating eye that sees everything!', obtained: 'Unobtainable. Was once obtainable from doing the LEGENDARY QUEST.', category: 'Quest' },
+  { name: 'Eye Of Rah', description: 'Legendary. Floating eye that sees everything!', obtained: 'Unobtainable. Was once obtainable from doing the LEGENDARY QUEST.', category: ['Quest', 'Back Gear']},
   { name: 'Golden Rod', description: 'Legendary. Use this rod to get extra benefits from fishing.', obtained: 'Unobtainable. Was once obtainable from easter eggs.', category: 'Weapon' },
   { name: 'Golden Sword', description: 'Exclusive Item. Such a shiny sword, makes you stand out!', obtained: 'Crafted using 1 wooden sword and 250 lost coins.', category: 'Weapon' },
   { name: 'Bubble Wings', description: 'Ultra Rare. Bubbly wings that gives you a double jump ability!', obtained: 'Unobtainable. Was once obtained from easter eggs.', category: 'Wings' },
@@ -38,7 +38,7 @@ const items = [
   { name: 'Pixie Wings', description: 'Rare. Wings taken from a Pixie.', obtained: 'Unobtainable. Could be bought for 12,500 gems', category: 'Wings'},
   { name: 'Fairy Wings', description: 'Rare. Wings taken from a Fairy.', obtained: 'Unobtainable. Could be bought for 12,500 gems', category: 'Wings'},
   { name: 'Rabbit Rocket', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtained: 'Unobtainable. Easter item.', category: 'Wings'},
-  { name: 'DaVinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the LEGENDARY QUEST.', category: ['Quest', 'Wings']},
+  { name: 'Da Vinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the LEGENDARY QUEST.', category: ['Quest', 'Wings']},
   { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', category: ['Quest', 'Wings']},
 
 
