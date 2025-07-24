@@ -6,7 +6,7 @@ const items = [
   { name: 'Diamond Ore', description: 'Uncommon. used to craft Diamond Fragments', obtained: 'Found when fishing', category: 'Misc' },
   { name: 'Ruby Ore', description: 'Uncommon. used to craft Ruby Fragments', obtained: 'Breaking stone blocks', category: 'Misc' },
   { name: 'Stick', description: 'Used to craft various items!', obtained: 'Obtained from breaking wood blocks', category: 'Misc' },
-  { name: 'Stretched Canvas', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Obtainable from the LEGENDARY QUEST', category: ['Misc', 'Quest']},
+  { name: 'Stretched Canvas', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Obtainable from the LEGENDARY QUEST', category: 'Misc'},
   { name: 'Wingframe', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Unobtainable Was obtained from crafting.', category: 'Misc' },
   { name: 'White Lenses', description: 'Rare. Lenses that makes your eyes white.', obtained: 'Unobtainable. Was once purchaseable in the shop for 7,500 gems', category: 'Accessory' },
   { name: 'Rich Boy Glasses', description: 'Ultra Rare. Glasses which only rich people dare to wear!', obtained: 'Unobtainable. Was once purchaseable in the shop for 15,500 gems', category: 'Accessory' },
