@@ -1,10 +1,13 @@
 // Wiki page functionality - Updated with new items
 const items = [
   // Items from items-script.js (newer, more complete data)
-  { name: 'Four Leaf Clover', description: 'Misc Item', obtained: 'Unobtainable', category: 'Material' },
-  { name: 'Golden Chest', description: 'Gives 5000 gems on use', obtained: 'Obtained by purchasing in the shop for 5000 gems', category: 'Material' },
-  { name: 'Diamond Ore', description: 'Uncommon. used to craft Diamond Blocks', obtained: 'Found when fishing', category: 'Material' },
-  { name: 'Ruby Ore', description: 'Uncommon. used to craft Ruby Blocks', obtained: 'Breaking stone blocks', category: 'Material' },
+  { name: 'Four Leaf Clover', description: 'Misc Item', obtained: 'Unobtainable', category: 'Misc' },
+  { name: 'Golden Chest', description: 'Gives 5000 gems on use', obtained: 'Obtained by purchasing in the shop for 5000 gems', category: 'Misc' },
+  { name: 'Diamond Ore', description: 'Uncommon. used to craft Diamond Blocks', obtained: 'Found when fishing', category: 'Misc' },
+  { name: 'Ruby Ore', description: 'Uncommon. used to craft Ruby Blocks', obtained: 'Breaking stone blocks', category: 'Misc' },
+  { name: 'Stick', description: 'Basic crafting material', obtained: 'Found or crafted', category: 'Misc' },
+  { name: 'Stretched Canvas', description: 'Material for artistic creations', obtained: 'Crafted or obtained from specific sources', category: 'Misc' },
+  { name: 'Wingframe', description: 'Frame component for wing construction', obtained: 'Crafted or found', category: 'Misc' },
   { name: 'White Lenses', description: 'Rare. Lenses that makes your eyes white.', obtained: 'Unobtainable. Was once purchaseable in the shop for 7,500 gems', category: 'Accessory' },
   { name: 'Rich Boy Glasses', description: 'Ultra Rare. Glasses which only rich people dare to wear!', obtained: 'Unobtainable. Was once purchaseable in the shop for 15,500 gems', category: 'Accessory' },
   { name: 'Devil Wings', description: 'Ultra Rare. Wings of the devil.', obtained: 'Unobtainable. Was once purchaseable in the shop for 25,500 gems.', category: 'Wings' },
