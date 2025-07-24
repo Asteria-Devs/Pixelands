@@ -5,7 +5,7 @@ const items = [
   { name: 'Diamond Ore', description: 'Uncommon. used to craft Diamond Blocks', obtained: 'Found when fishing', type: 'Misc' },
   { name: 'Ruby Ore', description: 'Uncommon. used to craft Ruby Blocks', obtained: 'Breaking stone blocks', type: 'Misc' },
   { name: 'Stick', description: 'Used to craft various items!', obtained: 'Obtained from breaking wood blocks', type: 'Misc' },
-  { name: 'Stretched Canvas', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Obtainable from the LEGENDARY QUEST', type: ['Misc', 'Quest']},
+  { name: 'Stretched Canvas', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Obtainable from the LEGENDARY QUEST', type: 'Misc'},
   { name: 'Wingframe', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Unobtainable Was obtained from crafting.', type: 'Misc' },
   { name: 'Night Owl Wings', description: 'Legendary. Special owl wings, owned by the very best!', obtained: 'Unobtainable. Was a part of the IAP bundle 2025 May.', type: 'Wings' },
   { name: 'White Lenses', description: 'Rare. Lenses that makes your eyes white.', obtained: 'Unobtainable. Was once purchaseable in the shop for 7,500 gems', type: 'Accessory' },
