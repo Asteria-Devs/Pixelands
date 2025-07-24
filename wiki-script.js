@@ -3,8 +3,8 @@ const items = [
   // Items from items-script.js (newer, more complete data)
   { name: 'Four Leaf Clover', description: 'Misc Item', obtained: 'Unobtainable', category: 'Misc' },
   { name: 'Golden Chest', description: 'Gives 5000 gems on use', obtained: 'Obtained by purchasing in the shop for 5000 gems', category: 'Misc' },
-  { name: 'Diamond Ore', description: 'Uncommon. used to craft Diamond Blocks', obtained: 'Found when fishing', category: 'Misc' },
-  { name: 'Ruby Ore', description: 'Uncommon. used to craft Ruby Blocks', obtained: 'Breaking stone blocks', category: 'Misc' },
+  { name: 'Diamond Ore', description: 'Uncommon. used to craft Diamond Fragments', obtained: 'Found when fishing', category: 'Misc' },
+  { name: 'Ruby Ore', description: 'Uncommon. used to craft Ruby Fragments', obtained: 'Breaking stone blocks', category: 'Misc' },
   { name: 'Stick', description: 'Used to craft various items!', obtained: 'Obtained from breaking wood blocks', category: 'Misc' },
   { name: 'Stretched Canvas', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Obtainable from the LEGENDARY QUEST', category: ['Misc', 'Quest']},
   { name: 'Wingframe', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Unobtainable Was obtained from crafting.', category: 'Misc' },
