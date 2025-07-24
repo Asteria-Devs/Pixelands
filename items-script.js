@@ -1,9 +1,12 @@
 // Items page functionality
 const items = [
-  { name: 'Four Leaf Clover', description: 'Misc Item', obtained: 'Unobtainable', type: 'Material' },
-  { name: 'Golden Chest', description: 'Gives 5000 gems on use', obtained: 'Obtained by purchasing in the shop for 5000 gems', type: 'Material' },
-  { name: 'Diamond Ore', description: 'Uncommon. used to craft Diamond Blocks', obtained: 'Found when fishing', type: 'Material' },
-  { name: 'Ruby Ore', description: 'Uncommon. used to craft Ruby Blocks', obtained: 'Breaking stone blocks', type: 'Material' },
+  { name: 'Four Leaf Clover', description: 'Misc Item', obtained: 'Unobtainable', type: 'Misc' },
+  { name: 'Golden Chest', description: 'Gives 5000 gems on use', obtained: 'Obtained by purchasing in the shop for 5000 gems', type: 'Misc' },
+  { name: 'Diamond Ore', description: 'Uncommon. used to craft Diamond Blocks', obtained: 'Found when fishing', type: 'Misc' },
+  { name: 'Ruby Ore', description: 'Uncommon. used to craft Ruby Blocks', obtained: 'Breaking stone blocks', type: 'Misc' },
+  { name: 'Stick', description: 'Basic crafting material', obtained: 'Found o', type: 'Misc' },
+  { name: 'Stretched Canvas', description: 'Material for artistic creations', obtained: 'Crafted or obtained from specific sources', type: 'Misc' },
+  { name: 'Wingframe', description: 'Frame component for wing construction', obtained: 'Crafted or found', type: 'Misc' },
   { name: 'Night Owl Wings', description: 'Legendary. Special owl wings, owned by the very best!', obtained: 'Unobtainable. Was a part of the IAP bundle 2025 May.', type: 'Wings' },
   { name: 'White Lenses', description: 'Rare. Lenses that makes your eyes white.', obtained: 'Unobtainable. Was once purchaseable in the shop for 7,500 gems', type: 'Accessory' },
   { name: 'Rich Boy Glasses', description: 'Ultra Rare. Glasses which only rich people dare to wear!', obtained: 'Unobtainable. Was once purchaseable in the shop for 15,500 gems', type: 'Accessory' },
