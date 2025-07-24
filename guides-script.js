@@ -16,7 +16,7 @@
           { 
             title: 'What is the best craftable for beginners?', 
             description: 'Learn what is the best craftable for begineers.',
-            content: 'Starting off, we have color blocks. Materials for color blocks are mostly nature/natural blocks which can be found in worlds. The waiting time is not too long, color blocks usually sell for 19-50 blocks per world lock. Color blocks can also be used to craft other stuff such as glass blocks, glass pane and concrete blocks. It is an easy and fun way to start massing!',
+            content: 'Starting off, we have color blocks. Materials for color blocks are mostly nature/natural blocks which can be found in worlds. The waiting time is not too long, color blocks usually sell for 10-50 blocks per world lock. Color blocks can also be used to craft other stuff such as glass blocks, glass pane and concrete blocks. It is an easy and fun way to start massing!',
             category: ['Crafting','Beginner']
           },
           { 
