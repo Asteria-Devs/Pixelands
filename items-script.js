@@ -42,7 +42,13 @@ const items = [
   { name: 'Fairy Wings', description: 'Rare. Wings taken from a Fairy.', obtained: 'Unobtainable. Could be bought for 12,500 gems', type: 'Wings'},
   { name: 'Rabbit Rocket', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtained: 'Unobtainable. Easter item.', type: 'Back Gear'},
   { name: 'Da Vinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the LEGENDARY QUEST.', type: ['Quest', 'Wings']},
-  { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', type: ['Quest', 'Wings']}
+  { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', type: ['Quest', 'Wings']},
+  { name: 'Flame of the Deep', description: 'Rare', obtained: 'Through the summer IAP  07/25', type: 'Weapon'},
+  { name: 'Skeleton Wings', description: 'Legendary Bone Item', obtained: 'Currently one of a wing, only owner is ASTERIA ', type: 'Wings' },
+  { name: 'Solstice Slicer', description: 'Rare', obtained: 'From breaking chests in beach world.', type: 'Sword'},
+  { name: 'Snake Crown', description: 'Ultra Rare', obtained: 'Unobtainable. From caponis chests', type: 'Accessory'},
+  { name: 'Snorkle', description: 'Rare. Comes in many differnt colours.', obtained: 'Obtainable from beach world chests.', type: ['Accessory']},
+  { name: 'Sea Hair', description: 'Ultra Rare', obtained: 'Obtained from beach worlds', type: ['Accessory']}
 ];
 
 // DOM elements
