@@ -52,13 +52,6 @@ const staff = [
     joinDate: '2025'
   },
   { 
-    name: 'Kai', 
-    role: 'Game Staff', 
-    description: 'Game staff member',
-    responsibilities: 'Player assistance, game moderation, community support',
-    joinDate: '2025'
-  },
-  { 
     name: 'Devil', 
     role: 'Game Staff', 
     description: 'Game staff member',
@@ -68,13 +61,6 @@ const staff = [
   // Discord Staff
   { 
     name: 'Freeze', 
-    role: 'Discord Staff', 
-    description: 'Discord community moderator',
-    responsibilities: 'Discord moderation, community management, chat support',
-    joinDate: '2025'
-  },
-  { 
-    name: 'Ansel', 
     role: 'Discord Staff', 
     description: 'Discord community moderator',
     responsibilities: 'Discord moderation, community management, chat support',
