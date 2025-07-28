@@ -45,7 +45,7 @@ const items = [
   { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', type: ['Quest', 'Wings']},
   { name: 'Flame of the Deep', description: 'Rare', obtained: 'Through the summer IAP  07/25', type: 'Weapon'},
   { name: 'Skeleton Wings', description: 'Legendary Bone Item', obtained: 'Currently one of a wing, only owner is ASTERIA ', type: 'Wings' },
-  { name: 'Solstice Slicer', description: 'Rare', obtained: 'From breaking chests in beach world.', type: 'Sword'},
+  { name: 'Solstice Slicer', description: 'Rare', obtained: 'From breaking chests in beach world.', type: 'Weapon'},
   { name: 'Snake Crown', description: 'Ultra Rare', obtained: 'Unobtainable. From caponis chests', type: 'Accessory'},
   { name: 'Snorkle', description: 'Rare. Comes in many differnt colours.', obtained: 'Obtainable from beach world chests.', type: ['Accessory']},
   { name: 'Sea Hair', description: 'Ultra Rare', obtained: 'Obtained from beach worlds', type: ['Accessory']}
