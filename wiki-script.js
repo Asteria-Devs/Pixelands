@@ -50,7 +50,7 @@ const items = [
    { name: 'World Lock', description: 'Lock your worlds with this & use it as a currency to buy/sell items!', obtained: 'Bought from the shop for 3,000 Gems.', category: 'Block' },
   { name: 'Gold Lock', description: 'Lock your worlds with this & use it as a currency to buy/sell items!', obtained: 'Bought from the shop for 300,000 Gems.', category: 'Block' },
   { name: 'Dirt Block', description: 'A basic dirt block', obtained: 'Basic Block found in worlds.', category: 'Block' },
-  { name: 'Grass Block', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', category: 'Block' },
+  { name: 'Grass', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', category: 'Block' },
   { name: 'Stone Block', description: 'Crafting item', obtained: 'Basic Block found in worlds', category: 'Block' },
   { name: 'Sand Block', description: 'Summer Block', obtained: 'Found in Summer Worlds', category: 'Block' },
   { name: 'Green Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Yellow Blocks + 50 Blue Blocks.', category: 'Block' },
@@ -65,12 +65,10 @@ const items = [
   { name: 'Grey Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Black Blocks + 50 White Blocks', category: 'Block' },
   { name: 'Cave Background', description: 'A basic cave background', obtained: 'Found behind dirt', category: 'Background' },
   { name: 'Wood Background', description: 'Craftting Item', obtained: 'Can be crafted using the crafting tabble. 3 Grass + 5 Cave Backgrounds', type: 'Background'},
+  { name: 'Lava Block', description: 'A damage dealing block', obtained: 'Basic Block found in worlds', category: 'Block'},
+  { name: 'Magma Block', description: 'Found underground of worlds', obtained: 'Basic Block found in worlds', type: 'Block'},
 
   // Additional items
-  { name: 'Sign', description: 'Place to write things for all too see', obtained: 'Bought from the shop for 75 gems in the signs and doors pack', category: 'Item' },
-  { name: 'Door', description: 'Wrench to open or close', obtained: 'Bought from the shop for 75 gems in the signs and doors pack', category: 'Item' },
-  { name: 'Block Crate', description: 'Gives 1 random coloured block', obtained: 'Bought in the shop for 50 gems', category: 'Item' },
-  { name: 'Crafting table block', description: 'With this table you can craft items', obtained: 'Bought for 50 gems in the shop', category: 'Block' }
 ];
 
 // DOM elements
