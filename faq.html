@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Pixelands Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wiki-styles.css">
+</head>
+<body>
+  <header class="wiki-header">
+    <div class="wiki-nav">
+      <div class="wiki-logo">
+        <h1>Pixelands Wiki</h1>
+      </div>
+      <nav class="wiki-navigation">
+        <a href="index.html">Main</a>
+        <a href="items.html">Wearables</a>
+        <a href="blocks.html">Blocks</a>
+        <a href="guides.html">Guides</a>
+        <a href="staff.html">Staff</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wiki-container">
+    <aside class="wiki-sidebar">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <a href="support.html" class="support-us-button">💖 Support Us</a>
+      </div>
+
+      <div class="wiki-stats">
+        <h3>Quick Links</h3>
+        <ul style="color: #e0e0e0; line-height: 1.6;">
+          <li><a href="#general" style="color: #3498db;">General Questions</a></li>
+          <li><a href="#gameplay" style="color: #3498db;">Gameplay</a></li>
+          <li><a href="#technical" style="color: #3498db;">Technical Issues</a></li>
+          <li><a href="#accounts" style="color: #3498db;">Accounts & Trading</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="wiki-content">
+      <div class="wiki-article">
+        <header class="article-header">
+          <h1>❓ Frequently Asked Questions</h1>
+          <p class="article-subtitle">Common questions and answers about Pixelands</p>
+        </header>
+
+        <div class="content-body">
+          <section id="general">
+            <h2>General Questions</h2>
+
+            <div class="item" style="margin: 1rem 0;">
+              <div class="item-header">
+                <span class="item-title">What is Pixelands?</span>
+                <span class="arrow">+</span>
+              </div>
+              <div class="dropdown-content">
+                <p>Pixelands is a multiplayer sandbox game where players can build, explore, trade, and interact in pixelated worlds. Create your own worlds, collect rare items, and engage with the community!</p>
+              </div>
+            </div>
+
+            <div class="item" style="margin: 1rem 0;">
+              <div class="item-header">
+                <span class="item-title">How do I get started in Pixelands?</span>
+                <span class="arrow">+</span>
+              </div>
+              <div class="dropdown-content">
+                <p>Start by creating your first world, dig down to find magma blocks for gems, and save up 3,000 gems to buy your first World Lock. Check out our <a href="guides.html" style="color: #3498db;">beginner guides</a> for detailed instructions!</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="gameplay">
+            <h2>Gameplay</h2>
+
+            <div class="item" style="margin: 1rem 0;">
+              <div class="item-header">
+                <span class="item-title">Which is the best farmable?</span>
+                <span class="arrow">+</span>
+              </div>
+              <div class="dropdown-content">
+                <p>For XP farming, both Magma and Jewel Blocks are the best options. For gem farming, Magma Blocks are the most efficient choice. Check out our <a href="guides.html" style="color: #3498db;">guides page</a> for detailed farming strategies and tips!</p>
+              </div>
+            </div>
+
+            <div class="item" style="margin: 1rem 0;">
+              <div class="item-header">
+                <span class="item-title">Which is the best pickaxe?</span>
+                <span class="arrow">+</span>
+              </div>
+              <div class="dropdown-content">
+                <p>The Pearl Pickaxe and Golden Pickaxe are both top-tier choices, as they both destroy blocks in just 2 hits. Both are extremely efficient for mining and farming activities.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="technical">
+            <h2>Technical Issues</h2>
+
+            <div class="item" style="margin: 1rem 0;">
+              <div class="item-header">
+                <span class="item-title">Why am I experiencing lag?</span>
+                <span class="arrow">+</span>
+              </div>
+              <div class="dropdown-content">
+                <p>Lag can be caused by either server location issues or device performance problems. The farther you live from the server location, the higher the chance it's a server provider issue. If you're close to the server but still experiencing lag, it might be a device-related issue.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="accounts">
+            <h2>Accounts & Trading</h2>
+
+            <div class="item" style="margin: 1rem 0;">
+              <div class="item-header">
+                <span class="item-title">Are alternative accounts allowed to use?</span>
+                <span class="arrow">+</span>
+              </div>
+              <div class="dropdown-content">
+                <p>Yes, alternative accounts are allowed, but using them for farming purposes is forbidden and against the rules.</p>
+              </div>
+            </div>
+
+            <div class="item" style="margin: 1rem 0;">
+              <div class="item-header">
+                <span class="item-title">Is there a price world?</span>
+                <span class="arrow">+</span>
+              </div>
+              <div class="dropdown-content">
+                <p>No, there isn't a price world yet. Hopefully in the near future one of the administrators will make one to help players with trading values.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="wiki-footer">
+    <p>© 2025 Pixelands Wiki - Community driven documentation</p>
+    <p><a href="index.html">← Back to Home</a></p>
+  </footer>
+
+  <script>
+    // Add click event listeners for FAQ dropdowns
+    document.querySelectorAll('.item-header').forEach(header => {
+      header.addEventListener('click', function() {
+        const itemDiv = this.closest('.item');
+        const arrow = this.querySelector('.arrow');
+        const isActive = itemDiv.classList.contains('active');
+
+        // Close all other dropdowns
+        document.querySelectorAll('.item').forEach(item => {
+          item.classList.remove('active');
+          item.querySelector('.arrow').textContent = '+';
+        });
+
+        // Toggle current dropdown
+        if (!isActive) {
+          itemDiv.classList.add('active');
+          arrow.textContent = '−';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
