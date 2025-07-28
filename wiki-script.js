@@ -47,6 +47,8 @@ const items = [
 
 
   // Blocks
+   { name: 'World Lock', description: 'Lock your worlds with this & use it as a currency to buy/sell items!', obtained: 'Bought from the shop for 3,000 Gems.', category: 'Block' },
+  { name: 'Gold Lock', description: 'Lock your worlds with this & use it as a currency to buy/sell items!', obtained: 'Bought from the shop for 300,000 Gems.', category: 'Block' },
   { name: 'Dirt Block', description: 'A basic dirt block', obtained: 'Basic Block found in worlds.', category: 'Block' },
   { name: 'Grass Block', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', category: 'Block' },
   { name: 'Stone Block', description: 'Crafting item', obtained: 'Basic Block found in worlds', category: 'Block' },
