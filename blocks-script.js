@@ -18,7 +18,7 @@ const blocks = [
   { name: 'Grey Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Black Blocks + 50 White Blocks', type: 'Crafted' },
   { name: 'Wood Background', description: 'Craftting Item', obtained: 'Can be crafted using the crafting tabble. 3 Grass + 5 Cave Backgrounds', type: 'Crafted'},
   { name: 'Cave Background', description: 'A basic cave background', obtained: 'Found behind dirt', type: 'Natural' },
-  { name: 'Lava Block', description: 'A damage dealing block', obtained: 'Basic Block fund in worlds', type: 'Natural'},
+  { name: 'Lava Block', description: 'A damage dealing block', obtained: 'Basic Block found in worlds', type: 'Natural'},
 ];
 
 // DOM elements
