@@ -1,6 +1,7 @@
 // Items page functionality
 const items = [
-  { name: 'Four Leaf Clover', description: 'Misc Item', obtained: 'Unobtainable', type: 'Misc' },
+  { name: 'Treasure Chest', description: 'Get different kinds of summer items!', obtained: 'Found in summer worlds', type: 'Misc' },
+  { name: 'Four Leaf Clover', description: 'Lucky Clover', obtained: 'Unobtainable', type: 'Misc' },
   { name: 'Blue Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
   { name: 'Green Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
   { name: 'Basic Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
@@ -43,10 +44,10 @@ const items = [
   { name: 'Rabbit Rocket', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtained: 'Unobtainable. Easter item.', type: 'Back Gear'},
   { name: 'Da Vinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the LEGENDARY QUEST.', type: ['Quest', 'Wings']},
   { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', type: ['Quest', 'Wings']},
-  { name: 'Flames of the Deep', description: 'Rare', obtained: 'Through the summer IAP  07/25', type: 'Weapon'},
-  { name: 'Skeleton Wings', description: 'Legendary Bone Item', obtained: 'Currently one of a wing, only owner is ASTERIA ', type: 'Wings' },
-  { name: 'Solstice Slicer', description: 'Rare', obtained: 'Obtainable from beach world treasure chests.', type: 'Weapon'},
-  { name: 'Snake Crown', description: 'Ultra Rare', obtained: 'Unobtainable. From caponis chests', type: 'Accessory'},
+  { name: 'Flames of the Deep', description: 'Legendary. Flaming blade with a blue fire.', obtained: 'Obtained. Through the summer IAP  07/25', type: 'Weapon'},
+  { name: 'Skeleton Wings', description: 'Legendary. Halloween Item', obtained: 'Currently one of a wing, only owner is ASTERIA ', type: 'Wings' },
+  { name: 'Solstice Slicer', description: 'Rare. Celestical.', obtained: 'Obtainable from beach world treasure chests.', type: 'Weapon'},
+  { name: 'Snake Crown', description: 'Ultra Rare. Be the ruler of all snakes!', obtained: 'Unobtainable. From Canopic Chests', type: 'Head Gear'},
   { name: 'Snorkle', description: 'Rare. Comes in many differnt colours.', obtained: 'Obtainable from beach world treasure chests.', type: 'Accessory'},
   { name: 'Steam Cloak', description: 'Rare, so old and fluffy, makes you look mysterious!', obtained: 'Unobtainable. Was once obtained from the Easter Eggs', type: 'Back Gear'},
 ];
