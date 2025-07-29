@@ -2,9 +2,9 @@
 // Guides page functionality
 const guides = [
   { 
-    title: 'Getting Started in Pixelands', 
-    description: 'A comprehensive beginner guide to help new players start their journey in Pixelands.',
-    content: 'Welcome to Pixelands! This guide will help you understand the basics of the game, including how to move, break blocks, place items, and interact with the world.',
+    title: 'Best farmables for XP and Gems', 
+    description: 'If you are looking for to earn Gems or XP by breaking the blocks, here are the best ones to farm - ranked by how many Gems or XP they can give you on average.',
+    content: '• Best Farmable for Gems: <br><br>1. Magma Blocks - 0-10 Gems per block on average, 1,5K - 2,3K Per 250 Magma Blocks <br> 2. Ruby Tiles - 0 to 9 Gems per block on average, 1.3K - 2K Gems per 250 Ruby Tiles <br> 3. Jewel Blocks - 0 to 7 Gems per block on average, 1.2K - 1.7K Gems per 250 Jewel Blocks <br>. Summary: Magma gives the highest gem yield on average. Prioritize it for gem grinding.<br><br> • Best farmable for XP: <br><br> 1. Jewel Blocks - 3 XP per Block <br>2. Magma Blocks - 3 XP <br>Ruby Tiles - 3 XP <br>. Summary: All 3 farmables are great for XP, but prioritize farming Magma Blocks, as they give a lot of Gems and XP.',
     category: 'Beginner'
   },
   { 
