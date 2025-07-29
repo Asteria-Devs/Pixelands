@@ -1,6 +1,7 @@
 // Wiki page functionality - Updated with new items
 const items = [
   // Items from items-script.js (newer, more complete data)
+  { name: 'Treasure Chest', description: '', obtained: '', category: '' },
   { name: 'Four Leaf Clover', description: 'Misc Item', obtained: 'Unobtainable', category: 'Misc' },
   { name: 'Blue Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', category: 'Misc'},
   { name: 'Green Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', category: 'Misc'},
@@ -44,7 +45,12 @@ const items = [
   { name: 'Rabbit Rocket', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtained: 'Unobtainable. Easter item.', category: 'Back Gear'},
   { name: 'Da Vinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the LEGENDARY QUEST.', category: ['Quest', 'Wings']},
   { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', category: ['Quest', 'Wings']},
-
+  { name: 'Flames of the Deep', description: 'Legendary. Flaming blade with a blue fire.', obtained: 'Through the summer IAP  07/25', type: 'Weapon'},
+  { name: 'Skeleton Wings', description: 'Legendary. Halloween Item', obtained: 'Currently one of a wing, only owner is ASTERIA ', type: 'Wings' },
+  { name: 'Solstice Slicer', description: 'Rare. Celestical.', obtained: 'Obtainable from beach world treasure chests.', category: 'Weapon'},
+  { name: 'Snake Crown', description: 'Ultra Rare. Be the ruler of all snakes!', obtained: 'Unobtainable. From caponis chests', category: 'Head Gear'},
+  { name: 'Snorkle', description: 'Rare. Comes in many differnt colours.', obtained: 'Obtainable from beach world treasure chests.', category: 'Accessory'},
+  { name: 'Steam Cloak', description: 'Rare, so old and fluffy, makes you look mysterious!', obtained: 'Unobtainable. Was once obtained from the Easter Eggs', type: 'Back Gear'},
 
   // Blocks
    { name: 'World Lock', description: 'Lock your worlds with this & use it as a currency to buy/sell items!', obtained: 'Bought from the shop for 3,000 Gems.', category: 'Block' },
