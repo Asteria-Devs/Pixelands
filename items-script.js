@@ -1,6 +1,8 @@
 // Items page functionality
 const items = [
-  { name: 'Treasure Chest', description: 'Get different kinds of summer items!', obtained: 'Found in summer worlds', type: 'Misc' },
+  { name: 'Treasure Chest', description: 'Summer Gacha, Get different kinds of Summer Items!', obtained: 'Found in summer worlds.', type: 'Misc' },
+  { name: 'Easter Eggs', description: 'Easter Gacha, get different kinds of Easter and Old Timey Items!', obtained: 'Unobtainable. Was once found on top of Worlds and from breaking Dirt Blocks.', type: 'Misc' },
+  { name: 'Canopic Chest', description: 'Pre-summer Gacha, Get different kinds of Egyptian Items!', obtained: 'Unobtainable. Was once purchaseable from the shop.', type: 'Misc' },
   { name: 'Four Leaf Clover', description: 'Lucky Clover', obtained: 'Unobtainable', type: 'Misc' },
   { name: 'Blue Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
   { name: 'Green Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
