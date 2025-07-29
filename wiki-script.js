@@ -1,7 +1,7 @@
 // Wiki page functionality - Updated with new items
 const items = [
   // Items from items-script.js (newer, more complete data)
-   { name: 'Treasure Chest', description: 'Get different kinds of summer items!', obtained: 'Found in summer worlds', catgeory: 'Misc' },
+  { name: 'Treasure Chest', description: 'Get different kinds of summer items!', obtained: 'Found in summer worlds', catgeory: 'Misc' },
   { name: 'Four Leaf Clover', description: 'Misc Item', obtained: 'Unobtainable', category: 'Misc' },
   { name: 'Blue Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', category: 'Misc'},
   { name: 'Green Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', category: 'Misc'},
