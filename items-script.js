@@ -27,15 +27,15 @@ const items = [
   { name: 'Sacred Katana', description: 'Legendary. So sharp it takes souls with one swipe', obtained: 'Could be obtained from the VIP spin back in June.', type: 'Weapon' },
   { name: 'Wooden Sword', description: 'Rare', obtained: 'Bought in the shop for 7,500 gems', type: 'Weapon' },
   { name: 'Black Afro', description: 'Rare. Hair so fluffy and big, makes you look attractive', obtained: 'Obtained from treasure chests.', type: 'Accessory' },
-  { name: 'Diamond Pickaxe', description: 'Halloween item', obtained: 'Obtainable from breaking Diamond Blocks.', type: 'Weapon' },
+  { name: 'Diamond Pickaxe', description: 'Shiny, blue and a hard pickaxe', obtained: 'Obtainable from breaking Diamond Blocks.', type: 'Weapon' },
   { name: 'Golden Pickaxe', description: '2 hits any block.', obtained: 'Unobtainable. Was once obtainable from easter eggs.', type: 'Weapon' },
   { name: 'Ghost Pirate Skin', description: 'Ultra Rare. Makes you look so spooky!', obtained: 'Obtained from Treasure Chests and Brawlbuccaneer Pack.', type: 'Accessory' },
   { name: 'Zeus Eyes', description: 'Rare', obtained: 'Obtained from treasure chests.', type: 'Accessory' },
   { name: 'Flaming Eyes', description: 'Rare. Eyes that are on fire..', obtained: 'Obtained from treasure chests and phoenix packs!', type: 'Accessory' },
   { name: 'Ninja Mask', description: 'Halloween Item. Mask of the famous ninja!', obtained: 'Unobtainable. Once was purchaseable in the shop for 7,500 gems.', type: 'Accessory' },
   { name: 'Snake Lenses', description: 'Ultra Rare. Eyes of the snake!', obtained: 'unobtainable.', type: 'Accessory' },
-  { name: 'Golden Shoes', description: 'No need for any other shoe.....', obtained: 'unobtainable', type: 'Accessory' },
-  { name: 'Sea hair', description: 'Ultra Rare.', obtained: 'Obtained from the summer treasure chests.', type: 'Accessory' },
+  { name: 'Golden Shoes', description: 'No need for any other shoe.....', obtained: 'unobtainable', type: 'Shoes' },
+  { name: 'Sea hair', description: 'Ultra Rare.', obtained: 'Obtained from the summer treasure chests.', type: 'Headgear' },
   { name: 'Emerald Dragon', description: 'Legendary. The legendary Jade Dragon.', obtained: 'Could be bought for 75,000 gems in the shop. Now is obtainable from the VIP Wheel.', type: 'Back Item' },
   { name: 'Pixie Wings', description: 'Rare. Wings taken from a Pixie.', obtained: 'Unobtainable. Could be bought for 12,500 gems', type: 'Wings'},
   { name: 'Golden Dragon', description: 'Legendary. Golden variation of the legendary Jade Dragon.', obtained: 'Unobtainable. Once could be bought for 125,000 gems in the shop.', type: 'Back Item' },
@@ -45,10 +45,10 @@ const items = [
   { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', type: ['Quest', 'Wings']},
   { name: 'Flame of the Deep', description: 'Rare', obtained: 'Through the summer IAP  07/25', type: 'Weapon'},
   { name: 'Skeleton Wings', description: 'Legendary Bone Item', obtained: 'Currently one of a wing, only owner is ASTERIA ', type: 'Wings' },
-  { name: 'Solstice Slicer', description: 'Rare', obtained: 'From breaking chests in beach world.', type: 'Weapon'},
+  { name: 'Solstice Slicer', description: 'Rare', obtained: 'Obtainable from beach world treasure chests.', type: 'Weapon'},
   { name: 'Snake Crown', description: 'Ultra Rare', obtained: 'Unobtainable. From caponis chests', type: 'Accessory'},
-  { name: 'Snorkle', description: 'Rare. Comes in many differnt colours.', obtained: 'Obtainable from beach world chests.', type: ['Accessory']},
-  { name: 'Sea Hair', description: 'Ultra Rare', obtained: 'Obtained from beach worlds', type: ['Accessory']}
+  { name: 'Snorkle', description: 'Rare. Comes in many differnt colours.', obtained: 'Obtainable from beach world treasure chests.', type: 'Accessory'},
+  { name: 'Steam Cloak', description: 'Rare, so old and fluffy, makes you look mysterious!', obtained: 'Unobtainable. Was once obtained from the Easter Eggs', type: 'Back Gear'},
 ];
 
 // DOM elements
