@@ -70,9 +70,14 @@ const items = [
   { name: 'Cyan Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Blue Blocks + 50 White Blocks', category: 'Block' },
   { name: 'Grey Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Black Blocks + 50 White Blocks', category: 'Block' },
   { name: 'Cave Background', description: 'A basic cave background', obtained: 'Found behind dirt', category: 'Background' },
-  { name: 'Wood Background', description: 'Craftting Item', obtained: 'Can be crafted using the crafting tabble. 3 Grass + 5 Cave Backgrounds', type: 'Background'},
+  { name: 'Wood Background', description: 'Craftting Item', obtained: 'Can be crafted using the crafting tabble. 3 Grass + 5 Cave Backgrounds', category: 'Background'},
   { name: 'Lava Block', description: 'A damage dealing block', obtained: 'Basic Block found in worlds', category: 'Block'},
-  { name: 'Magma Block', description: 'Found underground of worlds', obtained: 'Basic Block found in worlds', type: 'Block'},
+  { name: 'Magma Block', description: 'Found underground of worlds', obtained: 'Basic Block found in worlds', category: 'Block'},
+  { name: 'Legendary Dirt', description: 'A legendary, golden variant of basic Dirt Block', obtained: 'Obtained from breaking Dirt Blocks', category: 'Block'},
+  { name: 'Ruby Block', description: 'Shiny, farmable block', obtained: 'Obtained from crafting', category: 'Block'},
+  { name: 'Gold Block', description: 'Shiny, collectable block', obtained: 'Obtained from crafting', category: 'Block'},
+  { name: 'Diamond Block', description: 'Shiny, rewarding block', obtained: 'Obtained from crafting', category: 'Block'},
+
 
   // Additional items
 ];
