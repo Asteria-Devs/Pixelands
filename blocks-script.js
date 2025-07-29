@@ -21,7 +21,9 @@ const blocks = [
   { name: 'Lava Block', description: 'A damage dealing block', obtained: 'Basic Block found in worlds', type: 'Natural'},
   { name: 'Magma Block', description: 'Found underground of worlds', obtained: 'Basic Block found in worlds', type: 'Natural'},
   { name: 'Legendary Dirt', description: 'A legendary, golden variant of basic Dirt Block', obtained: 'Obtained from breaking Dirt Blocks', type: 'Natural'},
-
+  { name: 'Ruby Block', description: 'Shiny, farmable block', obtained: 'Obtained from crafting', type: 'Crafted'},
+  { name: 'Gold Block', description: 'Shiny, collectable block', obtained: 'Obtained from crafting', type: 'Crafted'},
+  { name: 'Diamond Block', description: 'Shiny, rewarding block', obtained: 'Obtained from crafting', type: 'Crafted'},
 ];
 
 // DOM elements
