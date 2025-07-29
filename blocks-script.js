@@ -20,6 +20,7 @@ const blocks = [
   { name: 'Cave Background', description: 'A basic cave background', obtained: 'Found behind dirt', type: 'Natural' },
   { name: 'Lava Block', description: 'A damage dealing block', obtained: 'Basic Block found in worlds', type: 'Natural'},
   { name: 'Magma Block', description: 'Found underground of worlds', obtained: 'Basic Block found in worlds', type: 'Natural'},
+  { name: 'Legendary Dirt', description: 'A legendary, golden variant of basic Dirt Block', obtained: 'Obtained from breaking Dirt Blocks', type: 'Natural'},
 
 ];
 
