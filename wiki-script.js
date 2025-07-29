@@ -1,7 +1,7 @@
 // Wiki page functionality - Updated with new items
 const items = [
   // Items from items-script.js (newer, more complete data)
-  { name: 'Treasure Chest', description: '', obtained: '', category: '' },
+   { name: 'Treasure Chest', description: 'Get different kinds of summer items!', obtained: 'Found in summer worlds', catgeory: 'Misc' },
   { name: 'Four Leaf Clover', description: 'Misc Item', obtained: 'Unobtainable', category: 'Misc' },
   { name: 'Blue Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', category: 'Misc'},
   { name: 'Green Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', category: 'Misc'},
@@ -28,7 +28,7 @@ const items = [
   { name: 'Sacred Katana', description: 'Legendary. So sharp it takes souls with one swipe', obtained: 'Could be obtained from the VIP spin back in June.', category: 'Weapon' },
   { name: 'Wooden Sword', description: 'Rare', obtained: 'Bought in the shop for 7,500 gems', category: 'Weapon' },
   { name: 'Black Afro', description: 'Rare. Hair so fluffy and big, makes you look attractive', obtained: 'Obtained from treasure chests.', category: 'Accessory' },
-  { name: 'Diamond Pickaxe', description: 'Halloween item', obtained: 'Obtainable from breaking Diamond Blocks.', category: 'Weapon' },
+  { name: 'Diamond Pickaxe', description: 'Shiny, blue and a hard pickaxe', obtained: 'Obtainable from breaking Diamond Blocks.', category: 'Weapon' },
   { name: 'Golden Pickaxe', description: '2 hits any block.', obtained: 'Unobtainable. Was once obtainable from easter eggs.', category: 'Weapon' },
   { name: 'Ghost Pirate Skin', description: 'Ultra Rare. Makes you look so spooky!', obtained: 'Obtained from Treasure Chests and Brawlbuccaneer Pack.', category: 'Accessory' },
   { name: 'Zeus Eyes', description: 'Rare', obtained: 'Obtained from treasure chests.', category: 'Accessory' },
@@ -50,7 +50,7 @@ const items = [
   { name: 'Solstice Slicer', description: 'Rare. Celestical.', obtained: 'Obtainable from beach world treasure chests.', category: 'Weapon'},
   { name: 'Snake Crown', description: 'Ultra Rare. Be the ruler of all snakes!', obtained: 'Unobtainable. From caponis chests', category: 'Head Gear'},
   { name: 'Snorkle', description: 'Rare. Comes in many differnt colours.', obtained: 'Obtainable from beach world treasure chests.', category: 'Accessory'},
-  { name: 'Steam Cloak', description: 'Rare, so old and fluffy, makes you look mysterious!', obtained: 'Unobtainable. Was once obtained from the Easter Eggs', type: 'Back Gear'},
+  { name: 'Steam Cloak', description: 'Rare, so old and fluffy, makes you look mysterious!', obtained: 'Unobtainable. Was once obtained from the Easter Eggs', category: 'Back Gear'},
 
   // Blocks
    { name: 'World Lock', description: 'Lock your worlds with this & use it as a currency to buy/sell items!', obtained: 'Bought from the shop for 3,000 Gems.', category: 'Block' },
