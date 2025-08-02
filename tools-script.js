@@ -39,7 +39,7 @@ function calculateAdvancedFishGems() {
     return;
   }
 
-  // Fish data (with auto image magic ✨)
+  // Fish data (with auto image magikk mwehehehe ✨)
   const fishData = [
     { id: 'fish1', gems: 20, name: 'Shrimp' },
     { id: 'fish2', gems: 20, name: 'Carp' },
@@ -50,7 +50,6 @@ function calculateAdvancedFishGems() {
     { id: 'fish7', gems: 75, name: 'Octopus' },
     { id: 'fish8', gems: 100, name: 'Bluefin Tuna' },
     { id: 'fish9', gems: 125, name: 'Pink Salmon' },
-    { id: 'fish10', gems: 500, name: 'Love Fish' }
   ];
 
   let totalGems = 0;
