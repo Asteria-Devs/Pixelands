@@ -18,7 +18,7 @@ const allItems = [
   { name: 'Grey Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Black Blocks + 50 White Blocks', type: 'Blocks' },
   { name: 'Wood Background', description: 'Craftting Item', obtained: 'Can be crafted using the crafting tabble. 3 Grass + 5 Cave Backgrounds', type: 'Blocks'},
   { name: 'Cave Background', description: 'A basic cave background', obtained: 'Found behind dirt', type: 'Blocks' },
-  { name: 'Black Background', description: 'A black background', obtained: 'Can be crafted using the crafting table', type: 'Crafted' },
+  { name: 'Black Background', description: 'A black background', obtained: 'Can be crafted using the crafting table', type: 'Blocks' },
   { name: 'Lava Block', description: 'A damage dealing block', obtained: 'Basic Block found in worlds', type: 'Blocks'},
   { name: 'Magma Block', description: 'Found underground of worlds', obtained: 'Basic Block found in worlds', type: 'Blocks'},
   { name: 'Legendary Dirt', description: 'A legendary, golden variant of basic Dirt Block', obtained: 'Obtained from breaking Dirt Blocks', type: 'Blocks'},
