@@ -716,11 +716,7 @@ input[id^="fish"] {
   border-radius: 4px;
 }
 
-/* Small icon images in calculator inputs */
-.item-image-container img[alt="World Lock"] {
-  width: 20px !important;
-  height: 20px !important;
-}
+/* Small icon images in calculator inputs - World Lock removed to use normal block size */
 
 .no-image {
   color: #7f8c8d;
