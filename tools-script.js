@@ -39,7 +39,7 @@ function calculateAdvancedFishGems() {
     return;
   }
 
-  // Fish data (with auto image magikk mwehehehe ✨)
+  // Fish data (with auto image magic ✨)
   const fishData = [
     { id: 'fish1', gems: 20, name: 'Shrimp' },
     { id: 'fish2', gems: 20, name: 'Carp' },
@@ -49,7 +49,7 @@ function calculateAdvancedFishGems() {
     { id: 'fish6', gems: 75, name: 'Electric Eel' },
     { id: 'fish7', gems: 75, name: 'Octopus' },
     { id: 'fish8', gems: 100, name: 'Bluefin Tuna' },
-    { id: 'fish9', gems: 125, name: 'Pink Salmon' },
+    { id: 'fish9', gems: 125, name: 'Pink Salmon' }
   ];
 
   let totalGems = 0;
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('Fish calculator initialized');
 
   // Hook up fish inputs
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i <= 9; i++) {
     const input = document.getElementById(`fish${i}`);
     if (input) {
       input.addEventListener('input', calculateAdvancedFishGems);
