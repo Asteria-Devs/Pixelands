@@ -1,87 +1,101 @@
 // Wiki page functionality - Updated with new items
-const items = [
-  // Items from items-script.js (newer, more complete data)
-  { name: 'Treasure Chest', description: 'Summer Gacha, get different kinds of summer items!', obtained: 'Found in summer worlds', category: 'Misc' },
-  { name: 'Easter Eggs', description: 'Easter Gacha, get different kinds of Easter and Old Timey Items!', obtained: 'Unobtainable. Was once found on top of Worlds and from breaking Dirt Blocks.', category: 'Misc' },
-  { name: 'Canopic Chest', description: 'Pre-summer Gacha, Get different kinds of Egyptian Items!', obtained: 'Unobtainable. Was once purchaseable from the shop.', category: 'Misc' },
-  { name: 'Four Leaf Clover', description: 'Misc Item', obtained: 'Unobtainable', category: 'Misc' },
-  { name: 'Blue Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', category: 'Misc'},
-  { name: 'Green Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', category: 'Misc'},
-  { name: 'Basic Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', category: 'Misc'},
-  { name: 'Golden Chest', description: 'Gives 5000 gems on use', obtained: 'Obtained by purchasing in the shop for 5000 gems', category: 'Misc' },
-  { name: 'Diamond Ore', description: 'Uncommon. Used to craft Diamond Blocks', obtained: 'Found when fishing', category: 'Misc' },
-  { name: 'Ruby Ore', description: 'Uncommon. Used to craft Ruby Blocks', obtained: 'Breaking stone blocks', category: 'Misc' },
-  { name: 'Gold Ore', description: 'Uncommon. Used to craft Gold fragments', obtained: 'From fishing', category: 'Misc' },
-  { name: 'Diamond Fragment', description: 'Uncommon. Used to craft Diamond Blocks', obtained: 'From crafting', category: 'Misc'},
-  { name: 'Ruby Fragment', description: 'Uncommon. Used to craft Ruby Blocks', obtained: 'From crafting', category: 'Misc'},
-  { name: 'Gold Fragment', description: 'Uncommon. Used to craft Gold Blocks', obtained: 'From crafting', category: 'Misc'},
-  { name: 'Stick', description: 'Used to craft various items!', obtained: 'Obtained from breaking wood blocks', category: 'Misc' },
-  { name: 'Stretched Canvas', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Obtainable from the LEGENDARY QUEST', category: 'Misc'},
-  { name: 'Wingframe', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Unobtainable Was obtained from crafting.', category: 'Misc' },
-  { name: 'White Lenses', description: 'Rare. Lenses that makes your eyes white.', obtained: 'Unobtainable. Was once purchaseable in the shop for 7,500 gems', category: 'Accessory' },
-  { name: 'Rich Boy Glasses', description: 'Ultra Rare. Glasses which only rich people dare to wear!', obtained: 'Unobtainable. Was once purchaseable in the shop for 15,500 gems', category: 'Accessory' },
-  { name: 'Devil Wings', description: 'Ultra Rare. Wings of the devil.', obtained: 'Unobtainable. Was once purchaseable in the shop for 25,500 gems.', category: 'Wings' },
-  { name: 'Cat Hat', description: 'Rare. A sleepy cat sleeps on your head', obtained: 'Unobtainable. Was once purchaseable in the shop for 2,500 gems.', category: 'Accessory' },
-  { name: 'Invisible Skin', description: 'Legendary. Makes you disappear? ', obtained: 'Obtained from doing the LEGENDARY QUEST.', category: 'Quest' },
-  { name: 'Eye Of Rah', description: 'Legendary. Floating eye that sees everything!', obtained: 'Unobtainable. Was once obtainable from doing the LEGENDARY QUEST.', category: ['Quest', 'Back Gear']},
-  { name: 'Golden Rod', description: 'Legendary. Use this rod to get extra benefits from fishing.', obtained: 'Unobtainable. Was once obtainable from easter eggs.', category: 'Weapon' },
-  { name: 'Golden Sword', description: 'Exclusive Item. Such a shiny sword, makes you stand out!', obtained: 'Crafted using 1 wooden sword and 250 lost coins.', category: 'Weapon' },
-  { name: 'Bubble Wings', description: 'Ultra Rare. Bubbly wings that gives you a double jump ability!', obtained: 'Unobtainable. Was once obtained from easter eggs.', category: 'Wings' },
-  { name: 'Sacred Katana', description: 'Legendary. So sharp it takes souls with one swipe', obtained: 'Could be obtained from the VIP spin back in June.', category: 'Weapon' },
-  { name: 'Wooden Sword', description: 'Rare', obtained: 'Bought in the shop for 7,500 gems', category: 'Weapon' },
-  { name: 'Black Afro', description: 'Rare. Hair so fluffy and big, makes you look attractive', obtained: 'Obtained from treasure chests.', category: 'Accessory' },
-  { name: 'Diamond Pickaxe', description: 'Shiny, blue and a hard pickaxe', obtained: 'Obtainable from breaking Diamond Blocks.', category: 'Weapon' },
-  { name: 'Golden Pickaxe', description: '2 hits any block.', obtained: 'Unobtainable. Was once obtainable from easter eggs.', category: 'Weapon' },
-  { name: 'Ghost Pirate Skin', description: 'Ultra Rare. Makes you look so spooky!', obtained: 'Obtained from Treasure Chests and Brawlbuccaneer Pack.', category: 'Accessory' },
-  { name: 'Zeus Eyes', description: 'Rare', obtained: 'Obtained from treasure chests.', category: 'Accessory' },
-  { name: 'Flaming Eyes', description: 'Rare. Eyes that are on fire..', obtained: 'Obtained from treasure chests and phoenix packs!', category: 'Accessory' },
-  { name: 'Ninja Mask', description: 'Halloween Item. Mask of the famous ninja!', obtained: 'Unobtainable. Once was purchaseable in the shop for 7,500 gems.', category: 'Accessory' },
-  { name: 'Snake Lenses', description: 'Ultra Rare. Eyes of the snake!', obtained: 'Unobtainable. Were once obtainable from easter eggs', category: 'Accessory' },
-  { name: 'Golden Shoes', description: 'No need for any other shoe.....', obtained: 'Unobtainable. Were once obtainable from easter eggs.', category: 'Accessory' },
-  { name: 'Sea Hair', description: 'Ultra Rare.', obtained: 'Obtained from the summer treasure chests.', category: 'Accessory' },
-  { name: 'Emerald Dragon', description: 'Legendary. The legendary Jade Dragon.', obtained: 'Could be bought for 75,000 gems in the shop. Now is obtainable from the VIP Wheel.', category: 'Back Gear' },
-  { name: 'Golden Dragon', description: 'Legendary. Golden variation of the legendary Jade Dragon.', obtained: 'Unobtainable. Once could be bought for 125,000 gems in the shop. Unobtainable now.', category: 'Back Gear' },
-  { name: 'Night Owl Wings', description: 'Legenadry. Special owl wings, owned by the very best!', obtained: 'Unobtainable. Was a part of the IAP bundle 2025 May.', category: 'Wings' },
-  { name: 'Pixie Wings', description: 'Rare. Wings taken from a Pixie.', obtained: 'Unobtainable. Could be bought for 12,500 gems', category: 'Wings'},
-  { name: 'Fairy Wings', description: 'Rare. Wings taken from a Fairy.', obtained: 'Unobtainable. Could be bought for 12,500 gems', category: 'Wings'},
-  { name: 'Rabbit Rocket', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtained: 'Unobtainable. Easter item.', category: 'Back Gear'},
-  { name: 'Da Vinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the LEGENDARY QUEST.', category: ['Quest', 'Wings']},
-  { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', category: ['Quest', 'Wings']},
-  { name: 'Flames of the Deep', description: 'Legendary. Flaming blade with a blue fire.', obtained: 'Through the summer IAP  07/25', type: 'Weapon'},
-  { name: 'Skeleton Wings', description: 'Legendary. Halloween Item', obtained: 'Currently one of a wing, only owner is ASTERIA ', type: 'Wings' },
-  { name: 'Solstice Slicer', description: 'Rare. Celestical.', obtained: 'Obtainable from beach world treasure chests.', category: 'Weapon'},
-  { name: 'Snake Crown', description: 'Ultra Rare. Be the ruler of all snakes!', obtained: 'Unobtainable. From caponis chests', category: 'Head Gear'},
-  { name: 'Snorkle', description: 'Rare. Comes in many differnt colours.', obtained: 'Obtainable from beach world treasure chests.', category: 'Accessory'},
-  { name: 'Steam Cloak', description: 'Rare, so old and fluffy, makes you look mysterious!', obtained: 'Unobtainable. Was once obtained from the Easter Eggs', category: 'Back Gear'},
-
+const allItems = [
   // Blocks
-   { name: 'World Lock', description: 'Lock your worlds with this & use it as a currency to buy/sell items!', obtained: 'Bought from the shop for 3,000 Gems.', category: 'Block' },
-  { name: 'Gold Lock', description: 'Lock your worlds with this & use it as a currency to buy/sell items!', obtained: 'Bought from the shop for 300,000 Gems.', category: 'Block' },
-  { name: 'Dirt Block', description: 'A basic dirt block', obtained: 'Basic Block found in worlds.', category: 'Block' },
-  { name: 'Grass', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', category: 'Block' },
-  { name: 'Stone Block', description: 'Crafting item', obtained: 'Basic Block found in worlds', category: 'Block' },
-  { name: 'Sand Block', description: 'Summer Block', obtained: 'Found in Summer Worlds', category: 'Block' },
-  { name: 'Green Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Yellow Blocks + 50 Blue Blocks.', category: 'Block' },
-  { name: 'Black Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Stone Blocks + 50 Magma Blocks.', category: 'Block' },
-  { name: 'Blue Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Stone Blocks + 120 Water Blocks', category: 'Block' },
-  { name: 'Orange Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Red Blocks + 50 Yellow Blocks', category: 'Block' },
-  { name: 'Red Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Stone Blocks + 50 Lava Blocks', category: 'Block' },
-  { name: 'Purple Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Red Blocks + 50 Blue Blocks', category: 'Block' },
-  { name: 'Yellow Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Stone Blocks + 120 Sand Blocks', category: 'Block' },
-  { name: 'Pink Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Red Blocks + 50 White Blocks', category: 'Block' },
-  { name: 'Cyan Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Blue Blocks + 50 White Blocks', category: 'Block' },
-  { name: 'Grey Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Black Blocks + 50 White Blocks', category: 'Block' },
-  { name: 'Cave Background', description: 'A basic cave background', obtained: 'Found behind dirt', category: 'Background' },
-  { name: 'Wood Background', description: 'Craftting Item', obtained: 'Can be crafted using the crafting tabble. 3 Grass + 5 Cave Backgrounds', category: 'Background'},
-  { name: 'Lava Block', description: 'A damage dealing block', obtained: 'Basic Block found in worlds', category: 'Block'},
-  { name: 'Magma Block', description: 'Found underground of worlds', obtained: 'Basic Block found in worlds', category: 'Block'},
-  { name: 'Legendary Dirt', description: 'A legendary, golden variant of basic Dirt Block', obtained: 'Obtained from breaking Dirt Blocks', category: 'Block'},
-  { name: 'Ruby Block', description: 'Shiny, farmable block', obtained: 'Obtained from crafting', category: 'Block'},
-  { name: 'Gold Block', description: 'Shiny, collectable block', obtained: 'Obtained from crafting', category: 'Block'},
-  { name: 'Diamond Block', description: 'Shiny, rewarding block', obtained: 'Obtained from crafting', category: 'Block'},
+  { name: 'World Lock', description: 'Lock your worlds with this & use it as a currency to buy/sell items!', obtained: 'Bought from the shop for 3,000 Gems.', type: 'Blocks' },
+  { name: 'Gold Lock', description: 'Lock your worlds with this & use it as a currency to buy/sell items!', obtained: 'Bought from the shop for 300,000 Gems.', type: 'Blocks' },
+  { name: 'Dirt Block', description: 'A basic dirt block', obtained: 'Basic Block found in worlds.', type: 'Blocks' },
+  { name: 'Grass', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', type: 'Blocks' },
+  { name: 'Stone Block', description: 'Crafting item', obtained: 'Basic Block found in worlds', type: 'Blocks' },
+  { name: 'Sand Block', description: 'Summer Block', obtained: 'Found in Summer Worlds', type: 'Blocks' },
+  { name: 'Green Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Yellow Blocks + 50 Blue Blocks.', type: 'Blocks' },
+  { name: 'Black Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Stone Blocks + 50 Magma Blocks.', type: 'Blocks' },
+  { name: 'Blue Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Stone Blocks + 120 Water Blocks', type: 'Blocks' },
+  { name: 'Orange Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Red Blocks + 50 Yellow Blocks', type: 'Blocks' },
+  { name: 'Red Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Stone Blocks + 50 Lava Blocks', type: 'Blocks' },
+  { name: 'Purple Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Red Blocks + 50 Blue Blocks', type: 'Blocks' },
+  { name: 'Yellow Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Stone Blocks + 120 Sand Blocks', type: 'Blocks' },
+  { name: 'Pink Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Red Blocks + 50 White Blocks', type: 'Blocks' },
+  { name: 'Cyan Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Blue Blocks + 50 White Blocks', type: 'Blocks' },
+  { name: 'Grey Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Black Blocks + 50 White Blocks', type: 'Blocks' },
+  { name: 'Wood Background', description: 'Craftting Item', obtained: 'Can be crafted using the crafting tabble. 3 Grass + 5 Cave Backgrounds', type: 'Blocks'},
+  { name: 'Cave Background', description: 'A basic cave background', obtained: 'Found behind dirt', type: 'Blocks' },
+  { name: 'Lava Block', description: 'A damage dealing block', obtained: 'Basic Block found in worlds', type: 'Blocks'},
+  { name: 'Magma Block', description: 'Found underground of worlds', obtained: 'Basic Block found in worlds', type: 'Blocks'},
+  { name: 'Legendary Dirt', description: 'A legendary, golden variant of basic Dirt Block', obtained: 'Obtained from breaking Dirt Blocks', type: 'Blocks'},
+  { name: 'Ruby Block', description: 'Shiny, farmable block', obtained: 'Obtained from crafting', type: 'Blocks'},
+  { name: 'Gold Block', description: 'Shiny, collectable block', obtained: 'Obtained from crafting', type: 'Blocks'},
+  { name: 'Diamond Block', description: 'Shiny, rewarding block', obtained: 'Obtained from crafting', type: 'Blocks'},
 
+  // Props
+  { name: 'Treasure Chest', description: 'Summer Gacha, Get different kinds of Summer Items!', obtained: 'Found in summer worlds.', type: 'Props' },
+  { name: 'Easter Eggs', description: 'Easter Gacha, get different kinds of Easter and Old Timey Items!', obtained: 'Unobtainable. Was once found on top of Worlds and from breaking Dirt Blocks.', type: 'Props' },
+  { name: 'Canopic Chest', description: 'Pre-summer Gacha, Get different kinds of Egyptian Items!', obtained: 'Unobtainable. Was once purchaseable from the shop.', type: 'Props' },
+  { name: 'Four Leaf Clover', description: 'Lucky Clover', obtained: 'Unobtainable', type: 'Misc' },
+  { name: 'Shrimp', description: 'A small crustacean found in waters', obtained: 'Caught while fishing', type: 'Misc' },
+  { name: 'Carp', description: 'A small fish commonly found in waters', obtained: 'Caught while fishing', type: 'Misc' },
+  { name: 'Starfish', description: 'A star-shaped sea creature', obtained: 'Caught while fishing', type: 'Misc' },
+  { name: 'Crab', description: 'A crustacean with claws', obtained: 'Caught while fishing', type: 'Misc' },
+  { name: 'Clownfish', description: 'A colorful tropical fish', obtained: 'Caught while fishing', type: 'Misc' },
+  { name: 'Electric Eel', description: 'An electric fish with shocking abilities', obtained: 'Caught while fishing', type: 'Misc' },
+  { name: 'Octopus', description: 'An eight-armed sea creature', obtained: 'Caught while fishing', type: 'Misc' },
+  { name: 'Bluefin Tuna', description: 'A large and valuable fish', obtained: 'Caught while fishing', type: 'Misc' },
+  { name: 'Pink Salmon', description: 'A pink-colored salmon', obtained: 'Caught while fishing', type: 'Misc' },
+  { name: 'Love Fish', description: 'A rare and valuable fish shaped like a heart', obtained: 'Caught while fishing (rare)', type: 'Misc' },
+  // Misc Items
+  { name: 'Golden Scarab', description: 'A rare golden beetle artifact', obtained: 'Found in canopic chests', type: 'Misc' },
+  { name: 'Message in a Bottle', description: 'A mysterious message from the sea', obtained: 'Caught while fishing', type: 'Misc' },
+  { name: 'Lost Coins', description: 'Ancient coins lost at sea', obtained: 'Caught while fishing', type: 'Misc' },
+  { name: 'Old Boot', description: 'A worn-out boot, not very useful', obtained: 'Common junk item from fishing', type: 'Misc' },
+  { name: 'Blue Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
+  { name: 'Green Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
+  { name: 'Basic Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
+  { name: 'Golden Chest', description: 'Gives 5000 gems on use', obtained: 'Obtained by purchasing in the shop for 5000 gems', type: 'Misc' },
+  { name: 'Diamond Ore', description: 'Uncommon. Used to craft Diamond Blocks', obtained: 'Found when fishing', type: 'Misc' },
+  { name: 'Ruby Ore', description: 'Uncommon. Used to craft Ruby Blocks', obtained: 'Breaking stone blocks', type: 'Misc' },
+  { name: 'Gold Ore', description: 'Uncommon. Used to craft Gold fragments', obtained: 'From fishing', type: 'Misc' },
+  { name: 'Diamond Fragment', description: 'Uncommon. Used to craft Diamond Blocks', obtained: 'From crafting', type: 'Misc'},
+  { name: 'Ruby Fragment', description: 'Uncommon. Used to craft Ruby Blocks', obtained: 'From crafting', type: 'Misc'},
+  { name: 'Gold Fragment', description: 'Uncommon. Used to craft Gold Blocks', obtained: 'From crafting', type: 'Misc'},
+  { name: 'Stick', description: 'Used to craft various items!', obtained: 'Obtained from breaking wood blocks', type: 'Misc' },
+  { name: 'Stretched Canvas', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Obtainable from the LEGENDARY QUEST', type: 'Misc'},
+  { name: 'Wingframe', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Unobtainable Was obtained from crafting.', type: 'Misc' },
 
-  // Additional items
+  // Wearables
+  { name: 'Night Owl Wings', description: 'Legendary. Special owl wings, owned by the very best!', obtained: 'Unobtainable. Was a part of the IAP bundle 2025 May.', type: 'Wings' },
+  { name: 'White Lenses', description: 'Rare. Lenses that makes your eyes white.', obtained: 'Unobtainable. Was once purchaseable in the shop for 7,500 gems', type: 'Face Gear' },
+  { name: 'Rich Boy Glasses', description: 'Ultra Rare. Glasses which only rich people dare to wear!', obtained: 'Unobtainable. Was once purchaseable in the shop for 15,500 gems', type: 'Face Gear' },
+  { name: 'Devil Wings', description: 'Ultra Rare. Wings of the devil.', obtained: 'Unobtainable. Was once purchaseable in the shop for 25,500 gems.', type: 'Wings' },
+  { name: 'Cat Hat', description: 'Rare. A sleepy cat sleeps on your head', obtained: 'Unobtainable. Was once purchaseable in the shop for 2,500 gems.', type: 'Hats' },
+  { name: 'Invisible Skin', description: 'Legendary. Makes you disappear? ', obtained: 'Obtained from doing the LEGENDARY QUEST.', type: 'Quest' },
+  { name: 'Eye Of Rah', description: 'Legendary. Floating eye that sees everything!', obtained: 'Unobtainable. Was once obtainable from doing the LEGENDARY QUEST.', type: ['Quest', 'Back Items']},
+  { name: 'Golden Rod', description: 'Legendary. Use this tod to get extra benefits from fishing.', obtained: 'Unobtainable. Was once obtainable from easter eggs.', type: 'Weapon' },
+  { name: 'Golden Sword', description: 'Exclusive Item. Such a shiny sword, makes you stand out!', obtained: 'Crafted using 1 wooden sword and 250 lost coins.', type: 'Weapon' },
+  { name: 'Bubble Wings', description: 'Ultra Rare. Bubbly wings that gives you a double jump ability!', obtained: 'Unobtainable. Was once obtained from easter eggs.', type: 'Wings' },
+  { name: 'Sacred Katana', description: 'Legendary. So sharp it takes souls with one swipe', obtained: 'Could be obtained from the VIP spin back in June.', type: 'Weapon' },
+  { name: 'Wooden Sword', description: 'Rare', obtained: 'Bought in the shop for 7,500 gems', type: 'Weapon' },
+  { name: 'Black Afro', description: 'Rare. Hair so fluffy and big, makes you look attractive', obtained: 'Obtained from treasure chests.', type: 'Hair' },
+  { name: 'Diamond Pickaxe', description: 'Shiny, blue and a hard pickaxe', obtained: 'Obtainable from breaking Diamond Blocks.', type: 'Weapon' },
+  { name: 'Golden Pickaxe', description: '2 hits any block.', obtained: 'Unobtainable. Was once obtainable from easter eggs.', type: 'Weapon' },
+  { name: 'Ghost Pirate Skin', description: 'Ultra Rare. Makes you look so spooky!', obtained: 'Obtained from Treasure Chests and Brawlbuccaneer Pack.', type: 'Accessory' },
+  { name: 'Zeus Eyes', description: 'Rare', obtained: 'Obtained from treasure chests.', type: 'Face Gear' },
+  { name: 'Flaming Eyes', description: 'Rare. Eyes that are on fire..', obtained: 'Obtained from treasure chests and phoenix packs!', type: 'Face Gear' },
+  { name: 'Ninja Mask', description: 'Halloween Item. Mask of the famous ninja!', obtained: 'Unobtainable. Once was purchaseable in the shop for 7,500 gems.', type: 'Face Gear' },
+  { name: 'Snake Lenses', description: 'Ultra Rare. Eyes of the snake!', obtained: 'unobtainable.', type: 'Face Gear' },
+  { name: 'Golden Shoes', description: 'No need for any other shoe.....', obtained: 'unobtainable', type: 'Shoes' },
+  { name: 'Sea hair', description: 'Ultra Rare.', obtained: 'Obtained from the summer treasure chests.', type: 'Hair' },
+  { name: 'Emerald Dragon', description: 'Legendary. The legendary Jade Dragon.', obtained: 'Could be bought for 75,000 gems in the shop. Now is obtainable from the VIP Wheel.', type: 'Back Items' },
+  { name: 'Pixie Wings', description: 'Rare. Wings taken from a Pixie.', obtained: 'Unobtainable. Could be bought for 12,500 gems', type: 'Wings'},
+  { name: 'Golden Dragon', description: 'Legendary. Golden variation of the legendary Jade Dragon.', obtained: 'Unobtainable. Once could be bought for 125,000 gems in the shop.', type: 'Back Items' },
+  { name: 'Fairy Wings', description: 'Rare. Wings taken from a Fairy.', obtained: 'Unobtainable. Could be bought for 12,500 gems', type: 'Wings'},
+  { name: 'Rabbit Rocket', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtained: 'Unobtainable. Easter item.', type: 'Back Items'},
+  { name: 'Da Vinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the LEGENDARY QUEST.', type: ['Quest', 'Wings']},
+  { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', type: ['Quest', 'Wings']},
+  { name: 'Flames of the Deep', description: 'Legendary. Flaming blade with a blue fire.', obtained: 'Obtained. Through the summer IAP  07/25', type: 'Weapon'},
+  { name: 'Skeleton Wings', description: 'Legendary. Halloween Item', obtained: 'Currently one of a wing, only owner is ASTERIA ', type: 'Wings' },
+  { name: 'Solstice Slicer', description: 'Rare. Celestical.', obtained: 'Obtainable from beach world treasure chests.', type: 'Weapon'},
+  { name: 'Snake Crown', description: 'Ultra Rare. Be the ruler of all snakes!', obtained: 'Unobtainable. From Canopic Chests', type: 'Hats'},
+  { name: 'Snorkle', description: 'Rare. Comes in many differnt colours.', obtained: 'Obtainable from beach world treasure chests.', type: 'Face Gear'},
+  { name: 'Steam Cloak', description: 'Rare, so old and fluffy, makes you look mysterious!', obtained: 'Unobtainable. Was once obtained from the Easter Eggs', type: 'Back Items'},
 ];
 
 // DOM elements
@@ -90,30 +104,32 @@ const searchInput = document.getElementById('search');
 const filterCheckboxes = document.querySelectorAll('.filter');
 const itemCountSpan = document.getElementById('itemCount');
 const lastUpdatedSpan = document.getElementById('lastUpdated');
-const maxItems = 20;
 
 // Utility functions
 function updateStats() {
-  itemCountSpan.textContent = items.length;
-  const today = new Date().toLocaleDateString();
-  lastUpdatedSpan.textContent = today;
-}
-
-function determineCategory(itemName) {
-  if (itemName.includes('Block')) return 'Block';
-  if (itemName.includes('Wings')) return 'Wings';
-  if (itemName.includes('Background')) return 'Background';
-  return 'Item';
+  if (itemCountSpan) {
+    itemCountSpan.textContent = allItems.length;
+  }
+  if (lastUpdatedSpan) {
+    const today = new Date().toLocaleDateString();
+    lastUpdatedSpan.textContent = today;
+  }
 }
 
 function createItemElement(item, index) {
   const itemDiv = document.createElement('div');
   itemDiv.className = 'item';
-  const categories = Array.isArray(item.category) ? item.category : [item.category || determineCategory(item.name)];
-  itemDiv.setAttribute('data-category', categories.join(' '));
+
+  // Support multiple tags
+  const tags = Array.isArray(item.type) ? item.type : [item.type];
+  itemDiv.setAttribute('data-category', tags.join(' '));
 
   // Generate tag HTML
-  const tagHTML = categories.map(cat => `<span class="category-tag ${cat}">${cat}</span>`).join('');
+  const tagHTML = tags.map(tag => {
+    // Replace spaces with dots for CSS classes, but preserve the original text
+    const cssClass = tag.replace(/\s+/g, '.');
+    return `<span class="category-tag ${cssClass}" data-category="${tag}">${tag}</span>`;
+  }).join('');
 
   itemDiv.innerHTML = `
     <div class="item-header" data-index="${index}">
@@ -136,19 +152,40 @@ function createItemElement(item, index) {
 }
 
 function renderItems() {
+  if (!container) return;
   container.innerHTML = '';
 
-  const searchTerm = searchInput.value.toLowerCase();
-  const selectedCategories = Array.from(filterCheckboxes)
+  const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+  const selectedCategories = filterCheckboxes ? Array.from(filterCheckboxes)
     .filter(cb => cb.checked)
-    .map(cb => cb.value);
+    .map(cb => cb.value) : [];
 
-  const filteredItems = items.filter(item => {
+  const filteredItems = allItems.filter(item => {
     if (!item.name) return false;
 
     const matchesSearch = item.name.toLowerCase().includes(searchTerm) || searchTerm === '';
-    const itemCategories = Array.isArray(item.category) ? item.category : [item.category || determineCategory(item.name)];
-    const matchesCategory = selectedCategories.length === 0 || selectedCategories.some(cat => itemCategories.includes(cat));
+    const itemTypes = Array.isArray(item.type) ? item.type : [item.type];
+
+    // Map categories to their merged groups
+    const clothingCategories = ['Weapon', 'Accessory', 'Shirts', 'Pants', 'Shoes', 'Hair', 'Hats', 'Face Gear'];
+    const otherCategories = ['Wings', 'Back Items', 'Quest'];
+
+    let matchesCategory = selectedCategories.length === 0;
+
+    if (!matchesCategory) {
+      for (const cat of selectedCategories) {
+        if (cat === 'Clothing' && itemTypes.some(type => clothingCategories.includes(type))) {
+          matchesCategory = true;
+          break;
+        } else if (cat === 'Other' && itemTypes.some(type => otherCategories.includes(type))) {
+          matchesCategory = true;
+          break;
+        } else if (itemTypes.includes(cat)) {
+          matchesCategory = true;
+          break;
+        }
+      }
+    }
 
     return matchesSearch && matchesCategory;
   });
@@ -188,11 +225,32 @@ function toggleDropdown(event) {
 }
 
 // Event listeners
-searchInput.addEventListener('input', renderItems);
+if (searchInput) {
+  searchInput.addEventListener('input', renderItems);
+}
 
-filterCheckboxes.forEach(checkbox => {
-  checkbox.addEventListener('change', renderItems);
-});
+if (filterCheckboxes) {
+  filterCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', renderItems);
+  });
+}
+
+// Changelog toggle functionality
+function toggleChangelog() {
+  const content = document.getElementById('changelogContent');
+  const arrow = document.querySelector('.changelog-arrow');
+  const isVisible = content.style.display === 'block';
+
+  if (isVisible) {
+    content.style.display = 'none';
+    arrow.textContent = '+';
+  } else {
+    content.style.display = 'block';
+    arrow.textContent = '−';
+  }
+}
+
+
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
