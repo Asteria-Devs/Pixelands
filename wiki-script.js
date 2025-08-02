@@ -45,7 +45,7 @@ const allItems = [
   { name: 'Golden Scarab', description: 'A rare golden beetle artifact', obtained: 'Found in canopic chests', type: 'Misc' },
   { name: 'Message in a Bottle', description: 'A mysterious message from the sea', obtained: 'Caught while fishing', type: 'Misc' },
   { name: 'Lost Coins', description: 'Ancient coins lost at sea', obtained: 'Caught while fishing', type: 'Misc' },
-  { name: 'Old Boot', description: 'A worn-out boot, not very useful', obtained: 'Common junk item from fishing', type: 'Misc' },
+  { name: 'Old Shoe', description: 'A worn-out shoe, not very useful', obtained: 'Common junk item from fishing', type: 'Misc' },
   { name: 'Blue Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
   { name: 'Green Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
   { name: 'Basic Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
