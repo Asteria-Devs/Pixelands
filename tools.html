@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools - Pixelands Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wiki-styles.css">
+</head>
+<body>
+  <header class="wiki-header">
+    <div class="wiki-nav">
+      <div class="wiki-logo">
+        <h1>Pixelands Wiki</h1>
+      </div>
+      <nav class="wiki-navigation">
+        <a href="index.html">Main</a>
+        <a href="items.html">Wearables</a>
+        <a href="blocks.html">Blocks</a>
+        <a href="guides.html">Guides</a>
+        <a href="staff.html">Staff</a>
+        <a href="faq.html">FAQ</a>
+        <a href="tools.html">Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wiki-container">
+    <aside class="wiki-sidebar">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <a href="support.html" class="support-us-button">💖 Support Us</a>
+      </div>
+
+      <div class="wiki-stats">
+        <h3>Quick Links</h3>
+        <ul style="color: #e0e0e0; line-height: 1.6;">
+          <li><a href="#fish-calculator" style="color: #3498db;">Fish Gem Calculator</a></li>
+          <li><a href="#set-planner" style="color: #95a5a6;">Set/Avatar Planner (Locked)</a></li>
+          <li><a href="#world-planner" style="color: #95a5a6;">World Planner (Locked)</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="wiki-content">
+      <div class="wiki-article">
+        <header class="article-header">
+          <h1>🔧 Pixelands Tools</h1>
+          <p class="article-subtitle">Helpful tools and calculators for Pixelands players</p>
+        </header>
+
+        <div class="content-body">
+          <section id="fish-calculator">
+            <h2>Fish Gem Calculator</h2>
+
+            <div class="item" style="margin: 1rem 0;">
+              <div class="item-header">
+                <span class="item-title">🐟 Advanced Fish Gem Calculator</span>
+                <span class="arrow">+</span>
+              </div>
+              <div class="dropdown-content">
+                <p><strong>Calculate:</strong> Total gems from multiple fish types with World Lock conversion</p>
+                <div style="background: #404040; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+
+                  <!-- Fish inputs grid -->
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                    <div class="fish-item" data-fish="shrimp" style="background: #353535; padding: 0.75rem; border-radius: 6px;">
+                      <div class="item-image-container" style="width: 60px; height: 60px; margin: 0 auto 0.5rem; background-color: #555; border: 1px solid #666; border-radius: 6px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/shrimp.webp" alt="Shrimp" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot; style=&quot;color: #7f8c8d; font-size: 0.7rem; text-align: center;&quot;>No Image</div>'">
+                      </div>
+                      <label style="color: #e0e0e0; font-size: 0.9rem; display: block; text-align: center; margin-bottom: 0.5rem;">Shrimp</label>
+                      <input type="number" placeholder="Amount" id="fish1" min="0" value="0" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: none; font-size: 0.9rem;">
+                      <div style="color: #888; font-size: 0.8rem; margin-top: 0.3rem; text-align: center;">20 gems each</div>
+                    </div>
+                    <div class="fish-item" data-fish="carp" style="background: #353535; padding: 0.75rem; border-radius: 6px;">
+                      <div class="item-image-container" style="width: 60px; height: 60px; margin: 0 auto 0.5rem; background-color: #555; border: 1px solid #666; border-radius: 6px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/carp.webp" alt="Carp" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot; style=&quot;color: #7f8c8d; font-size: 0.7rem; text-align: center;&quot;>No Image</div>'">
+                      </div>
+                      <label style="color: #e0e0e0; font-size: 0.9rem; display: block; text-align: center; margin-bottom: 0.5rem;">Carp</label>
+                      <input type="number" placeholder="Amount" id="fish2" min="0" value="0" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: none; font-size: 0.9rem;">
+                      <div style="color: #888; font-size: 0.8rem; margin-top: 0.3rem; text-align: center;">20 gems each</div>
+                    </div>
+                    <div class="fish-item" data-fish="starfish" style="background: #353535; padding: 0.75rem; border-radius: 6px;">
+                      <div class="item-image-container" style="width: 60px; height: 60px; margin: 0 auto 0.5rem; background-color: #555; border: 1px solid #666; border-radius: 6px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/starfish.webp" alt="Starfish" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot; style=&quot;color: #7f8c8d; font-size: 0.7rem; text-align: center;&quot;>No Image</div>'">
+                      </div>
+                      <label style="color: #e0e0e0; font-size: 0.9rem; display: block; text-align: center; margin-bottom: 0.5rem;">Starfish</label>
+                      <input type="number" placeholder="Amount" id="fish3" min="0" value="0" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: none; font-size: 0.9rem;">
+                      <div style="color: #888; font-size: 0.8rem; margin-top: 0.3rem; text-align: center;">35 gems each</div>
+                    </div>
+                    <div class="fish-item" data-fish="crab" style="background: #353535; padding: 0.75rem; border-radius: 6px;">
+                      <div class="item-image-container" style="width: 60px; height: 60px; margin: 0 auto 0.5rem; background-color: #555; border: 1px solid #666; border-radius: 6px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/crab.webp" alt="Crab" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot; style=&quot;color: #7f8c8d; font-size: 0.7rem; text-align: center;&quot;>No Image</div>'">
+                      </div>
+                      <label style="color: #e0e0e0; font-size: 0.9rem; display: block; text-align: center; margin-bottom: 0.5rem;">Crab</label>
+                      <input type="number" placeholder="Amount" id="fish4" min="0" value="0" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: none; font-size: 0.9rem;">
+                      <div style="color: #888; font-size: 0.8rem; margin-top: 0.3rem; text-align: center;">40 gems each</div>
+                    </div>
+                    <div class="fish-item" data-fish="clownfish" style="background: #353535; padding: 0.75rem; border-radius: 6px;">
+                      <div class="item-image-container" style="width: 60px; height: 60px; margin: 0 auto 0.5rem; background-color: #555; border: 1px solid #666; border-radius: 6px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/clownfish.webp" alt="Clownfish" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot; style=&quot;color: #7f8c8d; font-size: 0.7rem; text-align: center;&quot;>No Image</div>'">
+                      </div>
+                      <label style="color: #e0e0e0; font-size: 0.9rem; display: block; text-align: center; margin-bottom: 0.5rem;">Clownfish</label>
+                      <input type="number" placeholder="Amount" id="fish5" min="0" value="0" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: none; font-size: 0.9rem;">
+                      <div style="color: #888; font-size: 0.8rem; margin-top: 0.3rem; text-align: center;">50 gems each</div>
+                    </div>
+                    <div class="fish-item" data-fish="electric_eel" style="background: #353535; padding: 0.75rem; border-radius: 6px;">
+                      <div class="item-image-container" style="width: 60px; height: 60px; margin: 0 auto 0.5rem; background-color: #555; border: 1px solid #666; border-radius: 6px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/electric_eel.webp" alt="Electric Eel" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot; style=&quot;color: #7f8c8d; font-size: 0.7rem; text-align: center;&quot;>No Image</div>'">
+                      </div>
+                      <label style="color: #e0e0e0; font-size: 0.9rem; display: block; text-align: center; margin-bottom: 0.5rem;">Electric Eel</label>
+                      <input type="number" placeholder="Amount" id="fish6" min="0" value="0" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: none; font-size: 0.9rem;">
+                      <div style="color: #888; font-size: 0.8rem; margin-top: 0.3rem; text-align: center;">75 gems each</div>
+                    </div>
+                    <div class="fish-item" data-fish="octopus" style="background: #353535; padding: 0.75rem; border-radius: 6px;">
+                      <div class="item-image-container" style="width: 60px; height: 60px; margin: 0 auto 0.5rem; background-color: #555; border: 1px solid #666; border-radius: 6px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/octopus.webp" alt="Octopus" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot; style=&quot;color: #7f8c8d; font-size: 0.7rem; text-align: center;&quot;>No Image</div>'">
+                      </div>
+                      <label style="color: #e0e0e0; font-size: 0.9rem; display: block; text-align: center; margin-bottom: 0.5rem;">Octopus</label>
+                      <input type="number" placeholder="Amount" id="fish7" min="0" value="0" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: none; font-size: 0.9rem;">
+                      <div style="color: #888; font-size: 0.8rem; margin-top: 0.3rem; text-align: center;">75 gems each</div>
+                    </div>
+                    <div class="fish-item" data-fish="bluefin_tuna" style="background: #353535; padding: 0.75rem; border-radius: 6px;">
+                      <div class="item-image-container" style="width: 60px; height: 60px; margin: 0 auto 0.5rem; background-color: #555; border: 1px solid #666; border-radius: 6px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/bluefin_tuna.webp" alt="Bluefin Tuna" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot; style=&quot;color: #7f8c8d; font-size: 0.7rem; text-align: center;&quot;>No Image</div>'">
+                      </div>
+                      <label style="color: #e0e0e0; font-size: 0.9rem; display: block; text-align: center; margin-bottom: 0.5rem;">Bluefin Tuna</label>
+                      <input type="number" placeholder="Amount" id="fish8" min="0" value="0" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: none; font-size: 0.9rem;">
+                      <div style="color: #888; font-size: 0.8rem; margin-top: 0.3rem; text-align: center;">100 gems each</div>
+                    </div>
+                    <div class="fish-item" data-fish="pink_salmon" style="background: #353535; padding: 0.75rem; border-radius: 6px;">
+                      <div class="item-image-container" style="width: 60px; height: 60px; margin: 0 auto 0.5rem; background-color: #555; border: 1px solid #666; border-radius: 6px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/pink_salmon.webp" alt="Pink Salmon" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot; style=&quot;color: #7f8c8d; font-size: 0.7rem; text-align: center;&quot;>No Image</div>'">
+                      </div>
+                      <label style="color: #e0e0e0; font-size: 0.9rem; display: block; text-align: center; margin-bottom: 0.5rem;">Pink Salmon</label>
+                      <input type="number" placeholder="Amount" id="fish9" min="0" value="0" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: none; font-size: 0.9rem;">
+                      <div style="color: #888; font-size: 0.8rem; margin-top: 0.3rem; text-align: center;">125 gems each</div>
+                    </div>
+                    <div class="fish-item" data-fish="love_fish" style="background: #353535; padding: 0.75rem; border-radius: 6px;">
+                      <div class="item-image-container" style="width: 60px; height: 60px; margin: 0 auto 0.5rem; background-color: #555; border: 1px solid #666; border-radius: 6px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/love_fish.webp" alt="Love Fish" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot; style=&quot;color: #7f8c8d; font-size: 0.7rem; text-align: center;&quot;>No Image</div>'">
+                      </div>
+                      <label style="color: #e0e0e0; font-size: 0.9rem; display: block; text-align: center; margin-bottom: 0.5rem;">Love Fish</label>
+                      <input type="number" placeholder="Amount" id="fish10" min="0" value="0" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: none; font-size: 0.9rem;">
+                      <div style="color: #888; font-size: 0.8rem; margin-top: 0.3rem; text-align: center;">500 gems each</div>
+                    </div>
+                  </div>
+
+                  <!-- WL Rate input -->
+                  <div style="margin-bottom: 1rem; background: #353535; padding: 0.75rem; border-radius: 6px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                      <div class="item-image-container" style="width: 24px; height: 24px; margin-right: 0.5rem; background-color: #555; border: 1px solid #666; border-radius: 3px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/world_lock.webp" alt="World Lock" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot; style=&quot;color: #7f8c8d; font-size: 0.6rem;&quot;>WL</div>'">
+                      </div>
+                      <label style="color: #e0e0e0;">World Lock Rate (gems per WL):</label>
+                    </div>
+                    <input type="number" placeholder="e.g. 500" id="wlRate" value="500" min="1" style="width: 100%; padding: 0.5rem; border-radius: 4px; border: none;">
+                  </div>
+
+                  <button onclick="calculateAdvancedFishGems()" style="width: 100%; padding: 0.75rem; background: #3498db; color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; font-weight: bold;">Calculate Total Gems & WLs</button>
+                  <div id="fishResult" style="margin-top: 1rem; padding: 0.75rem; background: #2c3e50; border-radius: 4px; font-weight: bold;"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="set-planner">
+            <h2>Set/Avatar Planner</h2>
+
+            <div class="item" style="margin: 1rem 0;">
+              <div class="item-header" style="opacity: 0.6; cursor: not-allowed;">
+                <span class="item-title">👕 Set/Avatar Planner (Coming Soon)</span>
+                <span class="lock-icon" style="color: #95a5a6;">🔒</span>
+              </div>
+              <div class="dropdown-content">
+                <div style="background: #404040; padding: 1rem; border-radius: 8px; margin: 1rem 0; opacity: 0.7;">
+                  <p style="color: #95a5a6; font-style: italic; text-align: center;">
+                    🚧 This tool is currently under development! 🚧
+                  </p>
+                  <p style="color: #bdc3c7; margin-top: 1rem;">
+                    The Set/Avatar Planner will help you design and value your Pixelands outfit with features like:
+                  </p>
+                  <ul style="color: #bdc3c7; margin: 1rem 0; padding-left: 2rem;">
+                    <li>Equipment slot management</li>
+                    <li>Set value calculator</li>
+                    <li>Rarity breakdown display</li>
+                    <li>Save and share sets</li>
+                  </ul>
+                  <p style="color: #95a5a6; font-style: italic; text-align: center; margin-top: 1rem;">
+                    Stay tuned for updates!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="world-planner">
+            <h2>World Planner</h2>
+
+            <div class="item" style="margin: 1rem 0;">
+              <div class="item-header" style="opacity: 0.6; cursor: not-allowed;">
+                <span class="item-title">🗺️ World Planner (Coming Soon)</span>
+                <span class="lock-icon" style="color: #95a5a6;">🔒</span>
+              </div>
+              <div class="dropdown-content">
+                <div style="background: #404040; padding: 1rem; border-radius: 8px; margin: 1rem 0; opacity: 0.7;">
+                  <p style="color: #95a5a6; font-style: italic; text-align: center;">
+                    🚧 This tool is currently under development! 🚧
+                  </p>
+                  <p style="color: #bdc3c7; margin-top: 1rem;">
+                    The World Planner will help you design and plan your Pixelands worlds with features like:
+                  </p>
+                  <ul style="color: #bdc3c7; margin: 1rem 0; padding-left: 2rem;">
+                    <li>Grid-based world layout designer</li>
+                    <li>Block placement calculator</li>
+                    <li>Resource requirement estimator</li>
+                    <li>World cost calculator</li>
+                  </ul>
+                  <p style="color: #95a5a6; font-style: italic; text-align: center; margin-top: 1rem;">
+                    Stay tuned for updates!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="wiki-footer">
+    <p>© 2025 Pixelands Wiki - Community driven documentation</p>
+    <p><a href="index.html">← Back to Home</a></p>
+  </footer>
+
+  <script src="tools-script.js"></script>
+</body>
+</html>
