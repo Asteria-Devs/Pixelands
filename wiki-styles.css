@@ -380,8 +380,8 @@ input[id^="fish"] {
   background-color: #1abc9c !important;
 }
 
-.category-tag.Blocks,
-.category-tag[data-category="Blocks"] {
+.category-tag.Essentials,
+.category-tag[data-category="Essentials"] {
   background-color: #8b4513;
 }
 
