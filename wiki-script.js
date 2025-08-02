@@ -4,7 +4,6 @@ const allItems = [
   { name: 'World Lock', description: 'Lock your worlds with this & use it as a currency to buy/sell items!', obtained: 'Bought from the shop for 3,000 Gems.', type: 'Blocks' },
   { name: 'Gold Lock', description: 'Lock your worlds with this & use it as a currency to buy/sell items!', obtained: 'Bought from the shop for 300,000 Gems.', type: 'Blocks' },
   { name: 'Dirt Block', description: 'A basic dirt block', obtained: 'Basic Block found in worlds.', type: 'Blocks' },
-  { name: 'Grass', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', type: 'Blocks' },
   { name: 'Stone Block', description: 'Crafting item', obtained: 'Basic Block found in worlds', type: 'Blocks' },
   { name: 'Sand Block', description: 'Summer Block', obtained: 'Found in Summer Worlds', type: 'Blocks' },
   { name: 'Green Block', description: 'Crafting Item', obtained: 'Can be crafted using the crafting table. 50 Yellow Blocks + 50 Blue Blocks.', type: 'Blocks' },
@@ -27,8 +26,9 @@ const allItems = [
   { name: 'Diamond Block', description: 'Shiny, rewarding block', obtained: 'Obtained from crafting', type: 'Blocks'},
 
   // Props
+  { name: 'Grass', description: 'Covering the upper Dirt Blocks', obtained: 'Found on top of worlds or drops from the Dirt Block', type: 'Props' },
   { name: 'Treasure Chest', description: 'Summer Gacha, Get different kinds of Summer Items!', obtained: 'Found in summer worlds.', type: 'Props' },
-  { name: 'Easter Eggs', description: 'Easter Gacha, get different kinds of Easter and Old Timey Items!', obtained: 'Unobtainable. Was once found on top of Worlds and from breaking Dirt Blocks.', type: 'Props' },
+  { name: 'Easter Egg', description: 'Easter Gacha, get different kinds of Easter and Old Timey Items!', obtained: 'Unobtainable. Was once found on top of Worlds and from breaking Dirt Blocks.', type: 'Props' },
   { name: 'Canopic Chest', description: 'Pre-summer Gacha, Get different kinds of Egyptian Items!', obtained: 'Unobtainable. Was once purchaseable from the shop.', type: 'Props' },
   // Misc Items
   { name: 'Four Leaf Clover', description: 'Lucky Clover', obtained: 'Unobtainable. Was obtainable from breaking dirt blocks', type: 'Misc' },
