@@ -48,6 +48,7 @@ const items = [
   { name: 'Snake Crown', description: 'Ultra Rare. Be the ruler of all snakes!', obtained: 'Unobtainable. From Canopic Chests', type: 'Hats'},
   { name: 'Snorkle', description: 'Rare. Comes in many differnt colours.', obtained: 'Obtainable from beach world treasure chests.', type: 'Face Gear'},
   { name: 'Steam Cloak', description: 'Rare, so old and fluffy, makes you look mysterious!', obtained: 'Unobtainable. Was once obtained from the Easter Eggs', type: 'Back Items'},
+  { name: 'Phoenix Wings', description: 'Legendary. These wings are on FIRE!', obtained: 'Unobtainable. Was obtainable from the Phoenix Pack Summer 2025.', type : 'Wings'},
 ];
 
 // DOM elements
