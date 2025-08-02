@@ -30,7 +30,8 @@ const allItems = [
   { name: 'Treasure Chest', description: 'Summer Gacha, Get different kinds of Summer Items!', obtained: 'Found in summer worlds.', type: 'Props' },
   { name: 'Easter Eggs', description: 'Easter Gacha, get different kinds of Easter and Old Timey Items!', obtained: 'Unobtainable. Was once found on top of Worlds and from breaking Dirt Blocks.', type: 'Props' },
   { name: 'Canopic Chest', description: 'Pre-summer Gacha, Get different kinds of Egyptian Items!', obtained: 'Unobtainable. Was once purchaseable from the shop.', type: 'Props' },
-  { name: 'Four Leaf Clover', description: 'Lucky Clover', obtained: 'Unobtainable', type: 'Misc' },
+  // Misc Items
+  { name: 'Four Leaf Clover', description: 'Lucky Clover', obtained: 'Unobtainable. Was obtainable from breaking dirt blocks', type: 'Misc' },
   { name: 'Shrimp', description: 'A small crustacean found in waters', obtained: 'Caught while fishing', type: 'Misc' },
   { name: 'Carp', description: 'A small fish commonly found in waters', obtained: 'Caught while fishing', type: 'Misc' },
   { name: 'Starfish', description: 'A star-shaped sea creature', obtained: 'Caught while fishing', type: 'Misc' },
@@ -40,8 +41,6 @@ const allItems = [
   { name: 'Octopus', description: 'An eight-armed sea creature', obtained: 'Caught while fishing', type: 'Misc' },
   { name: 'Bluefin Tuna', description: 'A large and valuable fish', obtained: 'Caught while fishing', type: 'Misc' },
   { name: 'Pink Salmon', description: 'A pink-colored salmon', obtained: 'Caught while fishing', type: 'Misc' },
-  { name: 'Love Fish', description: 'A rare and valuable fish shaped like a heart', obtained: 'Caught while fishing (rare)', type: 'Misc' },
-  // Misc Items
   { name: 'Golden Scarab', description: 'A rare golden beetle artifact', obtained: 'Found in canopic chests', type: 'Misc' },
   { name: 'Message in a Bottle', description: 'A mysterious message from the sea', obtained: 'Caught while fishing', type: 'Misc' },
   { name: 'Lost Coins', description: 'Ancient coins lost at sea', obtained: 'Caught while fishing', type: 'Misc' },
