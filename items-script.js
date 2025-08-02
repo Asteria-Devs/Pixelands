@@ -74,7 +74,7 @@ function createItemElement(item, index) {
   itemDiv.setAttribute('data-category', tags.join(' '));
 
   // Generate tag HTML
-  const tagHTML = tags.map(tag => `<span class="category-tag ${tag}">${tag}</span>`).join('');
+  const tagHTML = tags.map(tag => `<span class="category-tag" data-category="${tag}">${tag}</span>`).join('');
 
   itemDiv.innerHTML = `
     <div class="item-header" data-index="${index}">
@@ -125,6 +125,31 @@ function renderItems() {
   if (filteredItems.length === 0) {
     container.innerHTML = '<p style="text-align: center; color: #7f8c8d; padding: 2rem;">No wearables found matching your criteria.</p>';
     return;
+  }
+
+  // Sort items based on whether filters are applied
+  if (selectedCategories.length === 0) {
+    // No filters selected - sort by tag priority, then alphabetically within each tag
+    const tagOrder = ['Wings', 'Weapon', 'Accessory', 'Shirts', 'Pants', 'Shoes', 'Hair', 'Hats', 'Face Gear', 'Back Items', 'Quest', 'Misc'];
+    
+    filteredItems.sort((a, b) => {
+      const aTypes = Array.isArray(a.type) ? a.type : [a.type];
+      const bTypes = Array.isArray(b.type) ? b.type : [b.type];
+      
+      // Get the highest priority tag for each item
+      const aPriority = Math.min(...aTypes.map(type => tagOrder.indexOf(type) >= 0 ? tagOrder.indexOf(type) : 999));
+      const bPriority = Math.min(...bTypes.map(type => tagOrder.indexOf(type) >= 0 ? tagOrder.indexOf(type) : 999));
+      
+      // If same priority, sort alphabetically
+      if (aPriority === bPriority) {
+        return a.name.localeCompare(b.name);
+      }
+      
+      return aPriority - bPriority;
+    });
+  } else {
+    // Filters are selected - sort alphabetically only
+    filteredItems.sort((a, b) => a.name.localeCompare(b.name));
   }
 
   filteredItems.forEach((item, index) => {
