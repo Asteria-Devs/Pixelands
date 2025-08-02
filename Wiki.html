@@ -20,6 +20,7 @@
         <a href="guides.html">Guides</a>
         <a href="staff.html">Staff</a>
         <a href="faq.html">FAQ</a>
+        <a href="tools.html">Tools</a>
       </nav>
     </div>
   </header>
@@ -38,19 +39,11 @@
       <div class="filter-section">
         <h3>Categories</h3>
         <div class="category-filters">
-          <label><input type="checkbox" class="filter" value="Block"> Blocks</label>
-          <label><input type="checkbox" class="filter" value="Item"> Items</label>
-          <label><input type="checkbox" class="filter" value="Background"> Backgrounds</label>
-          <label><input type="checkbox" class="filter" value="Wings"> Wings</label>
-          <label><input type="checkbox" class="filter" value="Weapon"> Weapons</label>
-          <label><input type="checkbox" class="filter" value="Accessory"> Accessories</label>
+          <label><input type="checkbox" class="filter" value="Blocks"> Blocks</label>
+          <label><input type="checkbox" class="filter" value="Props"> Props</label>
+          <label><input type="checkbox" class="filter" value="Clothing"> Clothing</label>
+          <label><input type="checkbox" class="filter" value="Other"> Other</label>
           <label><input type="checkbox" class="filter" value="Misc"> Misc</label>
-          <label><input type="checkbox" class="filter" value="Quest"> Quest Items</label>
-          <label><input type="checkbox" class="filter" value="Shirts"> Shirts</label>
-          <label><input type="checkbox" class="filter" value="Pants"> Pants</label>
-          <label><input type="checkbox" class="filter" value="Shoes"> Shoes</label>
-          <label><input type="checkbox" class="filter" value="Headgear"> Headgear</label>
-          <label><input type="checkbox" class="filter" value="Back Gear"> Back Gear</label>
         </div>
       </div>
 
@@ -58,6 +51,40 @@
         <h3>Wiki Statistics</h3>
         <p>Items documented: <span id="itemCount">0</span></p>
         <p>Last updated: <span id="lastUpdated">Today</span></p>
+      </div>
+
+      <div class="recently-updated">
+        <h3>Recently Updated</h3>
+        <div id="recentlyUpdated">
+          <div class="recent-item">
+            <a href="tools.html">🛠️ Tools Page</a>
+          </div>
+          <div class="recent-item">
+            <a href="blocks.html">🧱 Blocks Database</a>
+          </div>
+          <div class="recent-item">
+            <a href="items.html">👕 Wearables</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="changelog-section">
+        <h3>📝 Changelog</h3>
+        <div class="changelog-toggle" onclick="toggleChangelog()">
+          <span>View Recent Changes</span>
+          <span class="changelog-arrow">+</span>
+        </div>
+        <div id="changelogContent" class="changelog-content">
+          <div class="changelog-entry" style="border-left: 3px solid #e74c3c; padding-left: 1rem;">
+            <div class="changelog-date" style="color: #e74c3c;">🔥 Last 24 Hours</div>
+            <ul>
+              <li>Added Set and World Planners (Temporarily locked)</li>
+              <li>Added Fish Gem Calculator (fully working)</li>
+              <li>Organized All Items Database</li>
+              <li>Added Changelog</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </aside>
 
@@ -69,14 +96,29 @@
         </header>
 
         <div class="content-body">
+          <div class="wiki-navigation-arrows">
+            <a href="#" class="nav-arrow disabled">
+              <span class="arrow-icon">←</span>
+              <span>Previous</span>
+            </a>
+            <a href="items.html" class="nav-arrow">
+              <span>Wearables</span>
+              <span class="arrow-icon">→</span>
+            </a>
+          </div>
+
           <p>Welcome to the comprehensive Pixelands item database. Here you can find detailed information about every item, block, and piece of equipment available in the game.</p>
 
           <div class="table-of-contents">
             <h2>Contents</h2>
             <ul>
-              <li><a href="#item-list">1. Item List</a></li>
-              <li><a href="staff.html">2. Staff List</a></li>
-              <li><a href="guides.html">3. Guides</a></li>
+              <li><a href="#item-list">1. All Items Database</a></li>
+              <li><a href="items.html">2. Wearables & Quest Items</a></li>
+              <li><a href="blocks.html">3. Blocks & Building Materials</a></li>
+              <li><a href="tools.html">4. Tools & Calculators</a></li>
+              <li><a href="guides.html">5. Player Guides</a></li>
+              <li><a href="staff.html">6. Staff Directory</a></li>
+              <li><a href="faq.html">7. Frequently Asked Questions</a></li>
             </ul>
           </div>
 
