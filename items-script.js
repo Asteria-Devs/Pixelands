@@ -105,7 +105,7 @@ function renderItems() {
     .map(cb => cb.value);
 
   // Define wearable categories
-  const wearableCategories = ['Weapon', 'Wings', 'Shirts', 'Pants', 'Shoes', 'Hair', 'Hats', 'Face Gear', 'Back Gear', 'Quest'];
+ const wearableCategories = ['Weapon', 'Wings', 'Shirts', 'Pants', 'Shoes', 'Hair', 'Hats', 'Face Gear', 'Back Gear', 'Back Items', 'Quest'];
 
   const filteredItems = items.filter(item => {
     if (!item.name) return false;
