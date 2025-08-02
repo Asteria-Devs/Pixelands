@@ -390,8 +390,8 @@ input[id^="fish"] {
   background-color: #f39c12;
 }
 
-.category-tag.Back.Gear,
-.category-tag[data-category="Back Gear"] {
+.category-tag.Back.Items,
+.category-tag[data-category="Back Items"] {
   background-color: #e67e22;
 }
 
