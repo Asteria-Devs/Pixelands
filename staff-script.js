@@ -24,7 +24,7 @@ const staff = [
   },
   { 
     name: 'Bimn', 
-    role: 'Sycotik Studios', 
+    role: 'Artist', 
     description: 'Lead Artist',
     responsibilities: 'Art direction and visual design',
     joinDate: '2025'
