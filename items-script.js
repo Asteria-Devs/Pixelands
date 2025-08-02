@@ -1,9 +1,5 @@
 // Items page functionality
 const items = [
-  { name: 'Treasure Chest', description: 'Summer Gacha, Get different kinds of Summer Items!', obtained: 'Found in summer worlds.', type: 'Misc' },
-  { name: 'Easter Eggs', description: 'Easter Gacha, get different kinds of Easter and Old Timey Items!', obtained: 'Unobtainable. Was once found on top of Worlds and from breaking Dirt Blocks.', type: 'Misc' },
-  { name: 'Canopic Chest', description: 'Pre-summer Gacha, Get different kinds of Egyptian Items!', obtained: 'Unobtainable. Was once purchaseable from the shop.', type: 'Misc' },
-  { name: 'Four Leaf Clover', description: 'Lucky Clover', obtained: 'Unobtainable', type: 'Misc' },
   { name: 'Blue Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
   { name: 'Green Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
   { name: 'Basic Lure', description: 'Used for fishing', obtained: 'Obtainable from the lure pack', type: 'Misc'},
@@ -18,10 +14,10 @@ const items = [
   { name: 'Stretched Canvas', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Obtainable from the LEGENDARY QUEST', type: 'Misc'},
   { name: 'Wingframe', description: 'Material used for the Legendary Da Vinci Wings Quest!', obtained: 'Unobtainable Was obtained from crafting.', type: 'Misc' },
   { name: 'Night Owl Wings', description: 'Legendary. Special owl wings, owned by the very best!', obtained: 'Unobtainable. Was a part of the IAP bundle 2025 May.', type: 'Wings' },
-  { name: 'White Lenses', description: 'Rare. Lenses that makes your eyes white.', obtained: 'Unobtainable. Was once purchaseable in the shop for 7,500 gems', type: 'Accessory' },
-  { name: 'Rich Boy Glasses', description: 'Ultra Rare. Glasses which only rich people dare to wear!', obtained: 'Unobtainable. Was once purchaseable in the shop for 15,500 gems', type: 'Accessory' },
+  { name: 'White Lenses', description: 'Rare. Lenses that makes your eyes white.', obtained: 'Unobtainable. Was once purchaseable in the shop for 7,500 gems', type: 'Face Gear' },
+  { name: 'Rich Boy Glasses', description: 'Ultra Rare. Glasses which only rich people dare to wear!', obtained: 'Unobtainable. Was once purchaseable in the shop for 15,500 gems', type: 'Face Gear' },
   { name: 'Devil Wings', description: 'Ultra Rare. Wings of the devil.', obtained: 'Unobtainable. Was once purchaseable in the shop for 25,500 gems.', type: 'Wings' },
-  { name: 'Cat Hat', description: 'Rare. A sleepy cat sleeps on your head', obtained: 'Unobtainable. Was once purchaseable in the shop for 2,500 gems.', type: 'Accessory' },
+  { name: 'Cat Hat', description: 'Rare. A sleepy cat sleeps on your head', obtained: 'Unobtainable. Was once purchaseable in the shop for 2,500 gems.', type: 'Hats' },
   { name: 'Invisible Skin', description: 'Legendary. Makes you disappear? ', obtained: 'Obtained from doing the LEGENDARY QUEST.', type: 'Quest' },
   { name: 'Eye Of Rah', description: 'Legendary. Floating eye that sees everything!', obtained: 'Unobtainable. Was once obtainable from doing the LEGENDARY QUEST.', type: ['Quest', 'Back Gear']},
   { name: 'Golden Rod', description: 'Legendary. Use this tod to get extra benefits from fishing.', obtained: 'Unobtainable. Was once obtainable from easter eggs.', type: 'Weapon' },
@@ -29,29 +25,29 @@ const items = [
   { name: 'Bubble Wings', description: 'Ultra Rare. Bubbly wings that gives you a double jump ability!', obtained: 'Unobtainable. Was once obtained from easter eggs.', type: 'Wings' },
   { name: 'Sacred Katana', description: 'Legendary. So sharp it takes souls with one swipe', obtained: 'Could be obtained from the VIP spin back in June.', type: 'Weapon' },
   { name: 'Wooden Sword', description: 'Rare', obtained: 'Bought in the shop for 7,500 gems', type: 'Weapon' },
-  { name: 'Black Afro', description: 'Rare. Hair so fluffy and big, makes you look attractive', obtained: 'Obtained from treasure chests.', type: 'Accessory' },
+  { name: 'Black Afro', description: 'Rare. Hair so fluffy and big, makes you look attractive', obtained: 'Obtained from treasure chests.', type: 'Hair' },
   { name: 'Diamond Pickaxe', description: 'Shiny, blue and a hard pickaxe', obtained: 'Obtainable from breaking Diamond Blocks.', type: 'Weapon' },
   { name: 'Golden Pickaxe', description: '2 hits any block.', obtained: 'Unobtainable. Was once obtainable from easter eggs.', type: 'Weapon' },
   { name: 'Ghost Pirate Skin', description: 'Ultra Rare. Makes you look so spooky!', obtained: 'Obtained from Treasure Chests and Brawlbuccaneer Pack.', type: 'Accessory' },
-  { name: 'Zeus Eyes', description: 'Rare', obtained: 'Obtained from treasure chests.', type: 'Accessory' },
-  { name: 'Flaming Eyes', description: 'Rare. Eyes that are on fire..', obtained: 'Obtained from treasure chests and phoenix packs!', type: 'Accessory' },
-  { name: 'Ninja Mask', description: 'Halloween Item. Mask of the famous ninja!', obtained: 'Unobtainable. Once was purchaseable in the shop for 7,500 gems.', type: 'Accessory' },
-  { name: 'Snake Lenses', description: 'Ultra Rare. Eyes of the snake!', obtained: 'unobtainable.', type: 'Accessory' },
+  { name: 'Zeus Eyes', description: 'Rare', obtained: 'Obtained from treasure chests.', type: 'Face Gear' },
+  { name: 'Flaming Eyes', description: 'Rare. Eyes that are on fire..', obtained: 'Obtained from treasure chests and phoenix packs!', type: 'Face Gear' },
+  { name: 'Ninja Mask', description: 'Halloween Item. Mask of the famous ninja!', obtained: 'Unobtainable. Once was purchaseable in the shop for 7,500 gems.', type: 'Face Gear' },
+  { name: 'Snake Lenses', description: 'Ultra Rare. Eyes of the snake!', obtained: 'unobtainable.', type: 'Face Gear' },
   { name: 'Golden Shoes', description: 'No need for any other shoe.....', obtained: 'unobtainable', type: 'Shoes' },
-  { name: 'Sea hair', description: 'Ultra Rare.', obtained: 'Obtained from the summer treasure chests.', type: 'Headgear' },
-  { name: 'Emerald Dragon', description: 'Legendary. The legendary Jade Dragon.', obtained: 'Could be bought for 75,000 gems in the shop. Now is obtainable from the VIP Wheel.', type: 'Back Item' },
+  { name: 'Sea hair', description: 'Ultra Rare.', obtained: 'Obtained from the summer treasure chests.', type: 'Hair' },
+  { name: 'Emerald Dragon', description: 'Legendary. The legendary Jade Dragon.', obtained: 'Could be bought for 75,000 gems in the shop. Now is obtainable from the VIP Wheel.', type: 'Back Items' },
   { name: 'Pixie Wings', description: 'Rare. Wings taken from a Pixie.', obtained: 'Unobtainable. Could be bought for 12,500 gems', type: 'Wings'},
-  { name: 'Golden Dragon', description: 'Legendary. Golden variation of the legendary Jade Dragon.', obtained: 'Unobtainable. Once could be bought for 125,000 gems in the shop.', type: 'Back Item' },
+  { name: 'Golden Dragon', description: 'Legendary. Golden variation of the legendary Jade Dragon.', obtained: 'Unobtainable. Once could be bought for 125,000 gems in the shop.', type: 'Back Items' },
   { name: 'Fairy Wings', description: 'Rare. Wings taken from a Fairy.', obtained: 'Unobtainable. Could be bought for 12,500 gems', type: 'Wings'},
-  { name: 'Rabbit Rocket', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtained: 'Unobtainable. Easter item.', type: 'Back Gear'},
+  { name: 'Rabbit Rocket', description: 'Rare. Fly up in the sky with 2 Rabbits!', obtained: 'Unobtainable. Easter item.', type: 'Back Items'},
   { name: 'Da Vinci Wings', description: 'Legendary. These wings make you look like an inventor!', obtained: 'Obtainable from doing the LEGENDARY QUEST.', type: ['Quest', 'Wings']},
   { name: 'Seraphim Wings', description: 'Legendary. Radiant Angelic Flight.', obtained: 'Unobtainable, were once obtainable from the LEGENDARY QUEST.', type: ['Quest', 'Wings']},
   { name: 'Flames of the Deep', description: 'Legendary. Flaming blade with a blue fire.', obtained: 'Obtained. Through the summer IAP  07/25', type: 'Weapon'},
   { name: 'Skeleton Wings', description: 'Legendary. Halloween Item', obtained: 'Currently one of a wing, only owner is ASTERIA ', type: 'Wings' },
   { name: 'Solstice Slicer', description: 'Rare. Celestical.', obtained: 'Obtainable from beach world treasure chests.', type: 'Weapon'},
-  { name: 'Snake Crown', description: 'Ultra Rare. Be the ruler of all snakes!', obtained: 'Unobtainable. From Canopic Chests', type: 'Head Gear'},
-  { name: 'Snorkle', description: 'Rare. Comes in many differnt colours.', obtained: 'Obtainable from beach world treasure chests.', type: 'Accessory'},
-  { name: 'Steam Cloak', description: 'Rare, so old and fluffy, makes you look mysterious!', obtained: 'Unobtainable. Was once obtained from the Easter Eggs', type: 'Back Gear'},
+  { name: 'Snake Crown', description: 'Ultra Rare. Be the ruler of all snakes!', obtained: 'Unobtainable. From Canopic Chests', type: 'Hats'},
+  { name: 'Snorkle', description: 'Rare. Comes in many differnt colours.', obtained: 'Obtainable from beach world treasure chests.', type: 'Face Gear'},
+  { name: 'Steam Cloak', description: 'Rare, so old and fluffy, makes you look mysterious!', obtained: 'Unobtainable. Was once obtained from the Easter Eggs', type: 'Back Items'},
 ];
 
 // DOM elements
@@ -108,7 +104,7 @@ function renderItems() {
     .map(cb => cb.value);
 
   // Define wearable categories
-  const wearableCategories = ['Weapon', 'Wings', 'Shirts', 'Pants', 'Shoes', 'Headgear', 'Back Gear', 'Quest'];
+  const wearableCategories = ['Weapon', 'Wings', 'Shirts', 'Pants', 'Shoes', 'Hair', 'Hats', 'Face Gear', 'Back Gear', 'Quest'];
 
   const filteredItems = items.filter(item => {
     if (!item.name) return false;
