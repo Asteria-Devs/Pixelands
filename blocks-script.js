@@ -24,6 +24,10 @@ const blocks = [
   { name: 'Ruby Block', description: 'Shiny, farmable block', obtained: 'Obtained from crafting', type: 'Crafted'},
   { name: 'Gold Block', description: 'Shiny, collectable block', obtained: 'Obtained from crafting', type: 'Crafted'},
   { name: 'Diamond Block', description: 'Shiny, rewarding block', obtained: 'Obtained from crafting', type: 'Crafted'},
+  { name: 'Treasure Chest', description: 'Summer Gacha, Get different kinds of Summer Items!', obtained: 'Found in summer worlds.', type: 'Props' },
+  { name: 'Easter Eggs', description: 'Easter Gacha, get different kinds of Easter and Old Timey Items!', obtained: 'Unobtainable. Was once found on top of Worlds and from breaking Dirt Blocks.', type: 'Props' },
+  { name: 'Canopic Chest', description: 'Pre-summer Gacha, Get different kinds of Egyptian Items!', obtained: 'Unobtainable. Was once purchaseable from the shop.', type: 'Props' },
+  { name: 'Four Leaf Clover', description: 'Lucky Clover', obtained: 'Unobtainable', type: 'Misc' },
 ];
 
 // DOM elements
