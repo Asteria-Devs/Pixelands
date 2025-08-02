@@ -365,6 +365,23 @@ input[id^="fish"] {
   background-color: #9b59b6;
 }
 
+/* Shirts, pants, shoes, hats, and hair same size as wings */
+.item[data-category="Shirts"] .item-image-container img,
+.item[data-category="Pants"] .item-image-container img,
+.item[data-category="Shoes"] .item-image-container img,
+.item[data-category="Hats"] .item-image-container img,
+.item[data-category="Hair"] .item-image-container img {
+  width: 95px;
+  height: 95px;
+}
+
+/* Fix World Lock and Gold Lock sizes */
+.item-image-container img[alt="World Lock"],
+.item-image-container img[alt="Gold Lock"] {
+  width: 95px !important;
+  height: 95px !important;
+}
+
 .category-tag.Hair,
 .category-tag[data-category="Hair"] {
   background-color: #27ae60;
@@ -406,25 +423,40 @@ input[id^="fish"] {
 }
 
 /* Block Categories */
-.category-tag.Natural {
+.category-tag.Natural,
+.category-tag[data-category="Natural"] {
   background-color: #4a5c3a;
+  color: white;
 }
 
-.category-tag.Crafted {
+.category-tag.Crafted,
+.category-tag[data-category="Crafted"] {
   background-color: #ff6b35;
+  color: white;
 }
 
-.category-tag.Decorative {
+.category-tag.Decorative,
+.category-tag[data-category="Decorative"] {
   background-color: #663399;
+  color: white;
 }
 
-.category-tag.Functional {
+.category-tag.Functional,
+.category-tag[data-category="Functional"] {
   background-color: #8b0000;
+  color: white;
 }
 
-.category-tag.Shop {
+.category-tag.Shop,
+.category-tag[data-category="Shop"] {
   background-color: #f4d03f;
   color: #2c3e50;
+}
+
+.category-tag.Props,
+.category-tag[data-category="Props"] {
+  background-color: #f39c12;
+  color: white;
 }
 
 /* Staff Role Categories */
