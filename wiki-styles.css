@@ -660,7 +660,7 @@ input[id^="fish"] {
 
 /* Wings, back gear, weapon, and quest items size */
 .item[data-category="Wings"] .item-image-container img,
-.item[data-category="Back Gear"] .item-image-container img,
+.item[data-category="Back Items"] .item-image-container img,
 .item[data-category="Weapon"] .item-image-container img,
 .item[data-category*="Quest"] .item-image-container img {
   width: 95px;
