@@ -324,44 +324,54 @@ input[id^="fish"] {
 }
 
 /* Item Categories */
-.category-tag.Quest {
+.category-tag.Quest,
+.category-tag[data-category="Quest"] {
   background-color: #f1c40f;
   color: #2c3e50;
 }
 
-.category-tag.Misc {
+.category-tag.Misc,
+.category-tag[data-category="Misc"] {
   background-color: #7f8c8d;
 }
 
-.category-tag.Wings {
+.category-tag.Wings,
+.category-tag[data-category="Wings"] {
   background-color: #e74c3c;
 }
 
-.category-tag.Weapon {
+.category-tag.Weapon,
+.category-tag[data-category="Weapon"] {
   background-color: #8e44ad;
 }
 
-.category-tag.Accessory {
+.category-tag.Accessory,
+.category-tag[data-category="Accessory"] {
   background-color: #e91e63;
 }
 
-.category-tag.Shirts {
+.category-tag.Shirts,
+.category-tag[data-category="Shirts"] {
   background-color: #16a085;
 }
 
-.category-tag.Pants {
+.category-tag.Pants,
+.category-tag[data-category="Pants"] {
   background-color: #2980b9;
 }
 
-.category-tag.Shoes {
+.category-tag.Shoes,
+.category-tag[data-category="Shoes"] {
   background-color: #9b59b6;
 }
 
-.category-tag.Hair {
+.category-tag.Hair,
+.category-tag[data-category="Hair"] {
   background-color: #27ae60;
 }
 
-.category-tag.Hats {
+.category-tag.Hats,
+.category-tag[data-category="Hats"] {
   background-color: #d35400;
 }
 
@@ -370,28 +380,29 @@ input[id^="fish"] {
   background-color: #1abc9c !important;
 }
 
-.category-tag.Blocks {
+.category-tag.Blocks,
+.category-tag[data-category="Blocks"] {
   background-color: #8b4513;
 }
 
-.category-tag.Props {
+.category-tag.Props,
+.category-tag[data-category="Props"] {
   background-color: #f39c12;
 }
 
 .category-tag.Back.Gear,
-.category-tag[class*="Back Gear"],
-.category-tag.Back.Items,
-.category-tag[class*="Back Items"] {
+.category-tag[data-category="Back Gear"] {
   background-color: #e67e22;
 }
 
-.category-tag.Other {
-  background-color: #34495e;
-}
-
-/* Ensure Back Items displays with orange color */
+.category-tag.Back.Items,
 .category-tag[data-category="Back Items"] {
   background-color: #e67e22 !important;
+}
+
+.category-tag.Other,
+.category-tag[data-category="Other"] {
+  background-color: #34495e;
 }
 
 /* Block Categories */
@@ -647,10 +658,11 @@ input[id^="fish"] {
   height: 95px;
 }
 
-/* Wings, back gear, and weapon items size */
+/* Wings, back gear, weapon, and quest items size */
 .item[data-category="Wings"] .item-image-container img,
 .item[data-category="Back Gear"] .item-image-container img,
-.item[data-category="Weapon"] .item-image-container img {
+.item[data-category="Weapon"] .item-image-container img,
+.item[data-category*="Quest"] .item-image-container img {
   width: 95px;
   height: 95px;
 }
