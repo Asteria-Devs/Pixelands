@@ -27,6 +27,7 @@ const blocks = [
   { name: 'Treasure Chest', description: 'Summer Gacha, Get different kinds of Summer Items!', obtained: 'Found in summer worlds.', type: 'Props' },
   { name: 'Easter Eggs', description: 'Easter Gacha, get different kinds of Easter and Old Timey Items!', obtained: 'Unobtainable. Was once found on top of Worlds and from breaking Dirt Blocks.', type: 'Props' },
   { name: 'Canopic Chest', description: 'Pre-summer Gacha, Get different kinds of Egyptian Items!', obtained: 'Unobtainable. Was once purchaseable from the shop.', type: 'Props' },
+  { name: 'Four Leaf Clover', description: 'Lucky Clover', obtained: 'Unobtainable', type: 'Misc' },
 ];
 
 // DOM elements
@@ -52,7 +53,7 @@ function createBlockElement(block, index) {
   blockDiv.setAttribute('data-category', tags.join(' '));
 
   // Generate tag HTML
-  const tagHTML = tags.map(tag => `<span class="category-tag ${tag}">${tag}</span>`).join('');
+  const tagHTML = tags.map(tag => `<span class="category-tag" data-category="${tag}">${tag}</span>`).join('');
 
   blockDiv.innerHTML = `
     <div class="item-header" data-index="${index}">
@@ -95,6 +96,31 @@ function renderBlocks() {
   if (filteredBlocks.length === 0) {
     container.innerHTML = '<p style="text-align: center; color: #7f8c8d; padding: 2rem;">No blocks found matching your criteria.</p>';
     return;
+  }
+
+  // Sort blocks based on whether filters are applied
+  if (selectedCategories.length === 0) {
+    // No filters selected - sort by tag priority, then alphabetically within each tag
+    const tagOrder = ['Shop', 'Natural', 'Crafted', 'Decorative', 'Functional', 'Props', 'Misc'];
+    
+    filteredBlocks.sort((a, b) => {
+      const aTypes = Array.isArray(a.type) ? a.type : [a.type];
+      const bTypes = Array.isArray(b.type) ? b.type : [b.type];
+      
+      // Get the highest priority tag for each item
+      const aPriority = Math.min(...aTypes.map(type => tagOrder.indexOf(type) >= 0 ? tagOrder.indexOf(type) : 999));
+      const bPriority = Math.min(...bTypes.map(type => tagOrder.indexOf(type) >= 0 ? tagOrder.indexOf(type) : 999));
+      
+      // If same priority, sort alphabetically
+      if (aPriority === bPriority) {
+        return a.name.localeCompare(b.name);
+      }
+      
+      return aPriority - bPriority;
+    });
+  } else {
+    // Filters are selected - sort alphabetically only
+    filteredBlocks.sort((a, b) => a.name.localeCompare(b.name));
   }
 
   filteredBlocks.forEach((block, index) => {
