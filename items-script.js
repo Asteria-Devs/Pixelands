@@ -65,6 +65,15 @@ function updateStats() {
   lastUpdatedSpan.textContent = today;
 }
 
+function highlightUpdateKeywords(text) {
+  if (!text) return text;
+  
+  return text
+    .replace(/Easter Update/gi, '<a href="updates.html#easter-update" style="color: #e74c3c; font-weight: bold; text-decoration: underline;">Easter Update</a>')
+    .replace(/Summer Update/gi, '<a href="updates.html#summer-update" style="color: #f39c12; font-weight: bold; text-decoration: underline;">Summer Update</a>')
+    .replace(/Egyptian Update/gi, '<a href="updates.html#egyptian-update" style="color: #e67e22; font-weight: bold; text-decoration: underline;">Egyptian Update</a>');
+}
+
 function createItemElement(item, index) {
   const itemDiv = document.createElement('div');
   itemDiv.className = 'item';
@@ -88,8 +97,8 @@ function createItemElement(item, index) {
       <div class="item-image-container">
         <img src="images/${item.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')}.webp" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot;>No Image Available</div>'">
       </div>
-      <p><strong>Description:</strong><br>${item.description || '(Not yet filled)'}</p>
-      <p><strong>How it's obtained:</strong><br>${item.obtained || '(Not yet filled)'}</p>
+      <p><strong>Description:</strong><br>${highlightUpdateKeywords(item.description) || '(Not yet filled)'}</p>
+      <p><strong>How it's obtained:</strong><br>${highlightUpdateKeywords(item.obtained) || '(Not yet filled)'}</p>
     </div>
   `;
 
@@ -131,20 +140,20 @@ function renderItems() {
   if (selectedCategories.length === 0) {
     // No filters selected - sort by tag priority, then alphabetically within each tag
     const tagOrder = ['Wings', 'Weapon', 'Accessory', 'Shirts', 'Pants', 'Shoes', 'Hair', 'Hats', 'Face Gear', 'Back Items', 'Quest', 'Misc'];
-    
+
     filteredItems.sort((a, b) => {
       const aTypes = Array.isArray(a.type) ? a.type : [a.type];
       const bTypes = Array.isArray(b.type) ? b.type : [b.type];
-      
+
       // Get the highest priority tag for each item
       const aPriority = Math.min(...aTypes.map(type => tagOrder.indexOf(type) >= 0 ? tagOrder.indexOf(type) : 999));
       const bPriority = Math.min(...bTypes.map(type => tagOrder.indexOf(type) >= 0 ? tagOrder.indexOf(type) : 999));
-      
+
       // If same priority, sort alphabetically
       if (aPriority === bPriority) {
         return a.name.localeCompare(b.name);
       }
-      
+
       return aPriority - bPriority;
     });
   } else {
