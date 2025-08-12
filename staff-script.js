@@ -45,6 +45,13 @@ const staff = [
     joinDate: '2024'
   },
   { 
+    name: 'Asteria', 
+    role: 'Game Staff', 
+    description: 'Discord community moderator, In game mod and music specialist ',
+    responsibilities: 'Discord moderation, music management, community events, In game moderation',
+    joinDate: '2025'
+  },
+  { 
     name: 'Plat', 
     role: 'Game Staff', 
     description: 'Game staff member',
