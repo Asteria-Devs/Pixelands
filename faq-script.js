@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const arrow = this.querySelector('.arrow');
       const isActive = itemDiv.classList.contains('active');
 
-      // Close all other dropdowns
+      // Close all the other dropdowns
       document.querySelectorAll('.item').forEach(item => {
         item.classList.remove('active');
         item.querySelector('.arrow').textContent = '+';
