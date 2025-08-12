@@ -1,10 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blocks - Pixelands Wiki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="wiki-styles.css">
 </head>
@@ -20,8 +21,15 @@
         <a href="blocks.html">Blocks</a>
         <a href="guides.html">Guides</a>
         <a href="staff.html">Staff</a>
-        <a href="faq.html">FAQ</a>
-        <a href="tools.html">Tools</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Other ▼</a>
+          <div class="dropdown-menu">
+            <a href="tools.html">Tools</a>
+            <a href="faq.html">FAQ</a>
+            <a href="wotw-winners.html">WOTW Winners</a>
+            <a href="updates.html">Updates</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -34,7 +42,7 @@
 
       <div class="search-section">
         <h3>Search Blocks</h3>
-        <input type="text" id="search" placeholder="Search blocks...">
+        <input type="text" id="search" placeholder="E.g. World Lock">
       </div>
 
       <div class="filter-section">
