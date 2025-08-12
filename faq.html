@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ - Pixelands Wiki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="wiki-styles.css">
+  <script src="font-loader.js"></script>
 </head>
 <body>
   <header class="wiki-header">
@@ -19,8 +22,15 @@
         <a href="blocks.html">Blocks</a>
         <a href="guides.html">Guides</a>
         <a href="staff.html">Staff</a>
-        <a href="faq.html">FAQ</a>
-        <a href="tools.html">Tools</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Other ▼</a>
+          <div class="dropdown-menu">
+            <a href="tools.html">Tools</a>
+            <a href="faq.html">FAQ</a>
+            <a href="wotw-winners.html">WOTW Winners</a>
+            <a href="updates.html">Updates</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -38,6 +48,7 @@
           <li><a href="#gameplay" style="color: #3498db;">Gameplay</a></li>
           <li><a href="#technical" style="color: #3498db;">Technical Issues</a></li>
           <li><a href="#accounts" style="color: #3498db;">Accounts & Trading</a></li>
+          
         </ul>
       </div>
     </aside>
@@ -117,7 +128,7 @@
 
             <div class="item" style="margin: 1rem 0;">
               <div class="item-header">
-                <span class="item-title">Are alternative accounts allowed to use?</span>
+                <span class="item-title">Are alternative accounts allowed?</span>
                 <span class="arrow">+</span>
               </div>
               <div class="dropdown-content">
@@ -131,10 +142,12 @@
                 <span class="arrow">+</span>
               </div>
               <div class="dropdown-content">
-                <p>No, there isn't a price world yet. Hopefully in the near future one of the administrators will make one to help players with trading values.</p>
+                <p>No, there isn't a price world yet. Hopefully in the near future one of the administrators will create one to help players with trading values.</p>
               </div>
             </div>
           </section>
+
+          
         </div>
       </div>
     </main>
