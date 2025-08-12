@@ -1,4 +1,3 @@
-
 /* Import wiki navigation styles */
 @import url('wiki-styles.css');
 
@@ -531,36 +530,62 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Fix horizontal scrolling */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  .game-container {
+    padding: 0.5rem;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .game-content {
+    padding: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   .game-nav {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
     text-align: center;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
+    max-width: 100vw;
+    box-sizing: border-box;
   }
 
   .game-navigation {
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    max-width: 100%;
   }
 
   .game-navigation a {
     padding: 0.4rem 0.6rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
   }
 
   .content-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+    max-width: 100%;
   }
 
   .social-containers {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+    max-width: 100%;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
+    max-width: 100%;
   }
 
   /* Ensure all containers have consistent height on mobile */
@@ -569,15 +594,17 @@ body {
   .community-section,
   .instagram-section {
     height: auto;
-    min-height: 300px;
+    min-height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 1.25rem;
   }
 
   .community-section,
   .instagram-section {
-    padding: 1.5rem;
     align-items: center;
   }
 
@@ -586,47 +613,53 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
+    max-width: 100%;
   }
 
   .social-button {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
-    width: 85%;
-    max-width: 260px;
-    height: 60px;
-    min-height: 60px;
-    margin: 1.5rem auto 0 auto;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+    width: 90%;
+    max-width: 240px;
+    height: 55px;
+    min-height: 55px;
+    margin: 1rem auto 0 auto;
+    box-sizing: border-box;
   }
 
   .social-button img {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
   }
 
   /* Make download buttons stack properly on mobile */
   .download-links {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
     margin-top: auto;
+    max-width: 100%;
   }
 
   .download-button {
-    width: 100%;
-    max-width: 320px;
-    height: 70px;
-    min-height: 70px;
+    width: 90%;
+    max-width: 280px;
+    height: 60px;
+    min-height: 60px;
+    box-sizing: border-box;
   }
 
   /* Ensure video container scales properly */
   .video-container {
     margin-top: auto;
+    max-width: 100%;
   }
 
   .video-container iframe {
     width: 100%;
-    height: 200px;
-    max-width: none;
+    height: 180px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   /* Community and Instagram sections alignment */
@@ -638,6 +671,22 @@ body {
 
   .features-showcase {
     margin-top: auto;
+  }
+
+  .banner-images {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .banner-images img {
+    width: 95%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-section h1 {
+    font-size: 1.8rem;
+    word-break: break-word;
   }
 }
 
@@ -672,5 +721,32 @@ body {
 
   .game-content {
     padding: 1rem;
+  }
+}
+
+.game-navigation a:hover {
+  background-color: #34495e;
+}
+
+.socials-button {
+  background: #ff6b6b !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.socials-button:hover {
+  background-color: #e55555 !important;
+}
+
+/* Mobile styles for socials button */
+@media (max-width: 768px) {
+  .socials-button {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.9rem !important;
+    min-width: 80px !important;
+    text-align: center !important;
+    height: auto !important;
+    line-height: normal !important;
+    box-sizing: border-box !important;
   }
 }
