@@ -490,7 +490,8 @@ input[id^="fish"] {
   height: 95px;
 }
 
-/* Fix Gold Lock size */
+/* Fix World Lock and Gold Lock sizes */
+.item-image-container img[alt="World Lock"],
 .item-image-container img[alt="Gold Lock"] {
   width: 95px !important;
   height: 95px !important;
