@@ -69,31 +69,10 @@
   border-radius: 6px;
 }
 
-.wl-rate-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.wl-rate-container .item-image-container {
-  width: 30px;
-  height: 30px;
-  margin: 0 auto 0.5rem;
-  background-color: #555;
-  border: 1px solid #666;
-  border-radius: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.wl-rate-container img {
-  width: 24px;
-  height: 24px;
-}
-
 .wl-rate-container label {
   color: #e0e0e0;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .wl-rate-container input {
@@ -173,4 +152,3 @@
 .quick-links .locked-link {
   color: #95a5a6;
 }
-
