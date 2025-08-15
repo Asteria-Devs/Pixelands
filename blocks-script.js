@@ -46,7 +46,7 @@ function updateStats() {
 
 function highlightUpdateKeywords(text) {
   if (!text) return text;
-  
+
   return text
     .replace(/Easter Update/gi, '<a href="updates.html#easter-update" style="color: #e74c3c; font-weight: bold; text-decoration: underline;">Easter Update</a>')
     .replace(/Summer Update/gi, '<a href="updates.html#summer-update" style="color: #f39c12; font-weight: bold; text-decoration: underline;">Summer Update</a>')
@@ -148,14 +148,11 @@ function toggleDropdown(event) {
   const arrow = itemDiv.querySelector('.arrow');
   const isActive = itemDiv.classList.contains('active');
 
-  // Close all other dropdowns
-  document.querySelectorAll('.item').forEach(item => {
-    item.classList.remove('active');
-    item.querySelector('.arrow').textContent = '+';
-  });
-
-  // Toggle current dropdown
-  if (!isActive) {
+  // Toggle current dropdown only
+  if (isActive) {
+    itemDiv.classList.remove('active');
+    arrow.textContent = '+';
+  } else {
     itemDiv.classList.add('active');
     arrow.textContent = '−';
   }
