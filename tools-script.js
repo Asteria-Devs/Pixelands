@@ -13,17 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
       const arrow = this.querySelector('.arrow');
       const isActive = itemDiv.classList.contains('active');
 
-      // Close other dropdowns first
-      document.querySelectorAll('.item').forEach(item => {
-        item.classList.remove('active');
-        const itemArrow = item.querySelector('.arrow');
-        if (itemArrow) itemArrow.textContent = '+';
-      });
-
-      // Toggle this
-      if (!isActive && arrow) {
+      // Toggle current dropdown only
+      if (isActive) {
+        itemDiv.classList.remove('active');
+        if (arrow) arrow.textContent = '+';
+      } else {
         itemDiv.classList.add('active');
-        arrow.textContent = '−';
+        if (arrow) arrow.textContent = '−';
       }
     });
   });
