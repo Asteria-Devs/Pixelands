@@ -50,6 +50,7 @@ const items = [
   { name: 'Steam Cloak', description: 'Rare, so old and fluffy, makes you look mysterious!', obtained: 'Unobtainable. Was once obtained from the Easter Eggs', type: 'Back Items'},
   { name: 'Phoenix Wings', description: 'Legendary. These wings are on FIRE!', obtained: 'Unobtainable. Was obtainable from the Phoenix Pack Summer 2025.', type : 'Wings'},
   { name: 'Scruffy Black Hair', description: 'Can be obtained from the shop by buying the Scruffy Hair Pack for 50.000 gems.', obtained: 'NA', type: 'Hair' },
+  { name: 'Black Pigtails', description: 'Can be obtained as common drop by breaking Jack-o-Lanterns on Halloween Event.', obtained: 'NA', type: 'Hair' },
 ];
 
 // DOM elements
