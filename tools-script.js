@@ -13,13 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
       const arrow = this.querySelector('.arrow');
       const isActive = itemDiv.classList.contains('active');
 
-      // Toggle current dropdown only
-      if (isActive) {
-        itemDiv.classList.remove('active');
-        if (arrow) arrow.textContent = '+';
-      } else {
+      // Close other dropdowns first
+      document.querySelectorAll('.item').forEach(item => {
+        item.classList.remove('active');
+        const itemArrow = item.querySelector('.arrow');
+        if (itemArrow) itemArrow.textContent = '+';
+      });
+
+      // Toggle this
+      if (!isActive && arrow) {
         itemDiv.classList.add('active');
-        if (arrow) arrow.textContent = '−';
+        arrow.textContent = '−';
       }
     });
   });
@@ -81,43 +85,43 @@ function calculateAdvancedFishGems() {
   // Build the breakdown display
   let breakdownHTML = '';
   if (breakdown.length > 0) {
-    breakdownHTML = '<div class="fish-breakdown">';
-    breakdownHTML += '<div class="breakdown-title">Breakdown:</div>';
+    breakdownHTML = '<div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #555;">';
+    breakdownHTML += '<div style="color: #bdc3c7; font-size: 0.9rem; margin-bottom: 0.5rem;">Breakdown:</div>';
     breakdown.forEach((item) => {
       const imageFileName = item.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
-      breakdownHTML += `<div class="breakdown-item">
-        <span class="breakdown-item-info">
-          <div class="breakdown-item-image">
+      breakdownHTML += `<div style="color: #95a5a6; font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+        <span style="display: flex; align-items: center;">
+          <div class="item-image-container" style="width: 16px; height: 16px; margin-right: 0.3rem; background-color: #555; border: 1px solid #666; border-radius: 2px; display: flex; justify-content: center; align-items: center;">
             <img src="images/${imageFileName}.webp" alt="${item.name}" onerror="this.parentElement.innerHTML='<div class=&quot;no-image&quot;>${item.name.charAt(0)}</div>'">
           </div>
           ${item.name}: ${item.amount.toLocaleString()} × ${item.gemsEach} gems
         </span>
-        <span class="breakdown-item-total">${item.total.toLocaleString()} gems</span>
+        <span>${item.total.toLocaleString()} gems</span>
       </div>`;
     });
     breakdownHTML += '</div>';
   }
 
   // Lock icons for the display
-  const wlIcon = '<img src="images/world_lock.webp" class="lock-icon" onerror="this.outerHTML=\'🔒\'">';
-  const glIcon = '<img src="images/gold_lock.webp" class="lock-icon" onerror="this.outerHTML=\'🟨\'">';
+  const wlIcon = '<img src="images/world_lock.webp" style="width: 16px; height: 16px; margin-right: 0.2rem;" onerror="this.outerHTML=\'🔒\'">';
+  const glIcon = '<img src="images/gold_lock.webp" style="width: 16px; height: 16px; margin-right: 0.2rem;" onerror="this.outerHTML=\'🟨\'">';
 
   result.innerHTML = `
-    <div class="fish-result-container">
-      <div class="total-gems-display">
-        <img src="images/total_gems.webp" class="gems-icon" alt="Total Gems" onerror="this.outerHTML='💎'">
+    <div style="text-align: center;">
+      <div style="color: #27ae60; font-size: 1.2rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+        <img src="images/total_gems.webp" style="width: 20px; height: 20px; margin-right: 0.4rem;" alt="Total Gems" onerror="this.outerHTML='💎'">
         Total Gems: ${totalGems.toLocaleString()}
       </div>
-      <div class="world-locks-display">
+      <div style="color: #f39c12; font-size: 1.1rem; margin-bottom: 0.3rem; display: flex; align-items: center; justify-content: center;">
         ${wlIcon} World Locks: ${remainingWLs.toFixed(2)} WLs
       </div>
-      ${goldLocks > 0 ? `<div class="gold-locks-display">
+      ${goldLocks > 0 ? `<div style="color: #ffd700; font-size: 1.1rem; margin-bottom: 0.3rem; display: flex; align-items: center; justify-content: center;">
         ${glIcon} Gold Locks: ${goldLocks} GLs
       </div>` : ''}
-      <div class="rate-display">
+      <div style="color: #3498db; font-size: 0.9rem;">
         Rate: ${wlRate.toLocaleString()} gems per WL
       </div>
-      ${goldLocks > 0 ? `<div class="swap-info">
+      ${goldLocks > 0 ? `<div style="color: #95a5a6; font-size: 0.8rem; margin-top: 0.3rem;">
         (Auto-swapped: ${goldLocks * 100} WLs → ${goldLocks} GLs)
       </div>` : ''}
     </div>
