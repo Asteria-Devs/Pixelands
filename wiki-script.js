@@ -103,6 +103,7 @@ const allItems = [
   { name: 'Black Tie Up Hair', description: 'NA', obtained: 'Can be obtained as common drop by breaking Jack-o-Lanterns on Halloween Event.', type: 'Hair' },
   { name: 'Blonde Female Hair', description: 'NA', obtained: 'Can be obtained from the shop by buying the Basic Hair Pack for 15.000 gems.', type: 'Hair' },
   { name: 'Blonde Male Hair', description: 'NA', obtained: 'Can be obtained from the shop by buying the basic hair pack for 15,000 gems.', type: 'Hair' },
+  { name: 'Brawler Hair-Black', description: 'NA', obtained: 'Can be obtained by buying Summer Hair Packs from the shop during Summer Event.', type: 'Hair' },
 ];
 
 // DOM elements
