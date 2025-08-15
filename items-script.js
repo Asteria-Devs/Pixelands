@@ -52,6 +52,7 @@ const items = [
   { name: 'Scruffy Black Hair', description: 'NA', obtained: 'Can be obtained from the shop by buying the Scruffy Hair Pack for 50.000 gems.', type: 'Hair' },
   { name: 'Black Pigtails', description: 'NA', obtained: 'Can be obtained as common drop by breaking Jack-o-Lanterns on Halloween Event.', type: 'Hair' },
   { name: 'Black Short Hair', description: 'NA', obtained: 'Can be obtained from the shop by buying the Basic Hair Pack for 15.000 gems.', type: 'Hair' },
+  { name: 'Black Tie Up Hair', description: 'NA', obtained: 'Can be obtained as common drop by breaking Jack-o-Lanterns on Halloween Event.', type: 'Hair' },
 ];
 
 // DOM elements
