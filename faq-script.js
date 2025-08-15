@@ -8,11 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const arrow = this.querySelector('.arrow');
       const isActive = itemDiv.classList.contains('active');
 
-      // Toggle current dropdown only
-      if (isActive) {
-        itemDiv.classList.remove('active');
-        arrow.textContent = '+';
-      } else {
+      // Close all the other dropdowns
+      document.querySelectorAll('.item').forEach(item => {
+        item.classList.remove('active');
+        item.querySelector('.arrow').textContent = '+';
+      });
+
+      // Toggle current dropdown
+      if (!isActive) {
         itemDiv.classList.add('active');
         arrow.textContent = '−';
       }
