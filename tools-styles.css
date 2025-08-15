@@ -1,4 +1,3 @@
-
 /* Tools page specific styles */
 
 .tools-calculator {
@@ -150,5 +149,128 @@
 }
 
 .quick-links .locked-link {
+  color: #95a5a6;
+}
+
+.fish-item .item-image-container img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  border-radius: 4px;
+}
+
+/* Fish calculator specific sizing for different image containers */
+.fish-result .item-image-container img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.fish-result .item-image-container img[alt="Total Gems"] {
+  width: 18px;
+  height: 18px;
+}
+
+/* Fish calculator result styles */
+.fish-result-container {
+  text-align: center;
+}
+
+.total-gems-display {
+  color: #27ae60;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gems-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.4rem;
+}
+
+.world-locks-display {
+  color: #f39c12;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gold-locks-display {
+  color: #ffd700;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rate-display {
+  color: #3498db;
+  font-size: 0.9rem;
+}
+
+.swap-info {
+  color: #95a5a6;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.lock-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.2rem;
+}
+
+/* Fish breakdown styles */
+.fish-breakdown {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #555;
+}
+
+.breakdown-title {
+  color: #bdc3c7;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.breakdown-item {
+  color: #95a5a6;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.breakdown-item-info {
+  display: flex;
+  align-items: center;
+}
+
+.breakdown-item-image {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.3rem;
+  background-color: #555;
+  border: 1px solid #666;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.breakdown-item-total {
   color: #95a5a6;
 }
