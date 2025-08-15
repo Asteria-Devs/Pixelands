@@ -104,6 +104,19 @@ const allItems = [
   { name: 'Blonde Female Hair', description: 'NA', obtained: 'Can be obtained from the shop by buying the Basic Hair Pack for 15.000 gems.', type: 'Hair' },
   { name: 'Blonde Male Hair', description: 'NA', obtained: 'Can be obtained from the shop by buying the basic hair pack for 15,000 gems.', type: 'Hair' },
   { name: 'Brawler Hair-Black', description: 'NA', obtained: 'Can be obtained by buying Summer Hair Packs from the shop during Summer Event.', type: 'Hair' },
+  { name: 'Brawler Hair-Blonde', description: 'NA', obtained: 'Can be obtained by buying summer hair packs from the shop during summer event ', type: 'Hair' },
+  { name: 'Brawler Hair-Platinum', description: 'NA', obtained: 'Can be obtained by buying summer hair packs from the shop during summer event ', category: 'Hair' },
+  { name: 'Brown Buns', description: 'NA', obtained: 'Can be obtained from the shop by buying the Basic Hair Pack for 15.000 gems.', type: 'Hair' },
+  { name: 'Combed Spikey Hair', description: 'NA', obtained: 'Can be obtained as common drop by breaking Stuffed Turkeys on Harvestfest Event.', type: 'Hair' },
+  { name: 'Flaming Hair', description: 'NA', obtained: 'Can be obtained by buying Phoenix Packs from the shop during Summer Event.', type: 'Hair' },
+  { name: 'Greaser Hair-Black', description: 'NA', obtained: 'Can be obtained by buying Spending Spree Packs from the shop during Summer Event.', type: 'Hair' },
+  { name: 'Greaser Hair-Brown', description: 'NA', obtained: 'Can be obtained by buying Spending Spree Packs from the shop during Summer Event.', type: 'Hair' },
+  { name: 'High Ponytail Hair-Black', description: 'NA', obtained: 'Can be obtained by buying Summer Hair Packs from the shop during Summer Event.', type: 'Hair' },
+  { name: 'High Ponytail Hair-Black', description: 'NA', obtained: 'Can be obtained by buying Summer Hair Packs from the shop during Summer Event.', type: 'Hair' },
+  { name: 'Karen Bob', description: 'NA', obtained: 'Can be obtained by buying Spending Spree Packs from the shop during Summer Event.', type: 'Hair' },
+  { name: 'Long Middle Part-Blonde', description: 'NA', obtained: 'Can be obtained by buying Summer Hair Packs from the shop during Summer Event.', type: 'Hair' },
+  { name: 'Long Middle Part-Brown', description: 'NA', obtained: 'Can be obtained by buying Summer Hair Packs from the shop during Summer Event.', type: 'Hair' },
+  { name: 'Maid Hair-Black', description: 'NA', obtained: 'Can be obtained by buying Summer Hair Packs from the shop during Summer Event.', type: 'Hair' },
 ];
 
 // DOM elements
