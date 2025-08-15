@@ -1,8 +1,8 @@
-// Tools page - let's make this thing work! 🛠️
+// Tools page stuff :P
 document.addEventListener('DOMContentLoaded', function() {
-  // Handle clicks on tool dropdowns (ez pz)
+  // Handle clicks on tool dropdowns
   document.querySelectorAll('.item-header').forEach(header => {
-    // Skip locked tools - ain't nobody got time for that
+    // Skip locked tools cause they dont work yet
     if (header.querySelector('.lock-icon')) {
       header.style.cursor = 'not-allowed';
       return;
@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const arrow = this.querySelector('.arrow');
       const isActive = itemDiv.classList.contains('active');
 
-      // Close other dropdowns (one at a time, folks!)
+      // Close other dropdowns first
       document.querySelectorAll('.item').forEach(item => {
         item.classList.remove('active');
         const itemArrow = item.querySelector('.arrow');
         if (itemArrow) itemArrow.textContent = '+';
       });
 
-      // Toggle this bad boy
+      // Toggle this 
       if (!isActive && arrow) {
         itemDiv.classList.add('active');
         arrow.textContent = '−';
@@ -29,17 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Fish gem calc - time to make bank! 💰
+// Fish gem calculator stuff
 function calculateAdvancedFishGems() {
   const result = document.getElementById('fishResult');
   const wlRate = parseInt(document.getElementById('wlRate').value);
 
   if (isNaN(wlRate) || wlRate <= 0) {
-    result.innerHTML = '<span style="color: #e74c3c;">Bruh, enter a valid WL rate!</span>';
+    result.innerHTML = '<span style="color: #e74c3c;">Bruh enter a valid WL rate!</span>';
     return;
   }
 
-  // Fish data (with auto image magic ✨)
+  // Fish data with their gem values
   const fishData = [
     { id: 'fish1', gems: 20, name: 'Shrimp' },
     { id: 'fish2', gems: 20, name: 'Carp' },
@@ -56,7 +56,7 @@ function calculateAdvancedFishGems() {
   let breakdown = [];
   let hasValidInput = false;
 
-  // Crunch the numbers for each fishy 🐟
+  // Go through each fish and do the math
   fishData.forEach(fish => {
     const amount = parseInt(document.getElementById(fish.id).value) || 0;
     if (amount > 0) {
@@ -73,16 +73,16 @@ function calculateAdvancedFishGems() {
   });
 
   if (!hasValidInput) {
-    result.innerHTML = '<span style="color: #e74c3c;">Yo, put in some fish numbers!</span>';
+    result.innerHTML = '<span style="color: #e74c3c;">Yo put in some fish numbers!</span>';
     return;
   }
 
-  // Convert to locks (stonks time! 📈)
+  // Convert gems to world locks and gold locks
   const totalWLs = totalGems / wlRate;
   const goldLocks = Math.floor(totalWLs / 100);
   const remainingWLs = totalWLs % 100;
 
-  // Build the fancy breakdown display
+  // Build the breakdown display
   let breakdownHTML = '';
   if (breakdown.length > 0) {
     breakdownHTML = '<div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #555;">';
@@ -100,7 +100,7 @@ function calculateAdvancedFishGems() {
     breakdownHTML += '</div>';
   }
 
-  // Lock icons (cause we fancy like that 💅)
+  // Lock icons for the display
   const wlIcon = '<img src="images/world_lock.webp" style="width: 16px; height: 16px; margin-right: 0.2rem;" onerror="this.innerHTML=\'🔒\'">';
   const glIcon = '<img src="images/gold_lock.webp" style="width: 16px; height: 16px; margin-right: 0.2rem;" onerror="this.innerHTML=\'🟨\'">';
 
@@ -126,17 +126,17 @@ function calculateAdvancedFishGems() {
   `;
 }
 
-// Avatar planner - dress up time! 👕
+// Avatar planner stuff for later
 const itemValues = {
-  // Hats
+  // Hat stuff
   'cat_hat': { value: 2500, rarity: 'Rare' },
   'snake_crown': { value: 15000, rarity: 'Ultra Rare' },
 
-  // Hair
+  // Hair stuff
   'black_afro': { value: 5000, rarity: 'Rare' },
   'sea_hair': { value: 8000, rarity: 'Ultra Rare' },
 
-  // Face Gear
+  // Face stuff
   'white_lenses': { value: 7500, rarity: 'Rare' },
   'rich_boy_glasses': { value: 15500, rarity: 'Ultra Rare' },
   'zeus_eyes': { value: 6000, rarity: 'Rare' },
@@ -145,7 +145,7 @@ const itemValues = {
   'snake_lenses': { value: 20000, rarity: 'Ultra Rare' },
   'snorkle': { value: 4000, rarity: 'Rare' },
 
-  // Weapons
+  // Weapon stuff
   'golden_rod': { value: 50000, rarity: 'Legendary' },
   'golden_sword': { value: 30000, rarity: 'Exclusive' },
   'sacred_katana': { value: 75000, rarity: 'Legendary' },
@@ -155,7 +155,7 @@ const itemValues = {
   'flames_of_the_deep': { value: 60000, rarity: 'Legendary' },
   'solstice_slicer': { value: 8000, rarity: 'Rare' },
 
-  // Wings
+  // Wing stuff
   'night_owl_wings': { value: 100000, rarity: 'Legendary' },
   'devil_wings': { value: 25500, rarity: 'Ultra Rare' },
   'bubble_wings': { value: 30000, rarity: 'Ultra Rare' },
@@ -165,14 +165,14 @@ const itemValues = {
   'seraphim_wings': { value: 200000, rarity: 'Legendary' },
   'skeleton_wings': { value: 500000, rarity: 'Legendary' },
 
-  // Back Items
+  // Back stuff
   'eye_of_rah': { value: 250000, rarity: 'Legendary' },
   'emerald_dragon': { value: 75000, rarity: 'Legendary' },
   'golden_dragon': { value: 125000, rarity: 'Legendary' },
   'rabbit_rocket': { value: 20000, rarity: 'Rare' },
   'steam_cloak': { value: 15000, rarity: 'Rare' },
 
-  // Shoes
+  // Shoe stuff
   'golden_shoes': { value: 50000, rarity: 'Legendary' }
 };
 
@@ -182,7 +182,7 @@ function updateSetStats() {
   let itemCount = 0;
   let rarities = {};
 
-  // Count up the drip 💧
+  // Count up all the items and their values
   slots.forEach(slotId => {
     const select = document.getElementById(slotId);
     if (select && select.value) {
@@ -195,21 +195,25 @@ function updateSetStats() {
     }
   });
 
-  // Update the flex display
-  document.getElementById('itemCount').textContent = itemCount;
-  document.getElementById('setValue').textContent = totalValue.toLocaleString();
+  // Update the display if elements exist
+  const itemCountEl = document.getElementById('itemCount');
+  const setValueEl = document.getElementById('setValue');
+  const rarityBreakdownEl = document.getElementById('rarityBreakdown');
+  
+  if (itemCountEl) itemCountEl.textContent = itemCount;
+  if (setValueEl) setValueEl.textContent = totalValue.toLocaleString();
 
   const rarityText = Object.entries(rarities)
     .map(([rarity, count]) => `${count} ${rarity}`)
-    .join(', ') || 'None';
-  document.getElementById('rarityBreakdown').textContent = rarityText;
+    .join(' ') || 'None';
+  if (rarityBreakdownEl) rarityBreakdownEl.textContent = rarityText;
 }
 
 function saveSet() {
   const setData = {};
   const slots = ['hatSlot', 'hairSlot', 'faceSlot', 'weaponSlot', 'wingsSlot', 'backSlot', 'shoesSlot'];
 
-  // Grab all the gear
+  // Get all the selected items
   slots.forEach(slotId => {
     const select = document.getElementById(slotId);
     if (select && select.value) {
@@ -218,14 +222,14 @@ function saveSet() {
   });
 
   localStorage.setItem('pixelandsAvatarSet', JSON.stringify(setData));
-  showSetResult('Set saved successfully! 💾', '#27ae60');
+  showSetResult('Set saved successfully!', '#27ae60');
 }
 
 function shareSet() {
   const setData = {};
   const slots = ['hatSlot', 'hairSlot', 'faceSlot', 'weaponSlot', 'wingsSlot', 'backSlot', 'shoesSlot'];
 
-  // Pack it up for sharing
+  // Get items for sharing
   slots.forEach(slotId => {
     const select = document.getElementById(slotId);
     if (select && select.value) {
@@ -235,7 +239,7 @@ function shareSet() {
 
   const setCode = btoa(JSON.stringify(setData));
   navigator.clipboard.writeText(`Pixelands Set: ${setCode}`).then(() => {
-    showSetResult('Set code copied! Share the drip! 🔗', '#3498db');
+    showSetResult('Set code copied! Share it!', '#3498db');
   }).catch(() => {
     showSetResult(`Set code: ${setCode}`, '#3498db');
   });
@@ -244,7 +248,7 @@ function shareSet() {
 function clearSet() {
   const slots = ['hatSlot', 'hairSlot', 'faceSlot', 'weaponSlot', 'wingsSlot', 'backSlot', 'shoesSlot'];
 
-  // Yeet everything
+  // Clear all selections
   slots.forEach(slotId => {
     const select = document.getElementById(slotId);
     if (select) {
@@ -253,26 +257,28 @@ function clearSet() {
   });
 
   updateSetStats();
-  showSetResult('Set cleared! 🗑️', '#e74c3c');
+  showSetResult('Set cleared!', '#e74c3c');
 }
 
 function showSetResult(message, color) {
   const result = document.getElementById('setResult');
-  result.textContent = message;
-  result.style.backgroundColor = color;
-  result.style.display = 'block';
+  if (result) {
+    result.textContent = message;
+    result.style.backgroundColor = color;
+    result.style.display = 'block';
 
-  // Auto-hide after 3 secs
-  setTimeout(() => {
-    result.style.display = 'none';
-  }, 3000);
+    // Hide after 3 seconds
+    setTimeout(() => {
+      result.style.display = 'none';
+    }, 3000);
+  }
 }
 
-// Boot up everything when page loads 🚀
+// Setup everything when page loads
 document.addEventListener('DOMContentLoaded', function() {
   console.log('Fish calculator initialized');
 
-  // Hook up fish inputs
+  // Event listeners for fish inputs :P
   for (let i = 1; i <= 9; i++) {
     const input = document.getElementById(`fish${i}`);
     if (input) {
@@ -280,13 +286,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // WL rate listener
+  // Event listener for WL rate input
   const wlRateInput = document.getElementById('wlRate');
   if (wlRateInput) {
     wlRateInput.addEventListener('input', calculateAdvancedFishGems);
   }
 
-  // Set planner listeners
+  // Event listeners for set planner selects
   const setSlots = ['hatSlot', 'hairSlot', 'faceSlot', 'weaponSlot', 'wingsSlot', 'backSlot', 'shoesSlot'];
   setSlots.forEach(slotId => {
     const select = document.getElementById(slotId);
@@ -295,6 +301,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Start fresh
+  // Start with fresh stats
   updateSetStats();
 });
